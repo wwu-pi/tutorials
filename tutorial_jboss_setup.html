@@ -1,0 +1,60 @@
+<html><body>
+<h2>Contents</h2>
+<ol>
+<li><a href="#jdk">Installing the latest JDK</a></li>
+<li><a href="#jboss">Installing JBoss AS 7</a></li>
+<li><a href="#eclipse">Installing Eclipse 3.7</a></li>
+<li><a href="#jbosstools">Installing JBoss Tools 3.3</a></li>
+</ol>
+<h2><a id="jdk" name="jdk"></a>Installing the latest JDK</h2>
+<ol>
+<li>Make sure that the latest version of the <span style="font-weight: bold;">Java Development Kit</span> (JDK 7 Update 03 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.</li>
+<li>Go to <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a> and follow the instructions on Oracle's website to <span style="font-weight: bold;">download </span>the latest version of the <span style="font-weight: bold;">JDK </span>(<span style="font-weight: bold;">Java SE 7 Update 03 </span>or later) for the operating system of your computer.</li>
+<li><span style="font-weight: bold;">Install </span>the <span style="font-weight: bold;">JDK </span>to a directory on your computer, e.g. <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">C:\Java\jdk7</span></span>_03.</li>
+<li><span style="font-weight: bold;">Create </span>an <a class="int" href="#envvar"><span style="font-weight: bold;">environment variable</span></a> called <span style="font-size: small;"><span style="font-weight: bold; font-family: courier new,courier,mono;">JAVA_HOME</span></span> that points to the JDK installation directory, for example <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">C:\Java\jdk7_03</span></span>. </li>
+</ol>
+<h2><span style="font-weight: bold;"><a id="jboss" name="jboss"></a>Installing JBoss AS 7<br /> </span></h2>
+<ol>
+<li><span style="font-weight: bold;">Get </span>the latest stable version of the <span style="font-weight: bold;">JBoss Application Server</span> (<strong>7.1.1.Final</strong>) from <a href="http://www.jboss.org/jbossas/downloads/">http://www.jboss.org/jbossas/downloads/</a> (<span style="font-size: small;"><span style="font-family: courier new,courier,mono;">jboss-as-distribution-7.7.1.Final.zip</span></span>).</li>
+<li><span style="font-weight: bold;">Extract </span>the <span style="font-weight: bold;">zip</span> archive to a directory on your computer, e.g. <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">C:\EAI</span></span>. The path must <span style="font-weight: bold;">not contain any spaces</span>. A new directory, e.g. <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">C:\EAI\jboss-7.1.1.Final</span></span>, containing the JBoss AS files will be created.</li>
+<li>Use the script <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">&lt;JBoss directory&gt;\bin\standalone.bat</span></span> to start the JBoss server and check the installation. After startup, you should be able to access the web server at <a href="http://localhost:8080">http://localhost:8080</a>.</li>
+<li>Open the link <span style="font-weight: bold;">Administration Console</span> and follow the instructions to add a new management user.</li>
+<li>After creating a user revisit the <span style="font-weight: bold;">Administration Console</span>.</li>
+<li>Go to <span style="font-weight: bold;">Deployments</span> --&gt; <a href="http://localhost:9990/console/App.html#deployments"><span style="font-weight: bold;">Manage Deployments</span></a> and click <span style="font-weight: bold;">Add Content</span> to upload <a href="hsqldb.jar">hsqldb.jar</a>. Make sure that the deployed file is enabled.</li>
+<li>Go to <span style="font-weight: bold;">Connector </span>-&gt; <a style="font-weight: bold;" href="http://localhost:9990/console/App.html#datasources">Datasources</a> and click <span style="font-weight: bold;">Add</span>. Use the following information to create a datasource:<br />
+<ul>
+<li>Name: <span style="font-weight: bold;">DefaultDS</span></li>
+<li>JNDI Name: <span style="font-weight: bold;">java:/DefaultDS</span></li>
+<li>Choose <span style="font-weight: bold;">hsqldb.jar</span> as driver</li>
+<li>Connection URL: <span style="font-weight: bold;">jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}localDB</span></li>
+<li>username: <span style="font-weight: bold;">sa</span></li>
+</ul>
+</li>
+<li>In order to stop the server, press CTRL-C in the console window that was opened during step 3.</li>
+</ol>
+<h2><a id="eclipse" name="eclipse"></a>Installing Eclipse 3.7.2</h2>
+<ol>
+<li><span style="font-weight: bold;">Download </span>the <span style="font-weight: bold;">Eclipse IDE for Java EE Developers</span> for your operating system (version 3.7.2, <span style="font-style: italic;">Indigo SR2</span>) from <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2">http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/indigosr2</a>.</li>
+<li><span style="font-weight: bold;">Extract </span>the downloaded <span style="font-weight: bold;">archive</span>, e.g. <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">eclipse-jee-indigo-SR2-win32-x86_64.zip</span></span>, to a directory on your computer, e.g. <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">C:\EAI</span></span>. This will create a sub directory, like <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">C:\EAI\eclipse</span></span>.</li>
+<li><span style="font-weight: bold;">Start Eclipse</span>. The <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">eclipse.exe</span></span> is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and <span style="font-weight: bold;">select a workspace directory</span>, for example <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">C:\EAI\projects</span></span>. This path must <span style="font-weight: bold;">not contain any spaces </span>either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click <span style="font-weight: bold;">"OK"</span> to close the dialog and get to the workbench window.</li>
+</ol>
+<h2><a id="jbosstools" name="jbosstools"></a>Installing JBoss Tools 3.3 for Eclipse</h2>
+<ol>
+<li><span style="font-weight: bold;">Select "Help-&gt;Eclipse Marketplace..."</span> from the Eclipse menu bar. Choose "Eclipse Marketplace" if prompted for a marketplace catalog.</li>
+<li>Search for "JBoss Tools" and <span style="font-weight: bold;">install JBoss Tools (Indigo)</span>, version 3.3.x.</li>
+<li>Wait until "Calculating requirements..." has finished and make sure that all features are checked, then <span style="font-weight: bold;">click "Next"</span>.</li>
+<li><span style="font-weight: bold;">Accept the license agreements</span> and click <span style="font-weight: bold;">"Finish"</span>.</li>
+<li>When the download is complete, a security warning regarding "Unsigned content" will appear. <span style="font-weight: bold;">Accept with "OK"</span> to begin with the installation.</li>
+<li>When prompted to do so, <span style="font-weight: bold;">"Restart Now"</span>.</li>
+<li>After <span style="font-weight: bold;">closing </span>the <span style="font-weight: bold;">"Welcome" window</span> you will see the "Java EE" perspective. The selected perspective is indicated in the upper right corner as shown in the following figure:<br /> <img src="eclipse_jee_perspective.png" alt="" width="293" height="153" /><br /> If the Java EE button is not visible you can change to the Java EE perspective via "Window-&gt;Open Perspective-&gt;Other..." . In the "Open Perspective" dialog double click the Java EE entry.</li>
+<li><span style="font-weight: bold;">Activate </span>the <span style="font-weight: bold;">"Servers" view</span> tab in the lower right of the window. <span style="font-weight: bold;">Right-click</span> the empty area and <span style="font-weight: bold;">select "New-&gt;Server"</span> as shown in this screenshot:<br /> <a href="eclipse_server_view.png"><img src="eclipse_server_view.png" alt="" width="523" height="120" /></a></li>
+<li>In the "New Server" window select <span style="font-weight: bold;">"JBoss AS 7.1"</span> (from the JBoss Community category) <span style="font-weight: bold;">as server type</span> and click <span style="font-weight: bold;">"Next"</span>.<br /> <img src="eclipse_new_server.png" alt="" width="500" height="571" /><br /> <span style="font-weight: bold;">Set</span> the <span style="font-weight: bold;">"Home Directory"</span> entry to the installation directory of the JBoss AS, e.g. <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">C:\EAI\jboss-7.1.1.Final</span></span>, and <span style="font-weight: bold;">click "Finish"</span>.</li>
+<li>In the "Servers" view <span style="font-weight: bold;">select the newly created server</span> and click the green <span style="font-weight: bold;">start button</span>.<br /> <img src="eclipse_server_start.png" alt="" width="600" height="83" /><br /> A new "Console" view will open showing the startup logs of the JBoss AS.</li>
+</ol>
+<p>Congratulations, you have successfully installed JBoss AS and JBoss Tools!<br /> Continue with the <a class="int" href="tutorial_jboss_project.html">setup of your first Java EE project</a>.<br /> <br /> Please send questions and comments regarding this tutorial to <a class="e_mail" href="/pi/personal/usener.php">Claus Alexander Usener</a>.<br /> </p>
+<h2><a id="envvar" name="envvar"></a>How To Set Environment Variables</h2>
+<ul>
+<li><span style="font-weight: bold;">Windows XP</span>: Open the Control Panel (<span style="font-style: italic;">Systemsteuerung</span>) from the Start Menu, switch to Classic View (<span style="font-style: italic;">Klassische Ansicht</span>) if necessary, open the System Control Panel applet (<span style="font-style: italic;">System</span>), select the Advanced tab (<span style="font-style: italic;">Erweitert</span>), and click on the Environment Variables button (<span style="font-style: italic;">Umgebungsvariablen</span>).</li>
+<li><span style="font-weight: bold;">Windows 7</span>: Control Panel (<span style="font-style: italic;">Systemsteuerung</span>) - System - choose Advanced System Settings (<span style="font-style: italic;">Erweiterte Systemeinstellungen</span>) on the left - Advanced tab (<span style="font-style: italic;">Erweitert</span>) - Environment Variables button (<span style="font-style: italic;">Umgebungsvariablen</span>)</li>
+</ul>
+</body></html>
