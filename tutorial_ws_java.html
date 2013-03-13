@@ -23,13 +23,13 @@
       <h2>Accessing a Web Service from Java</h2>
       <p>In order to conveniently access a Web service, regardless of its implementation language, a Java application can use proxy classes which offer a type-safe and abstract view on the Web service. The following sections describe two ways of generating these proxies:</p>
       <ol style="list-style-type: upper-alpha;">
-        <li><a href="#wsimport">Using the JDK tool <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">wsimport</span></span>. (We recommend this alternative)<br /> </a></li>
+        <li><a href="#wsimport">Using the JDK tool <tt>wsimport</tt>. (We recommend this alternative)</a></li>
         <li><a href="#jbosstools">Using tooling provided by Eclipse JBoss Tools.</a></li>
       </ol>
-      <h2><a id="wsimport" name="wsimport"></a>A. <span style="font-family: courier new,courier,mono;">wsimport</span></h2>
+      <h2><a id="wsimport" name="wsimport"></a>A. <tt>wsimport</tt></h2>
       <p>This procedure uses standardized JAX-WS technology (part of Java EE). It does, however, require more manual work than alternative B.&nbsp; </p>
       <ul>
-        <li>From the command line, execute "<span style="font-family: 'courier new', courier, mono; font-size: small;">wsimport -keep &lt;URL of WSDL&gt;</span>". This will generate Java source and class files.
+        <li>From the command line, execute "<small><tt>wsimport -keep &lt;URL of WSDL&gt;</tt></small>". This will generate Java source and class files.
         <ul>
           <li>Above command assumes that your PATH environment variable includes the "bin" folder from the JDK installation. If this is not the case, <a href="tutorial_jboss_setup.html">modify the environment variable</a> or use the full path to wsimport.</li>
         </ul>
