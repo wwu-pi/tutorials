@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Tutorials</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Tutorials</h1>
+        <p><a href=".">Home</a></p>
+
+        <p class="view"><a href="https://github.com/wwu-pi/tutorials">View the Project on GitHub <small>wwu-pi/tutorials</small></a></p>
+      </header>
+      <section>
+      <p>This tutorial explains how to implement a business application with several layers in Visual Studio 2010. It uses ADO.NET Entity Framework and ASP.NET. First, have a look at the <a href="Library-NET4.zip">library application (.NET)</a> as an example of such an application. Make yourself familiar with Visual Studio and with the structure of the library application in .NET. Then, proceed with this tutorial to create a similar business application from scratch.<br /> <br /> In Visual Studio, applications are developed in so called "solutions". A solution contains projects of different types. In this tutorial, two projects will be created:</p>
+      <ol style="list-style-type: upper-roman;">
+        <li><a href="#business">A class library representing the business layer (data and logic).</a></li>
+        <li><a href="#web">A web application.</a></li>
+      </ol>
+      <p>This is just an example. It would also be possible to split the data and logic parts into two projects or to choose a different structure.</p>
+      <h2><a id="business" name="business"></a>I. Creating the Business Layer</h2>
+      <ol>
+        <li>Create a C#-"Class Library" by selecting "File -&gt; New -&gt; Project..." from the menu bar. Choose a name for the project ("Name" at the bottom of the window), e.g. "BusinessLayer", and for your application ("Solution").</li>
+        <li>First, create the data model of your application. In the "Solution Explorer", right-click on the newly created project and select "Add -&gt; New Item...". Select "ADO.NET Entity Data Model" and choose a name. In the following wizard, choose "Empty model" as the initial content of the data model and click "Finish".</li>
+        <li>Create your data model by dragging elements (entities, associations) from the toolbox onto the designer. If it is not visible, open the "Properties Window" from the "View" menu. To edit the properties of an element, select it in the designer. This approach is called "Model First".</li>
+        <li>When your data model is complete (at least a first version of it), you have to generate a database schema for it.<ol>
+          <li>Open the "Server Explorer" (under "View" in the menu bar).</li>
+          <li>Right-click on "Data Connections" and select "Create New SQL Server Database...".</li>
+          <li>Set "Server name" to "localhost\sqlexpress" and choose a "New database name". Press OK.</li>
+          <li>Right-click on the white background in the Entity Designer and choose "Generate Database from Model...".</li>
+          <li>Select the data connection you just created, make sure it will be saved in App.config and click "Next".</li>
+          <li>Save the generated script to a file of your choice and click "Finish". Your conceptual Entity Data Model is now mapped to a relational schema. However, the tables of this schema have not yet been created in the database.</li>
+          <li>Open the SQL script from the previous step. Right-click somewhere in the editor and choose "Execute SQL".</li>
+          <li>When asked to connect to a database, set "Server name" and "Connect to database" (press "Options &gt;&gt;", then switch to the tab "Connection Properties") to the respective values from step 3. Click "Connect". This will create the necessary tables. <img src="net_projects_server.png" alt="" width="416" height="315" /><br /> <img src="net_projects_database.png" alt="" width="416" height="494" /></li>
+        </ol></li>
+        <li>The Entity Designer automatically creates C# classes for entities and a container class. Use these classes in your business logic to access the database.</li>
+      </ol>
+      <h2><a id="web" name="web"></a>II. Creating the Web Layer</h2>
+      <ol>
+        <li>Choose File-&gt;New-&gt;Project... and create a "ASP.NET Empty Web Application" ("Visual C# &gt; Web"). At the bottom of that window choose a name e.g. "WebLayer" and select "Add to solution".</li>
+        <li>In the solution explorer, right-click on "References" of your web project and select "Add Reference...". From the tab "Projects", choose your business layer project and click "OK". This reference allows you to access public classes and methods of the business layer.</li>
+        <li>Copy the connectionStrings section from the App.config file of the business layer project to the Web.config file of the web project. This is necessary as only the top-level configuration is in effect when running the application.</li>
+        <li>Implement the web application, referencing the business layer where necessary.</li>
+      </ol>
+      <p>Please send questions and comments regarding this tutorial to <a class="e_mail" href="mailto:usener@wi.uni-muenster.de">Claus Alexander Usener</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/wwu-pi">wwu-pi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+</body></html>
