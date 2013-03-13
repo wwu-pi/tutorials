@@ -1,17 +1,32 @@
-<html><body>
-<h2>Contents</h2>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Tutorials</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <section>
+<h3>Contents</h3>
 <ol>
 <li><a href="#precond">Preconditions</a></li>
 <li><a href="#import">Importing the Example Application into Eclipse</a></li>
 <li><a href="#create">Creating an Enterprise Application from scratch</a></li>
 </ol>
-<h2><a id="precond" name="precond"></a>Preconditions</h2>
+<h3><a id="precond" name="precond"></a>Preconditions</h3>
 <ul>
 <li>Make sure <span style="font-weight: bold;">JBoss AS</span> and <span style="font-weight: bold;">Eclipse with JBoss Tools Plug-in</span> are properly <span style="font-weight: bold;">installed </span>and configured (<a class="int" href="tutorial_jboss_setup.html">tutorial</a>).</li>
 <li><span style="font-weight: bold;">Start Eclipse with JBoss Tools Plug-in</span> and make sure the <span style="font-weight: bold;">Java EE perspective</span> is <span style="font-weight: bold;">opened</span>.</li>
 <li>Make sure that a <span style="font-weight: bold;">JBoss 7.1 Runtime Server</span> is configured in Eclipse as outlined in the <a href="tutorial_jboss_setup.html">first tutorial</a>.</li>
 </ul>
-<h2><a id="import" name="import"></a>Importing the Example Application into Eclipse</h2>
+<h3><a id="import" name="import"></a>Importing the Example Application into Eclipse</h3>
 <p>This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next section, "<a href="tutorial_jboss_project.html#create">Creating an Enterprise Application from scratch</a>", will show how you can create your own Java EE projects.</p>
 <ol>
 <li><span style="font-weight: bold;">Download</span> the <a class="download" href="Library-JavaEE7.zip">library application source files</a> to a temporary folder.</li>
@@ -29,7 +44,7 @@
 <li><span style="font-weight: bold;">Start the server</span> and wait until the application has been deployed.</li>
 <li>The Library web application is accessible under <a href="http://localhost:8080/Library-Web/">http://localhost:8080/Library-Web/</a>.</li>
 </ol><hr />
-<h2><a id="create" name="create"></a>Creating an Enterprise Application from scratch</h2>
+<h3><a id="create" name="create"></a>Creating an Enterprise Application from scratch</h3>
 <p>The following instructions show how to create an enterprise application from scratch, without importing existing projects. It may be helpful when you start developing your own application, for example during the practical course.<br /> An enterprise application consists of several projects. In the following, the application is made up of four projects:</p>
 <ol>
 <li><a href="#create-ear"><span style="font-weight: bold;">Enterprise Application Project</span></a>: a container project that packages the other projects into an <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">.ear</span></span> file for deployment purposes.</li>
@@ -79,4 +94,11 @@ This defines the data source to use ("java:/DefaultDS" is the JNDI address of th
 <li>XHTML Pages with Facelets markup go into the <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">WebContent</span></span> folder ("New-&gt;Other..."). Backing beans should be created as Java classes under <span style="font-size: small;"><span style="font-family: courier new,courier,mono;">JavaResources/src</span></span>.</li>
 </ol>
 <p>Please refer to <a class="int" href="#import-deploy">steps 7-9</a> of the section "<a href="#import-deploy">Importing the Example Application into Eclipse</a>" in order to learn how to deploy your project.<br /> <br /> Please send questions and comments regarding this tutorial to <a class="e_mail" href="/pi/personal/usener.php">Claus Alexander Usener</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/janernsting">janernsting</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
 </body></html>
