@@ -39,7 +39,7 @@
       <ol>
         <li>Download the <a class="download" href="binaries/Apache.NMS.zip">ZIP archive with necessary DLLs</a>. It contains .NET 4.0 assemblies of Apache.NMS API v1.5.0 and Apache.NMS.Stomp v1.5.1. The latter has been modified to work with HornetQ's naming scheme. The binary DLLs are all you need, however, if you want to, you can <a class="download" href="binaries/Apache.NMS.Stomp.src.zip">download the source code</a>.</li>
         <li>Copy the DLLs from the archive somewhere into your solution folder on the file system, for example into a new folder called <small><tt>Libraries</tt></small>.</li>
-        <li>Reference both DLLs from the Visual Studio project which will act as the communication layer. Use the "Browse" tab of the "Add Reference" dialog to locate the DLLs.<img src="jms_net_reference.png" alt="" width="467" height="390" /></li>
+        <li>Reference both DLLs from the Visual Studio project which will act as the communication layer. Use the "Browse" tab of the "Add Reference" dialog to locate the DLLs.<img src="images/jms_net_reference.png" alt="" width="467" height="390" /></li>
         <li>You can now use the NMS API (namespace Apache.NMS) to communicate with JMS/HornetQ. Have a look at the <a class="download" href="binaries/JMS-Statistics.zip">.NET project from the JMS example</a> on how to subscribe to a topic and handle messages. You should restrict yourself to the message types TextMessage or BytesMessage - other message types are not supported in this scenario.</li>
       </ol>
       <p>Please send questions and comments regarding this tutorial to <a class="e_mail" href="mailto:usener@wi.uni-muenster.de">Claus Alexander Usener</a>.</p>

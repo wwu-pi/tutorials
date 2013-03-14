@@ -40,7 +40,7 @@
           <li>Open the file Web.config and locate the XML node serviceHostingEnvironment (child of system.serviceModel). Add a child node serviceActivations under this node. For each service, a child node under serviceActivations like the following is required: <small><tt>&lt;add service="#1" relativeAddress="#2"/&gt;</tt></small><br /> Replace #1 with the namespace qualified name of the implementation class. Replace #2 with a name ending with ".svc". The service will be accessible under the address http://localhost:XXXX/#2.svc (append ?wsdl to retrieve the WSDL).<br /> Instead of step 3, you can also use a .svc-file (see the output of the wizard from step 1).</li>
         </ol></li>
       </ol>
-      <p><img src="ws_net_config.png" alt="" width="428" height="177" /></p>
+      <p><img src="images/ws_net_config.png" alt="" width="428" height="177" /></p>
       <h2><a id="access" name="access"></a>B. Accessing a Web Service from .NET</h2>
       <p>The following applies regardless of the language in which the Web service is implemented.</p>
       <ol>
