@@ -26,16 +26,16 @@
       <p>To enable JMS in your JBoss AS 7 the configuration file standalone.xml has to be modified. Changes can be found in the <a class="download" href="standalone.diff">diff file</a>. Add the lines that are marked with '+' at the beginning of the line to your configuration file. <br /> To provide a queue within the JBoss AS 7.1 you can either specify them within the configuration file of the server, or by providing a file META-INF/hornetq-jms.xml within your EJB project. We recommend using the last method, as it is easier to handle within the group (see also <a class="download" href="JMS-Statistics.zip">JMS_Example</a>). </p>
       <p>To provide a topic 'CustomerTopic' the file should contain the following:</p>
       <pre>
-<?xml version="1.0" encoding="UTF-8"?>
-<messaging-deployment xmlns="urn:jboss:messaging-deployment:1.0">
-<hornetq-server>
-<jms-destinations>
-<jms-topic name="CustomerTopic">
-<entry name="/topic/CustomerTopic" />
-</jms-topic>
-</jms-destinations>
-</hornetq-server>
-</messaging-deployment>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;messaging-deployment xmlns="urn:jboss:messaging-deployment:1.0"&gt;
+&lt;hornetq-server&gt;
+&lt;jms-destinations&gt;
+&lt;jms-topic name="CustomerTopic"&gt;
+&lt;entry name="/topic/CustomerTopic" /&gt;
+&lt;/jms-topic&gt;
+&lt;/jms-destinations&gt;
+&lt;/hornetq-server&gt;
+&lt;/messaging-deployment&gt;
       </pre>
       <h2>Implement .NET client</h2>
       <ol>
