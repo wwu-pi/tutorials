@@ -35,7 +35,15 @@
         <li>Enter the <b>database name</b> and specify the <b>location of the database files, e.g. <small><tt>file:/tmp/jboss/standalone/data/hypersonic/localDB</tt></small>.</b></li>
       </ol>
       <h3>Creating a Database Connection for Dedicated HSQLDB</h3>
-      Steps 1-3 also apply when using a dedicated HSQLDB. In step 4 specify the database name and the <b>address/location of HSQLDB</b>.
+      <p>Steps 1-3 also apply when using a dedicated HSQLDB. In step 4 specify the database name and the <b>address/location of HSQLDB</b>.</p>
+      <h3>Accessing HSQLDB</h3>
+          <ol>
+            <li><small><em>In-Process</em> HSQLDB only:</small> <b>Stop JBoss</b> to shutdown HSQLDB.</li>
+            <li><b>Right-click</b> on connection and select <b>"Connect"</b>.</li>
+            <li><b>Right-click</b> on connection and select <b>"Open SQL Scrapbook"</b>.</li>
+            <li>Perform queries on HSQLDB.</li>
+            <li><small><em>In-Process</em> HSQLDB only:</small> <b>Right-click</b> on connection and select <b>"Disconnect"</b>, <b>before starting JBoss again</b>.</li>
+          </ol>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/wwu-pi">wwu-pi</a></p>
