@@ -3,7 +3,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Tutorials
-      &raquo; {{ page.lecture }}
+      {% if page.lecture %}
+        &raquo; {{ page.lecture }}
+      {% endif %}
       &raquo; {{ page.title }}
     </title>
 
@@ -18,7 +20,9 @@
     <div class="wrapper">
       <header>
         <h1>Tutorials
-          &raquo; {{ page.lecture }}
+          {% if page.lecture %}
+            &raquo; {{ page.lecture }}
+          {% endif %}
         </h1>
         <p><a href="{{ site.url }}">Home</a></p>
 
