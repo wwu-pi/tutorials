@@ -4,6 +4,7 @@ layout: default
 <h2>{{ page.title}}</h2>
 
 {{ content }}
-{% if contact-url and contact %}
-  <p>Please send questions and comments regarding this tutorial to <a href="{{ contact-url }}">{{ contact }}</a>.</p>
+
+{% if page.contact-url and page.contact %}
+  <p>Please send questions and comments regarding this tutorial to <a href="{{ page.contact-url }}">{{ page.contact }}</a>.</p>
 {% endif %}
