@@ -3,6 +3,11 @@ layout: default
 title: Overview
 ---
 
+General
+-------
+
+* [Git](general/git.html)
+
 Enterprise Application Integration
 ----------------------------------
 
