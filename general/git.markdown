@@ -20,7 +20,7 @@ Before you request the free micro plan, ensure that you added your *uni-muenster
 ### Tools
 
 Beginners greatly benefit from using a command line interface.
-For day-to-day operations many users employ interfaces such as:
+For day-to-day operations users employ various interfaces such as:
 
 * [Git](http://git-scm.com/)
 * [GitHub for Windows](http://windows.github.com/)
