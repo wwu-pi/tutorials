@@ -15,6 +15,7 @@ Before you request the free micro plan, ensure that you added your *uni-muenster
 
 * [Introduction](http://try.github.com/)
 * [Branching](http://pcottle.github.com/learnGitBranching/)
+* [Pro Git Ebook](http://git-scm.com/book)
 
 ### Tools
 
