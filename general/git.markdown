@@ -1,11 +1,11 @@
 ---
+title: Git
 layout: tutorial
 lecture: General
 contact: Jan Ernsting
 contact-url: https://www.wi.uni-muenster.de/department/groups/pi/people/jan-ernsting
 ---
 
-## Git
 ### GitHub for free
 
 Enable your account to receive a free micro plan (5 private repositories) on [github.com/edu](https://github.com/edu).
