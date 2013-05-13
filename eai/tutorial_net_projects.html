@@ -7,6 +7,7 @@ title: Creating a Layered Business Application in Visual Studio
 <ol style="list-style-type: upper-roman;">
   <li><a href="#business">A class library representing the business layer (data and logic).</a></li>
   <li><a href="#web">A web application.</a></li>
+  <li><a href="#remove_old_db">Remove an old database.</a></li>
 </ol>
 <p>This is just an example. It would also be possible to split the data and logic parts into two projects or to choose a different structure.</p>
 <h2><a id="business" name="business"></a>I. Creating the Business Layer</h2>
@@ -32,4 +33,34 @@ title: Creating a Layered Business Application in Visual Studio
   <li>In the solution explorer, right-click on "References" of your web project and select "Add Reference...". From the tab "Projects", choose your business layer project and click "OK". This reference allows you to access public classes and methods of the business layer.</li>
   <li>Copy the connectionStrings section from the App.config file of the business layer project to the Web.config file of the web project. This is necessary as only the top-level configuration is in effect when running the application.</li>
   <li>Implement the web application, referencing the business layer where necessary.</li>
+</ol>
+<h2><a id="remove_old_db" name="remove_old_db"></a>III. Remove an old database</h2>
+<ol>
+  <li>By accident you may have deleted a database connection within VisualStudio. There are two ways of deleting an old database:
+  <ol>
+    <li><a href="http://msdn.microsoft.com/en-us/library/ms177419.aspx">Using Transact-SQL</a>
+    <ol>
+      <li>Connect to the Database Engine</li>
+      <li>From the Standard bar, click New Query</li>
+      <li>Copy and paste the following example into the query window and click Execute. The example removes the LibraryEF database
+      <code>
+        USE master ;
+        GO
+        DROP DATABASE [LibraryEF];
+        GO
+      </code>
+      </li>
+    </ol>
+    </li>
+    <li>Using SQLCMD
+    <ol>
+      <li>Open a command-line</li>
+      <li>Connect to the Database Engine by executing: <code>sqlcmd -S localhost\sqlexpress</code></li>
+      <li>Enter <code>drop database [LibraryEF];</code> and <code>go</code></li>
+      <li>Enter <code>exit</code> to leave the SQL command-line</li>
+    </ol>
+    </li>
+  </ol>
+  </li>
+
 </ol>
