@@ -5,7 +5,7 @@ title: Accessing HSQLDB from Eclipse
 
 <h3>Preconditions</h3>
 <ul>
-  <li>Make sure <b>Eclipse with JBoss Tools Plug-in</b> is <b>installed</b> properly (<a href="tutorial_jboss_setup">tutorial</a>).</li>
+  <li>Make sure <b>Eclipse with JBoss Tools Plug-in</b> is <b>installed</b> properly (<a href="010_tutorial_jboss_setup">tutorial</a>).</li>
   <li><b>HSQLDB's connection string</b> should include <b><small><tt>shutdown=true</tt></small></b> on <b>JBoss AS</b> to ensure the database is closed correctly. This is needed to overcome the limitation of <a href="http://www.hsqldb.org/doc/guide/running-chapt.html#rgc_inprocess"><em>in-process</em> HSQLDBs</a> supporting just one, its creating thread.</li>
   <li>Alternatively <small>(No need to stop JBoss server)</small>: Start <a href="http://www.hsqldb.org/doc/guide/running-chapt.html#rgc_hsql_server">HSQLDB as a dedicated instance</a> and <a href="http://www.hsqldb.org/doc/guide/running-chapt.html#rgc_connecting_db">change JDBC connection strings accordingly</a>.
 </ul>
