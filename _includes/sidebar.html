@@ -1,0 +1,45 @@
+{% assign site_pages = (site.pages | sort:"name") %}
+<aside id="sidebar">
+
+  <section class="sidebar-block block-short">
+    <nav class="navigation pages-nav home-nav">
+      <h6><a class="nav-link" href="{{site.url}}">Tutorials</a></h6>
+      <small class="dimmed">LS-PI - WWU Münster</small>
+    </nav>
+  </section>
+
+  <section class="sidebar-block">
+    <h5 class="sidebar-title">Overview</h5>
+    <ol class="navigation chapters-list">
+      {% for chapter in site.lectures %}
+        {% capture url %}/lectures/{{ chapter | replace: ' ', '_' | downcase }}{% endcapture %}
+        {% capture indexurl %}{{ url }}/index.html{% endcapture %}
+        
+          {% for index_page in site_pages %}
+             {% if index_page.url == indexurl and (only_lecture == nil or only_lecture == chapter ) %}
+                <li class="chapter">
+                    <div class="sidebar-subtitle{% if page.url == indexurl %} page-active{% endif %}"><strong><a class="chapter-title" href="{{ site.url }}{{ indexurl }}">{{ index_page.title }}</a></strong></div>
+      
+                    <ul class="pseudo-list recipes-list">
+                    {% for recipe_page in site_pages %}
+                      {% if recipe_page.url contains url %}
+                        {% unless recipe_page.url == indexurl %}
+                          <li class="list-item recipe{% if page.url == recipe_page.url %} page-active{% endif %}"><a class="recipe-title" href="{{ site.url}}{{ recipe_page.url | replace: '.html', '.html' }}">{{ recipe_page.title }}</a></li>
+                        {% endunless %}
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                </li>
+             {% endif %}
+          {% endfor %}
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="sidebar-block">
+    <nav class="navigation pages-nav">
+      <small class="thin dimmed">(last updated {{ site.time | date_to_long_string }})</small>
+    </nav>
+  </section>
+
+</aside>

@@ -1,1 +1,14 @@
 url: http://wwu-pi.github.io/tutorials
+
+lectures:
+ - eai
+
+contacts:
+  eai:
+    url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/jan-ernsting
+    name: Jan Ernsting
+
+exclude:
+  - serve.*
+  - shell.*
+  - build.*
