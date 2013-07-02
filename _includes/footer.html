@@ -2,5 +2,8 @@
   <p> This project is maintained by
       <a href="https://github.com/wwu-pi">wwu-pi</a>
    </p>
+{% if curr_lecture != nil and site.contacts[curr_lecture] != nil %}
+    <p>Please send questions and comments regarding this tutorial to <a href="{{ site.contacts[curr_lecture].url }}">{{ site.contacts[curr_lecture].name }}</a>.</p>
+{% endif %}
 </footer>
 

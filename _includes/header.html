@@ -1,6 +1,22 @@
 <header class="header">
-  <h1><a class="" href="{{site.url}}"><span class="title ir">Tutorials</span>
-    </a>
+  <h1><a class="" href="{{site.url}}"><span class="">Tutorials</span></a>
+    {% if curr_lecture != nil %}
+        <!-- find lecture title -->
+        {% for site_page in site.pages %}
+            {% capture indexurl %}/lectures/{{ curr_lecture | replace: ' ', '_' | downcase }}/index.html{% endcapture %}
+            {% if site_page.url == indexurl %}
+                &raquo; {{ site_page.title }}
+            {% endif %}
+        {% endfor %}
+    
+    {% endif %}
   </h1>
-  <small class="thin dimmed"> WWU Münster </small>
+  <small class="thin dimmed"> 
+  {% if title_in_header != nil %}
+         &raquo; 
+        {{ title_in_header }}
+  {% else %}
+    WI-PI &raquo; WWU Münster
+  {% endif %}
+  </small>
 </header>

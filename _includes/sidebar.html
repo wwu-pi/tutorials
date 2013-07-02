@@ -4,7 +4,7 @@
   <section class="sidebar-block block-short">
     <nav class="navigation pages-nav home-nav">
       <h6><a class="nav-link" href="{{site.url}}">Tutorials</a></h6>
-      <small class="dimmed">LS-PI - WWU Münster</small>
+      <small class="dimmed">WI-PI &raquo; WWU Münster</small>
     </nav>
   </section>
 
@@ -15,14 +15,16 @@
         {% capture url %}/lectures/{{ chapter | replace: ' ', '_' | downcase }}{% endcapture %}
         {% capture indexurl %}{{ url }}/index.html{% endcapture %}
         
+          <!-- find index page for each chapter, print it and then print sub pages -->
           {% for index_page in site_pages %}
              {% if index_page.url == indexurl and (only_lecture == nil or only_lecture == chapter ) %}
                 <li class="chapter">
                     <div class="sidebar-subtitle{% if page.url == indexurl %} page-active{% endif %}"><strong><a class="chapter-title" href="{{ site.url }}{{ indexurl }}">{{ index_page.title }}</a></strong></div>
       
                     <ul class="pseudo-list recipes-list">
+                    <!-- print sub pages for this chapter -->
                     {% for recipe_page in site_pages %}
-                      {% if recipe_page.url contains url %}
+                      {% if recipe_page.url contains url and recipe_page.url contains '.html' %}
                         {% unless recipe_page.url == indexurl %}
                           <li class="list-item recipe{% if page.url == recipe_page.url %} page-active{% endif %}"><a class="recipe-title" href="{{ site.url}}{{ recipe_page.url | replace: '.html', '.html' }}">{{ recipe_page.title }}</a></li>
                         {% endunless %}
