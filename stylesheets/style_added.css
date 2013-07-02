@@ -1,0 +1,90 @@
+
+pre { padding: 12px 24px; }
+
+.header .entypo {
+    line-height: 0;
+    top: 25px;
+}
+
+.header .title {
+    background: none repeat scroll 0 0 transparent;
+}
+
+.header h1 {
+    margin-bottom: 0px;
+}
+
+.header small {
+    margin-left: 60px;
+    margin-top: -20px;
+}
+
+.content {
+    margin-right: 150px;
+}
+
+.content .footnotes p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.table_of_content{
+    font-size: 0.8em;
+}
+.table_of_content li{
+    margin-left: 30px;
+}
+
+.tip {
+   color: #4C4C49;
+   background: #B1C805;
+   padding: 1px 5px;
+   margin-bottom: 1em;
+}
+ 
+.example{
+    color: #4C4C49;
+    background: #009DD1;
+    padding: 1px 5px;
+    margin-bottom: 1em;
+}
+.footnote {
+    color: #4C4C49;
+    background: #F5F5F5;
+    padding: 1px 5px;
+    margin-bottom: 1em;
+}
+
+.figure {
+    margin: 0 auto 1em;
+    max-width: 95%;
+    background: lightgrey;
+    padding: 2px;
+    width: -moz-min-content;
+
+}
+.figure .image {
+   
+}
+.figure .caption {
+  font-size: 0.8em;
+  padding-left: 50px;
+  padding-right: 10px;
+  text-indent: -40px;
+}
+
+.ir:before {
+    #content: "";
+}
+
+sidebar {
+     #position: absolute;
+     #bottom: auto;
+}
+
+@media print {
+     #a[href]:after { content: " (" attr(href) ")"; }
+     .content a[href]:after { content: " (" attr(href) ")"; }
+     h1, h2, h3 { page-break-after: avoid; }
+}
+     
