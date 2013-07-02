@@ -22,29 +22,14 @@
       <article class="content-block">
           {{ content }}
           
-          <div class="dimmed">Overview</div>
-          
-
-{% for chapter in site.lectures %}
-    {% capture url %}/lectures/{{ chapter | replace: ' ', '_' | downcase }}{% endcapture %}
-    {% capture indexurl %}{{ url }}/index.html{% endcapture %}
-    {% if page.url == indexurl %}
-        <!-- we found the chapter of the page object that is rendered -->
-        
-        <ul class="subchapter-list">
-        {% for sub_page in site_pages %}
-          {% if sub_page.url contains url and sub_page.url contains '.html' %}
-            {% unless sub_page.url == indexurl %}
-                <li><a href="{{ site.url }}{{ sub_page.url | replace: '.html', '.html' }}">{{ sub_page.title }}</a></li>
-            {% endunless %}
-          {% endif %}
-        {% endfor %}
-        </ul>
-        </article>
-        
-    {% endif %}
-{% endfor %}
-
+          <div class="table_of_content">
+            <div class="dimmed">Table of Content</div>
+                {% capture url %}/lectures/{{ curr_lecture }}{% endcapture %}
+                {% capture indexurl %}{{ url }}/index.html{% endcapture %}
+                {% assign no_index_print = true %}
+                {% include sidebar_content.html %} 
+                {% assign no_index_print = nil %}
+            </div>
         {% include footer.html %}
       </section>
 

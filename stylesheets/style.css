@@ -680,7 +680,12 @@ pre > code { display: block; }
 }
 
 
-
+.table_of_content{
+    font-size: 0.8em;
+}
+.table_of_content li{
+    margin-left: 30px;
+}
 
 
 

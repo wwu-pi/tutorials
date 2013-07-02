@@ -1,0 +1,27 @@
+<!-- 
+    template needs following variables: url, indexurl, for chapter in site.lectures
+-->
+
+<!-- find index page for each chapter, print it and then print sub pages -->
+{% for index_page in site_pages %}
+  {% if index_page.url == indexurl %}
+    {% if no_index_print == nil %}
+        <li class="chapter">
+            <div class="sidebar-subtitle{% if page.url == indexurl %} page-active{% endif %}"><strong><a class="chapter-title" href="{{ site.url }}{{ indexurl }}">{{ index_page.title }}</a></strong></div>
+
+            <ul class="pseudo-list recipes-list">
+     {% endif %}   
+        <!-- print sub pages for this chapter -->
+        {% for recipe_page in site_pages %}
+          {% if recipe_page.url contains url and recipe_page.url contains '.html' %}
+            {% unless recipe_page.url == indexurl %}
+              <li class="list-item recipe{% if page.url == recipe_page.url %} page-active{% endif %}"><a class="recipe-title" href="{{ site.url}}{{ recipe_page.url | replace: '.html', '.html' }}">{{ recipe_page.title }}</a></li>
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+    {% if no_index_print == nil %}
+        </ul>
+    </li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
