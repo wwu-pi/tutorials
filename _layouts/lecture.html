@@ -1,5 +1,6 @@
 <!doctype html>
 {% assign site_pages = (site.pages | sort:"name") %}
+{% assign curr_lecture = 'general' %}
 {% for chapter in site.lectures %}
     {% capture url %}/lectures/{{ chapter | replace: ' ', '_' | downcase }}{% endcapture %}
      {% if page.url contains url %}

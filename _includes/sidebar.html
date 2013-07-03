@@ -18,6 +18,10 @@
             {% include sidebar_content.html %}
           {% endif %}
       {% endfor %}
+      
+      {% capture url %}/lectures/general{% endcapture %}
+      {% capture indexurl %}{{ url }}/index.html{% endcapture %}
+      {% include sidebar_content.html %}
     </ol>
   </section>
 

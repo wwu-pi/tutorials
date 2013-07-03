@@ -905,8 +905,8 @@ green:     #859900;
     }
 
     #sidebar {
-        position: absolute;
-        bottom: auto;
+       #position: absolute;
+       #bottom: auto;
         border-bottom: 1px solid #e0e5e6;
     }
 
