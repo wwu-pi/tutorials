@@ -2,7 +2,6 @@ ol ol {
     list-style: lower-roman outside none;
 }
 
-
 pre { padding: 12px 24px; }
 
 .header .entypo {
@@ -91,35 +90,21 @@ pre { padding: 12px 24px; }
   text-indent: -40px;
 }
 
+.nav-bar {
+    top:0;
+    left: 0;
+    text-align: center;
+    background: none repeat scroll 0 0 #F0F5F6;
+    width: 100%;
+    height: 30px;
+    display: none;
+}
+.nav-bar .button {
+    float: left;
+    width: 50%;
+    text-decoration: none;
+}
+
 .ir:before {
     #content: "";
 }
-@media (max-width: 900px) {
-    #sidebar {
-         #position: absolute;
-         padding: 40px 10px 40px 10px;
-    }
-    .content {
-        margin-right: 10px;
-    }
-    .container {
-        min-width: inherit;
-    }
-    body {
-        min-width: 400px;
-    }
-
-}
-@media (max-width: 1110px) {
-    #sidebar {
-         #position: absolute;
-         #bottom: auto;
-    }
-}
-
-@media print {
-     #a[href]:after { content: " (" attr(href) ")"; }
-     .content a[href]:after { content: " (" attr(href) ")"; }
-     h1, h2, h3 { page-break-after: avoid; }
-}
-     
