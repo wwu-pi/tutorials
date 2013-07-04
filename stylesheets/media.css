@@ -1,28 +1,27 @@
-@media (max-width: 750px) {
+/* 
+    Media very small size
+======================================================================== */
+@media ( max-width : 750px) {
+    /* sidebar ---------------------------------- */
     #sidebar {
         position: inherit;
         width: 100%;
         padding: 10px;
         overflow-y: auto;
     }
+    .sidebar-block {
+        margin-bottom: 0px;
+    }
+    .page-active:after {
+        top: 0;
+    }
+    .nav-bar {
+        display: block;
+        position: fixed;
+        z-index: 1;
+    }
     
-   .sidebar-block {
-    margin-bottom: 0px;
-   }
-   
-
-   .page-active:after {
-    top: 0;
-}
-
-   
-.nav-bar {
-    display: block;
-    position: fixed;
-    z-index: 1;
-
-}
-   
+    /* content ---------------------------------- */
     .container {
         margin: 0;
         margin-top: 30px;
@@ -32,7 +31,6 @@
     .content {
         margin: 10px;
     }
-    
     .content-block {
         margin-bottom: 10px;
     }
@@ -41,32 +39,46 @@
     }
 }
 
-@media (min-width: 751px) and (max-width: 899px) {
+/* 
+    Media medium size
+======================================================================== */
+@media ( min-width : 751px) and (max-width: 899px) {
     #sidebar {
-         #position: absolute;
-         padding: 40px 10px 40px 10px;
+        /* position: absolute; */
+        padding: 40px 10px 40px 10px;
+        width: 250px;
     }
+    
     .content {
         margin-right: 10px;
     }
     .container {
+        margin-left: 250px;
         min-width: inherit;
     }
     body {
-        min-width: 400px;
+        /* min-width: 400px; */
     }
-
 }
 
-@media (min-width: 900px) {
-    #sidebar {
-         #position: absolute;
-         #bottom: auto;
+@media ( min-width : 900px) {
+    #sidebar { 
+        /* position: absolute;
+        bottom: auto; */
     }
 }
 
 @media print {
-     #a[href]:after { content: " (" attr(href) ")"; }
-     .content a[href]:after { content: " (" attr(href) ")"; }
-     h1, h2, h3 { page-break-after: avoid; }
+    #a[href]:after {
+        content: " (" attr(href) ")";
+         
+    }
+    .content a[href]:after {
+        content: " (" attr(href) ")";
+         
+    }
+    h1,h2, h3 {
+        page-break-after: avoid;
+         
+    }
 }
