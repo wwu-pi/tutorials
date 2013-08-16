@@ -23,8 +23,9 @@ Create new tutorials
 To create tutorials for a new lecture, create a directory in `lectures`.
 As the directory name is being used for the URL and other configurations, you should choose an established abbreviation (i.e. `eai` for Enterprise Application Integration).
 
-Each lecture has to have a `index.md` file that describes the lecture.
-The file has to start with the Liquid declaration of the lecture's full title and the document's layout:
+Each lecture has to have an `index.md` file that describes the lecture and also serves as a landing page for the respective lecture.
+The file has to start with the Liquid declaration of the lecture's full title and the document's layout (`lecture` will automatically generate table of contents/tutorials).
+The lecture's full title is used in the overview, the lecture's landing page, and at the top of each tutorials.
 ```
 ---
 title: Enterprise Application Integration
