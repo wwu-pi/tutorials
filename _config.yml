@@ -9,9 +9,10 @@ lectures:
 
 # contact data for each lecture is maintained here
 # - use the same lecture name as above for lectures
+# - the contact information is displayed as a footer on each page (landing page and tutorials)
 #
-# lecture:
-#   url: personal contact information url
+# <lecture name>: use the same name as above
+#   url: URL where personal contact information is available
 #   name: contact name
 contacts:
   eai:
