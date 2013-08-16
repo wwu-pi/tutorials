@@ -1,7 +1,7 @@
 Tutorials
 =========
 
-Contents can be written both in HTML and [Markdown](http://daringfireball.net/projects/markdown/basics).
+Contents can be written in HTML and [Markdown](http://daringfireball.net/projects/markdown/basics).
 
 Build and serve tutorials locally
 ---------------------------------
@@ -21,7 +21,7 @@ Create new tutorials
 
 ### Create directory and content
 To create tutorials for a new lecture, create a directory in `lectures`.
-As the directory name is being used for the URL and other configurations, you should choose an established abbreviation (i.e. eai for Enterprise Application Integration).
+As the directory name is being used for the URL and other configurations, you should choose an established abbreviation (i.e. `eai` for Enterprise Application Integration).
 
 Each lecture has to have a `index.md` file that describes the lecture.
 The file has to start with the Liquid declaration of the lecture's full title and the document's layout:
@@ -34,7 +34,7 @@ layout: lecture
 Description of the lecture in *Markdown syntax*
 ```
 
-Each lecture is contained in a single file that you can name at your convenience.
+Each tutorial is contained in a single file that you can name at your convenience.
 Please note that tutorials within a lecture are sorted by their respective file names; therefore using numbers as prefixes allows you to control the order of appearance in the overview and table of contents (e.g. 010-introduction.md, 020-basics.md, etc).
 A tutorial's content file also has to start with a Liquid declaration for the tutorial's title and its layout:
 ```
