@@ -1,9 +1,18 @@
+# used to address resources (stylesheets, javascript)
 url: http://wwu-pi.github.io/tutorials
 
+# lectures to be included when generating overview
+# - use the directory name within the lectures directory
 lectures:
  - eai
  - mdsd
 
+# contact data for each lecture is maintained here
+# - use the same lecture name as above for lectures
+#
+# lecture:
+#   url: personal contact information url
+#   name: contact name
 contacts:
   eai:
     url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/jan-ernsting
@@ -12,6 +21,7 @@ contacts:
     url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/claus-alexander-usener
     name: Claus Alexander Usener
 
+# excluded from Jekyll conversion
 exclude:
   - serve.*
   - shell.*
