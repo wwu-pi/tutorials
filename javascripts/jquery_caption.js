@@ -5,9 +5,9 @@ $(document).ready(function() {
 		if($(this).contents().first().is('img')) {
           // take the images html
           var imgHtml = $(this).contents().first().detach()[0].outerHTML;
-          var captionText = this.innerHTML;
+          var captionHtml = this.innerHTML;
           // skip captioning in case of no available caption
-          if (captionText.trim.length == 0)
+          if (captionHtml.trim.length == 0)
             return;
           $(this).replaceWith(
               '<div class="figure">' +
@@ -15,7 +15,7 @@ $(document).ready(function() {
                   imgHtml +
                 '</div>' +
                 '<div class="caption">' +
-                  captionText +
+                  captionHtml +
                 '</div>' +
               '</div>'
             );
