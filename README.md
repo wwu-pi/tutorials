@@ -11,7 +11,7 @@ You can build and serve tutorials locally using Jekyll.
 Please see [GitHub's help on how to use Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages).
 
 As some URLs within the tutorials require the full hostname, you may encounter situations where you will not see local modifications, because the generated site still refers to a remote resource/a remote URL.
-For that reason we included a local config that adjusts the URLs used to your local site.
+For that reason we included a local configuration that adjusts the URLs used to your local site.
 
 Append `--config _config.yml,_config_local.yml` to your Jekyll command to override the remote URL setting.
 It is important that `_config_local.yml` is provided as the second comma separated parameter!
