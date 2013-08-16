@@ -48,3 +48,20 @@ Content of the tutorial, which could also be put into a html file.
 
 ### Update configuration
 To make a lecture's tutorials appear, you have to add information for `lectures` and `contacts` in `_config.yml`.
+
+Writing a tutorial
+------------------
+
+### Images
+Besides Markdown's syntax to include images (i.e. `![alt text](/path/to/img.jpg "Title")`), we included a JavaScript based mechanism to provide more detailed captions for images.
+Whenever an image is the first element within a paragraph and it is immediately followed by some text, the text is assumed to be captioned and displayed accordingly.
+
+Example:
+```
+Some text…
+
+![alt text](/path/to/img.jpg "Title")
+This will be rendered as a caption.
+
+This will not be part of the caption! This is a new paragraph.
+```
