@@ -37,7 +37,8 @@ Description of the lecture in *Markdown syntax*
 
 Each tutorial is contained in a single file that you can name at your convenience.
 Please note that tutorials within a lecture are sorted by their respective file names; therefore using numbers as prefixes allows you to control the order of appearance in the overview and table of contents (e.g. 010-introduction.md, 020-basics.md, etc).
-A tutorial's content file also has to start with a Liquid declaration for the tutorial's title and its layout:
+A tutorial's content file also has to start with a Liquid declaration for the tutorial's title and its layout.
+The title is used for the overview, the table of contents on the lecture's landing page, and as a heading for the specific tutorial.
 ```
 ---
 title: Introduction to EAI
