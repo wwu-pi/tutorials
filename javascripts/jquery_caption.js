@@ -6,6 +6,8 @@ $(document).ready(function() {
       // take the images html
       var imgHtml = $(this).contents().first().detach()[0].outerHTML;
       var captionHtml = this.innerHTML;
+      if ($.trim(captionHtml).length == 0)
+        return;
       $(this).replaceWith(
         '<div class="figure">' +
           '<div class="image">' +
