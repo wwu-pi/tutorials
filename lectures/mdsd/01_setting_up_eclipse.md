@@ -6,6 +6,9 @@ title: Setting up Eclipse
 Please follow these steps to install and prepare Eclipse for the practical course on Model-driven Software Development.
 
 1. Download the Eclipse IDE for Java and DSL Developers from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/keplerr](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/keplerr). It includes Xtext (for implementing DSLs) and Xtend (useful for model-to-text transformations).
+
+   * At least on Windows we observed some problems using Eclipse 64bit version with Xtext. To reduce compatibility issues **we recommend Eclipse's 32bit version**.
+   
 1. Unzip the archive to a folder of your choice.
 1. Start *eclipse.exe* (or equivalent) in the eclipse folder.
 1. Choose a folder for the Eclipse workspace.
