@@ -22,8 +22,8 @@ Please follow these steps to install and prepare Eclipse for the practical cours
       *for UML diagrams*
    * **Collaboration** > **Subversive SVN Team Provider**  
       *(even if you do not plan to use SVN, installing this allows you to actually install a SVN provider later, so that you are not prompted to select one any time Eclipse starts)*
-   * **General Purpose Tools** > **SWT Designer**  
-      *... optional, simplifies development of user interfaces with SWT.*
+   * **General Purpose Tools** > **Swing Designer**  
+      *... optional, simplifies development of user interfaces with Swing.*
 
     ![Eclipse --> Install New Software...](images/install_software.png)
     Eclipse --> Install New Software...
