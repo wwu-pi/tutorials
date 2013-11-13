@@ -16,6 +16,10 @@ This tutorial briefly explains the steps needed to create a new DSL project with
    
 1. When asked "Do you agree to download ...", type `y` in the console of Eclipse and hit enter.
 1. To test your language and its editor, start a new Eclipse instance ("Launch Runtime Eclipse" from the Run dropdown menu).
+	
+    ![Launch Runtime Eclipse](images/LaunchRuntimeEclipse.png)
+    "Launch Runtime Eclipse" from the Run dropdown menu
+
 1. In the new instance, create a new general project.
    Therein, create a new file that has the extension specified in step 3 (e.g., *test.cdsl*).
    Click *Yes* when asked if you want to add the Xtext nature to the project.
