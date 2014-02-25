@@ -11,9 +11,9 @@ title: Creating Java EE projects with JBoss Tools
 </ol>
 <h3><a id="precond" name="precond"></a>Preconditions</h3>
 <ul>
-<li>Make sure <b>JBoss AS</b> and <b>Eclipse with JBoss Tools Plug-in</b> are properly <b>installed </b>and configured (<a class="int" href="010_tutorial_jboss_setup.html">tutorial</a>).</li>
+<li>Make sure <b>WildFly</b> and <b>Eclipse with JBoss Tools Plug-in</b> are properly <b>installed </b>and configured (<a class="int" href="010_tutorial_jboss_setup.html">tutorial</a>).</li>
 <li><b>Start Eclipse with JBoss Tools Plug-in</b> and make sure the <b>Java EE perspective</b> is <b>opened</b>.</li>
-<li>Make sure that a <b>JBoss 7.1 Runtime Server</b> is configured in Eclipse as outlined in the <a href="010_tutorial_jboss_setup.html">first tutorial</a>.</li>
+<li>Make sure that a <b>WildFly 8 Runtime Server</b> is configured in Eclipse as outlined in the <a href="010_tutorial_jboss_setup.html">first tutorial</a>.</li>
 </ul>
 <h3><a id="import" name="import"></a>Importing the Example Application into Eclipse</h3>
 <p>This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next section, "<a href="#create">Creating an Enterprise Application from scratch</a>", will show how you can create your own Java EE projects.</p>
@@ -26,7 +26,7 @@ title: Creating Java EE projects with JBoss Tools
 <li>The project explorer should now contain the four projects. Eclipse will automatically validate and build the projects.<br />
 <div style="margin-left: 40px;"><img src="images/library_projects.png" alt="" width="265" height="785" /></div>
 </li>
-<li><a id="import-deploy" name="import-deploy"></a>In the "Servers" tab, <b>right-click</b> on your <b>JBoss 7.1 server</b> and select <b>"Add and Remove..."</b>.<br />
+<li><a id="import-deploy" name="import-deploy"></a>In the "Servers" tab, <b>right-click</b> on your <b>WildFly 8 server</b> and select <b>"Add and Remove..."</b>.<br />
 <div style="margin-left: 40px;"><img src="images/library_add.png" alt="" width="433" height="260" /></div>
 </li>
 <li>Select the <b>library application</b> and click <b>"Add &gt;"</b>, then "Finish.</li>
@@ -45,12 +45,12 @@ title: Creating Java EE projects with JBoss Tools
 <h4><a id="create-ear" name="create-ear"></a>New Enterprise Application Project</h4>
 <ol>
 <li>Select <b>"File-&gt;New-&gt;Enterprise Application Project"</b> from the menu bar.</li>
-<li>In the "New EAR Application Project" dialog, enter "Test"as <b>project name</b>, makesure that JBoss 7.1 is the target runtime and <b>click "Finish"</b>.</li>
+<li>In the "New EAR Application Project" dialog, enter "Test"as <b>project name</b>, makesure that WildFly 8 is the target runtime and <b>click "Finish"</b>.</li>
 </ol>
 <h4><a id="create-jpa" name="create-jpa"></a>New JPA Project</h4>
 <ol>
 <li>Select <b>"File-&gt;New-&gt;JPA Project"</b> from the menu bar.</li>
-<li>In the "New JPA Project" dialog, enter "Test-Persistence" as <b>project name</b>. Again, the target runtime should be JBoss 7.1. "Minimal JPA 2.0 Configuration" should be selected as "Configuration".</li>
+<li>In the "New JPA Project" dialog, enter "Test-Persistence" as <b>project name</b>. Again, the target runtime should be WildFly 8. "Minimal JPA 2.1 Configuration" should be selected as "Configuration".</li>
 <li>As we want this project to be part of the enterprise application, we <b>select "Add project to an EAR"</b> and <b>choose</b> our <b>Test project</b> from the <b>"EAR Project Name" menu</b>.</li>
 <li>Click <b>"Finish"</b>. (Do <b>not </b>switch to the JPA perspective if asked to do so.)</li>
 <li><b>Open </b>the file <b>"persistence.xml"</b> (under "JPA Content" or under <small><tt>src/META-INF/</tt></small>) and switch to the <b>"Source" tab</b>. <b>Modify </b>the <b>node </b><b><small><tt>persistence-unit</tt></small></b> to match the following snippet: <br />
@@ -61,7 +61,7 @@ title: Creating Java EE projects with JBoss Tools
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="create-drop"/&gt;
 &nbsp;&nbsp;&lt;/properties&gt;
 &lt;/persistence-unit&gt;</pre>
-This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on the JBoss AS) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".</li>
+This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".</li>
 <li>To <b>create </b>your first <b>Entity</b>, right-click on the project, select "New-&gt;Entity" and follow the wizard.</li>
 </ol>
 <h4><a id="create-ejb" name="create-ejb"></a>New EJB Project</h4>
