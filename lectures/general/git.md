@@ -16,7 +16,7 @@ Before you request the free micro plan, ensure that you added your *uni-muenster
 
 ### Tools
 
-Beginners greatly benefit from using a command line interface.
+**Beginners greatly benefit from using the command line interface**.
 For day-to-day operations users employ various interfaces such as:
 
 * [Git](http://git-scm.com/)
