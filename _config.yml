@@ -27,3 +27,5 @@ exclude:
   - serve.*
   - shell.*
   - build.*
+
+markdown: kramdown
