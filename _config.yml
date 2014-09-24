@@ -6,6 +6,7 @@ url: http://wwu-pi.github.io/tutorials
 lectures:
  - eai
  - mdsd
+ - lsp
 
 # contact data for each lecture is maintained here
 # - use the same lecture name as above for lectures
@@ -21,6 +22,9 @@ contacts:
   mdsd:
     url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/claus-alexander-usener
     name: Claus Alexander Usener
+  lsp:
+    url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/steffen-ernsting
+    name: Steffen Ernsting
 
 # excluded from Jekyll conversion
 exclude:
