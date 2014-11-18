@@ -28,6 +28,30 @@ title: Installing Drools
    
    * Make sure the checkbox "Contact all update sites during install to find required software" is checked.
 
-
+4. Create Drools Runtime:
+   * In Eclipse switch to the Drools view (upper right corner).
+   
+   * Select **File** > **New** > **Drools project**.
+   
+   * Choose a name and click "Next".
+   ![Choose name](images/newproject.png)
+   
+   * Click "Next".
+   ![Add sample](images/addsample.png)
+   
+   * Click "Configure Workspace Settings...".
+   ![Config workspace settings](images/chooseruntime.png)
+   
+   * Click "Add...".
+   ![Add runtime](images/add.png)
+   
+   * Click "Create a new Drools 6 Runtime..." and choose a directory to create the Drools Runtime.
+   ![Create runtime](images/createnewruntime.png)
+   
+   * Select the created Drools Runtime and clock "OK".
+   ![Select runtime](images/addedruntime.png)
+   
+   * Click "Finish" to create the project.
+   ![Finish](images/finish.png)
 
 
