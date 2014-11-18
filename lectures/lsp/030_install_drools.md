@@ -48,7 +48,7 @@ title: Installing Drools
    * Click "Create a new Drools 6 Runtime..." and choose a directory to create the Drools Runtime.
    ![Create runtime](images/createnewruntime.png)
    
-   * Select the created Drools Runtime and clock "OK".
+   * Select the created Drools Runtime and click "OK".
    ![Select runtime](images/addedruntime.png)
    
    * Click "Finish" to create the project.
