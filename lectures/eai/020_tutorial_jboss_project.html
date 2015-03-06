@@ -24,10 +24,10 @@ title: Creating Java EE projects with JBoss Tools
 <li>Choose <b>"Select archive file"</b> and browse to the archive from step 1.</li>
 <li><b>Four projects</b> called Library, Library-EJB, Library-Persistence and Library-Web should appear under "Projects". Make sure all four are selected and <b>"Finish"</b>.</li>
 <li>The project explorer should now contain the four projects. Eclipse will automatically validate and build the projects.<br />
-<div style="margin-left: 40px;"><img src="images/library_projects.png" alt="" width="475" height="954" /></div>
+<div style="margin-left: 40px;"><img src="images/library_projects.png" alt="" width="405" height="830" /></div>
 </li>
 <li><a id="import-deploy" name="import-deploy"></a>In the "Servers" tab, <b>right-click</b> on your <b>WildFly 8 server</b> and select <b>"Add and Remove..."</b>.<br />
-<div style="margin-left: 40px;"><img src="images/library_add.png" alt="" width="570" height="272" /></div>
+<div style="margin-left: 40px;"><img src="images/library_add.png" alt="" width="542" height="238" /></div>
 </li>
 <li>Select the <b>library application</b> and click <b>"Add &gt;"</b>, then "Finish. <small>Should Eclipse fail to display any applications, ensure that all EAR projects in the workspace contain an <tt>EarContent</tt> directory. In case the project was imported from VCS (e.g. git), an empty <tt>.gitignore</tt> file within <tt>EarContent</tt> will ensure the directory is always present.</small></li>
 <li><b>Start the server</b> and wait until the application has been deployed.</li>
