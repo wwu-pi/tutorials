@@ -33,7 +33,8 @@ title: Installing and Configuring WildFly and JBoss Tools
 <li>username: <b>sa</b></li>
 </ul>
 </li>
-<li><b>Enable</b> the new <b>datasource</b>.</li>
+<li><b>Enable</b> the new <b>datasource</b>.
+<small>Alternatively, you can use the JBoss-CLI to deploy the HSQLDB driver and add the data source: <tt>./jboss-cli.sh -c "deploy ~/Downloads/hsqldb.jar,data-source add --driver-name=hsqldb.jar --use-ccm=false --jta=false --user-name=sa --name=DefaultDS --jndi-name=java:/DefaultDS --connection-url=jdbc:hsqldb:\$\{jboss.server.data.dir\}\$\{/\}hypersonic\$\{/\}localDB;shutdown=true"</tt></small></li>
 <li>In order to stop the server, press CTRL-C in the console window that was opened during step 3.</li>
 </ol>
 <h3><a id="eclipse" name="eclipse"></a>Installing Eclipse 4.4</h3>
