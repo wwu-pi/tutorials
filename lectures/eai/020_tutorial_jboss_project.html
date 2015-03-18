@@ -62,7 +62,7 @@ title: Creating Java EE projects with JBoss Tools
 &nbsp;&nbsp;&lt;/properties&gt;
 &lt;/persistence-unit&gt;</pre>
 This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".</li>
-<li>To <b>create </b>your first <b>Entity</b>, right-click on the project, select "New-&gt;Entity" and follow the wizard.</li>
+<li>To <b>create </b>your first <b>Entity</b>, right-click on the project, select "New-&gt;Entity" and follow the wizard. <small>You may not use class names that coincide with SQL keywords such as order. Moreover, member names may not contain special characters such as underscores.</small></li>
 </ol>
 <h4><a id="create-ejb" name="create-ejb"></a>New EJB Project</h4>
 <ol>
