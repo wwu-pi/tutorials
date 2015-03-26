@@ -4,6 +4,7 @@ url: http://wwu-pi.github.io/tutorials
 # lectures to be included when generating overview
 # - use the directory name within the lectures directory
 lectures:
+ - acse
  - eai
  - mdsd
  - lsp
@@ -16,6 +17,9 @@ lectures:
 #   url: URL where personal contact information is available
 #   name: contact name
 contacts:
+  acse:
+    url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/jan-ernsting
+    name: Jan Ernsting
   eai:
     url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/jan-ernsting
     name: Jan Ernsting
