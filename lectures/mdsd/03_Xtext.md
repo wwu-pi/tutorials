@@ -1,5 +1,5 @@
 ---
-layout: recipe
+layout: recipe-merged-into-acse
 title: Creating a new DSL project with Xtext
 ---
 
