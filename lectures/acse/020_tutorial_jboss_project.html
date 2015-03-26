@@ -1,0 +1,85 @@
+---
+layout: recipe
+title: Creating Java EE projects with JBoss Tools
+---
+ 
+<h3>Contents</h3>
+<ol>
+<li><a href="#precond">Preconditions</a></li>
+<li><a href="#import">Importing the Example Application into Eclipse</a></li>
+<li><a href="#create">Creating an Enterprise Application from scratch</a></li>
+</ol>
+<h3><a id="precond" name="precond"></a>Preconditions</h3>
+<ul>
+<li>Make sure <b>WildFly</b> and <b>Eclipse with JBoss Tools Plug-in</b> are properly <b>installed </b>and configured (<a class="int" href="010_tutorial_jboss_setup.html">tutorial</a>).</li>
+<li><b>Start Eclipse with JBoss Tools Plug-in</b> and make sure the <b>Java EE perspective</b> is <b>opened</b>.</li>
+<li>Make sure that a <b>WildFly 8 Runtime Server</b> is configured in Eclipse as outlined in the <a href="010_tutorial_jboss_setup.html">first tutorial</a>.</li>
+</ul>
+<h3><a id="import" name="import"></a>Importing the Example Application into Eclipse</h3>
+<p>This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next section, "<a href="#create">Creating an Enterprise Application from scratch</a>", will show how you can create your own Java EE projects.</p>
+<ol>
+<li><b>Download</b> the <a href="https://github.com/wwu-pi/library-application/archive/master.zip">library application source files</a> to a temporary folder.</li>
+<li><b>Select "File-&gt;Import..."</b> from the Eclipse menu bar.</li>
+<li>Choose <b>"General &gt; Existing Projects into Workspace"</b> and click next.</li>
+<li>Choose <b>"Select archive file"</b> and browse to the archive from step 1.</li>
+<li><b>Four projects</b> called Library, Library-EJB, Library-Persistence and Library-Web should appear under "Projects". Make sure all four are selected and <b>"Finish"</b>.</li>
+<li>The project explorer should now contain the four projects. Eclipse will automatically validate and build the projects.<br />
+<div style="margin-left: 40px;"><img src="images/library_projects.png" alt="" width="405" height="830" /></div>
+</li>
+<li><a id="import-deploy" name="import-deploy"></a>In the "Servers" tab, <b>right-click</b> on your <b>WildFly 8 server</b> and select <b>"Add and Remove..."</b>.<br />
+<div style="margin-left: 40px;"><img src="images/library_add.png" alt="" width="542" height="238" /></div>
+</li>
+<li>Select the <b>library application</b> and click <b>"Add &gt;"</b>, then "Finish. <small>Should Eclipse fail to display any applications, ensure that all EAR projects in the workspace contain an <tt>EarContent</tt> directory. In case the project was imported from VCS (e.g. git), an empty <tt>.gitignore</tt> file within <tt>EarContent</tt> will ensure the directory is always present.</small></li>
+<li><b>Start the server</b> and wait until the application has been deployed.</li>
+<li>The Library web application is accessible under <a href="http://localhost:8080/Library-Web/">http://localhost:8080/Library-Web/</a>.</li>
+</ol><hr />
+<h3><a id="create" name="create"></a>Creating an Enterprise Application from scratch</h3>
+<p>The following instructions show how to create an enterprise application from scratch, without importing existing projects. It may be helpful when you start developing your own application, for example during the practical course.<br /> An enterprise application consists of several projects. In the following, the application is made up of four projects:</p>
+<ol>
+<li><a href="#create-ear"><b>Enterprise Application Project</b></a>: a container project that packages the other projects into an <small><tt>.ear</tt></small> file for deployment purposes.</li>
+<li><a href="#create-jpa"><b>JPA Project</b></a>: the data model of your application, contains mostly Entities.</li>
+<li><a href="#create-ejb"><b>EJB Project</b></a>: the business logic of your application, contains mostly Session Beans.</li>
+<li><a href="#create-web"><b>Web Project</b></a>: the web presentation layer of your application, implemented using JSF technology, contains web pages and Java classes as backing beans.</li>
+</ol>
+<p>This tutorial uses "Test" and variations thereof as project names. Of course, you are free to choose your own names.</p>
+<h4><a id="create-ear" name="create-ear"></a>New Enterprise Application Project</h4>
+<ol>
+<li>Select <b>"File-&gt;New-&gt;Enterprise Application Project"</b> from the menu bar.</li>
+<li>In the "New EAR Application Project" dialog, enter "Test"as <b>project name</b>, makesure that WildFly 8 is the target runtime and <b>click "Finish"</b>.</li>
+</ol>
+<h4><a id="create-jpa" name="create-jpa"></a>New JPA Project</h4>
+<ol>
+<li>Select <b>"File-&gt;New-&gt;JPA Project"</b> from the menu bar.</li>
+<li>In the "New JPA Project" dialog, enter "Test-Persistence" as <b>project name</b>. Again, the target runtime should be WildFly 8. "Minimal JPA 2.1 Configuration" should be selected as "Configuration".</li>
+<li>As we want this project to be part of the enterprise application, we <b>select "Add project to an EAR"</b> and <b>choose</b> our <b>Test project</b> from the <b>"EAR Project Name" menu</b>.</li>
+<li>Click <b>"Finish"</b>. (Do <b>not </b>switch to the JPA perspective if asked to do so.)</li>
+<li><b>Open </b>the file <b>"persistence.xml"</b> (under "JPA Content" or under <small><tt>src/META-INF/</tt></small>) and switch to the <b>"Source" tab</b>. <b>Modify </b>the <b>node </b><b><small><tt>persistence-unit</tt></small></b> to match the following snippet: <br />
+<pre>&lt;persistence-unit name="Test-Persistence"&gt;
+&nbsp;&nbsp;&lt;jta-data-source&gt;java:/DefaultDS&lt;/jta-data-source&gt;
+&nbsp;&nbsp;&lt;properties&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;property name="hibernate.hbm2ddl.auto"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value="create-drop"/&gt;
+&nbsp;&nbsp;&lt;/properties&gt;
+&lt;/persistence-unit&gt;</pre>
+This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".</li>
+<li>To <b>create </b>your first <b>Entity</b>, right-click on the project, select "New-&gt;Entity" and follow the wizard. <small>You may not use class names that coincide with SQL keywords such as order. Moreover, member names may not contain special characters such as underscores.</small></li>
+</ol>
+<h4><a id="create-ejb" name="create-ejb"></a>New EJB Project</h4>
+<ol>
+<li>Select <b>"File-&gt;New-&gt;EJB Project"</b> from the menu bar.</li>
+<li>In the "New EJB Project" dialog, enter&nbsp;"Test-EJB"as <b>project name</b>. The "EJB module version" should be set to 3.2.</li>
+<li>As we want this project to be part of the enterprise application, we <b>select "Add project to an EAR"</b> and <b>choose</b> our <b>Test project</b> from the <b>"EAR Project Name" menu</b>.</li>
+<li>After clicking <b>"Next" twice</b> we <b>disable </b>the <b>"Create an EJB Client Jar..."</b> check box. For the moment we do not need a separate EJB client jar file.</li>
+<li>A click on <b>"Finish"</b> will create a new library-ejb project.</li>
+<li>To <b>create</b> a <b>Session Bean</b>, right-click on the project, select "New-&gt;Session Bean (EJB 3.x)" and follow the wizard.</li>
+</ol>
+<h4><a id="create-web" name="create-web"></a>New Web Project</h4>
+<ol>
+<li>Select <b>"File-&gt;New-&gt;Dynamic Web Project"</b> from the menu bar.</li>
+<li>In the "New Dynamic Web Project" dialog, enter "Test-Web"as <b>project name</b>. The "Dynamic web module version" should be set to 3.0.</li>
+<li>Under <b>"Configuration"</b>, select <b>"JavaServer Faces v2.2 Project"</b> from the drop-down menu.</li>
+<li>As we want this project to be part of the enterprise application, we <b>select "Add project to an EAR"</b> and <b>choose </b>our <b>Test project</b> from the <b>"EAR Project Name" menu</b>.</li>
+<li>A <b>click on "Finish"</b> will create a new library-web project.</li>
+<li>XHTML Pages with Facelets markup go into the <small><tt>WebContent</tt></small> folder ("New-&gt;Other..."). Backing beans should be created as Java classes under <small><tt>JavaResources/src</tt></small>.</li>
+</ol>
+<p>Please refer to <a class="int" href="#import-deploy">steps 7-9</a> of the section "<a href="#import-deploy">Importing the Example Application into Eclipse</a>" in order to learn how to deploy your project.</p>
