@@ -1,0 +1,65 @@
+---
+layout: recipe
+title: Setting up the Development Environment
+---
+<h3>Contents</h3>
+<ol>
+<li><a href="#jdk">Installing the latest JDK</a></li>
+<li><a href="#wildfly">Installing WildFly</a></li>
+<li><a href="#eclipse">Installing Eclipse</a></li>
+<li><a href="#plugins">Extending Eclipse</a></li>
+<li><a href="#jbosstools">Installing JBoss Tools</a></li>
+</ol>
+<h3><a id="jdk" name="jdk"></a>Installing the latest JDK</h3>
+<ol>
+<li>Make sure that the latest version of the <b>Java Development Kit</b> (JDK 7 Update 75 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.</li>
+<li>Go to <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a> and follow the instructions on Oracle's website to <b>download </b>the latest version of the <b>JDK</b> (<b>Java SE 7 Update 75 </b>or later) for the operating system of your computer.</li>
+<li><b>Install</b> the <b>JDK</b> to a directory on your computer, e.g. <b><tt>C:\Java\jdk7</tt></b>_75.</li>
+<li><b>Create </b>an <a class="int" href="#envvar"><b>environment variable</b></a> called <small><b><tt>JAVA_HOME</tt></b></small> that points to the JDK installation directory, for example <small><tt>C:\Java\jdk7_75</tt></small>. </li>
+</ol>
+<h3><b><a id="wildfly" name="wildfly"></a>Installing WildFly</b></h3>
+<ol>
+<li><b>Get </b>the latest stable version of the <b>WildFly Application Server</b> (<strong>8.2.0.Final</strong>) from <a href="http://wildfly.org/downloads/">http://wildfly.org/downloads/</a> (<small><tt>wildfly-8.2.0.Final.zip</tt></small>).</li>
+<li><b>Extract </b>the <b>zip</b> archive to a directory on your computer, e.g. <small><tt>C:\EAI</tt></small>. The path must <b>not contain any spaces</b>. A new directory, e.g. <small><tt>C:\EAI\wildfly-8.2.0.Final</tt></small>, containing the WildFly files will be created.</li>
+<li>Use the script <small><tt>&lt;WildFly directory&gt;\bin\standalone.bat</tt></small> to start the WildFly server and check the installation. After startup, you should be able to access the web server at <a href="http://localhost:8080">http://localhost:8080</a>.</li>
+<li>Open the link <b>Administration Console</b> and follow the instructions to add a new management user.</li>
+<li>After creating a user revisit the <b>Administration Console</b>.</li>
+<li>Go to <a href="http://localhost:9990/console/App.html#deployments"><b>Manage Deployments</b></a> and click <b>Add Content</b> to upload <a href="hsqldb.jar">hsqldb.jar</a>. Make sure that the deployed file is <b>enabled</b>.</li>
+<li>Go to <b>Configuration</b> -&gt; <b>Connector</b> -&gt; <a href="http://localhost:9990/console/App.html#datasources"><b>Datasources</b></a> and click <b>Add</b>. Use the following information to create a datasource:<br />
+<ul>
+<li>Name: <b>DefaultDS</b></li>
+<li>JNDI Name: <b>java:/DefaultDS</b></li>
+<li>Choose <b>hsqldb.jar</b> as driver</li>
+<li>Connection URL: <b>jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}localDB;shutdown=true</b></li>
+<li>username: <b>sa</b></li>
+</ul>
+</li>
+<li><b>Enable</b> the new <b>datasource</b>.
+<small>Alternatively, you can use the JBoss-CLI to deploy the HSQLDB driver and add the data source: <tt>./jboss-cli.sh -c "deploy ~/Downloads/hsqldb.jar,data-source add --driver-name=hsqldb.jar --use-ccm=false --jta=false --user-name=sa --name=DefaultDS --jndi-name=java:/DefaultDS --connection-url=jdbc:hsqldb:\$\{jboss.server.data.dir\}\$\{/\}hypersonic\$\{/\}localDB;shutdown=true"</tt></small></li>
+<li>In order to stop the server, press CTRL-C in the console window that was opened during step 3.</li>
+</ol>
+<h3><a id="eclipse" name="eclipse"></a>Installing Eclipse</h3>
+<ol>
+<li><b>Download </b>the <b>Eclipse IDE for Java EE Developers</b> for your operating system (version 4.4.2, <i>Luna SR2</i>) from <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr2">http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr2</a>.</li>
+<li><b>Extract </b>the downloaded <b>archive</b>, e.g. <small><tt>eclipse-jee-luna-SR2-win32-x86_64.zip</tt></small>, to a directory on your computer, e.g. <small><tt>C:\EAI</tt></small>. This will create a sub directory, like <small><tt>C:\EAI\eclipse</tt></small>.</li>
+<li><b>Start Eclipse</b>. The <small><tt>eclipse.exe</tt></small> is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and <b>select a workspace directory</b>, for example <small><tt>C:\EAI\projects</tt></small>. This path must <b>not contain any spaces </b>either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click <b>"OK"</b> to close the dialog and get to the workbench window.</li>
+</ol>
+<h3><a id="jbosstools" name="jbosstools"></a>Installing JBoss Tools for Eclipse</h3>
+<ol>
+<li><b>Select "Help-&gt;Eclipse Marketplace..."</b> from the Eclipse menu bar. Choose "Eclipse Marketplace" if prompted for a marketplace catalog.</li>
+<li>Search for "JBoss Tools" and <b>install JBoss Tools (Luna)</b>, version 4.2.x.</li>
+<li>Wait until "Calculating requirements..." has finished and make sure that all features are checked, then <b>confirm</b>.</li>
+<li><b>Accept the license agreements</b> and click <b>"Finish"</b>.</li>
+<li>When the download is complete, a security warning regarding "Unsigned content" will appear. <b>Accept with "OK"</b> to begin with the installation.</li>
+<li>When prompted to do so, <b>"Restart Now"</b>.</li>
+<li>After <b>closing </b>the <b>"Welcome" window</b> you will see the "Java EE" perspective. The selected perspective is indicated in the upper right corner as shown in the following figure:<br /> <img src="images/eclipse_jee_perspective.png" alt="" width="293" height="153" /><br /> If the Java EE button is not visible you can change to the Java EE perspective via "Window-&gt;Open Perspective-&gt;Other..." . In the "Open Perspective" dialog double click the Java EE entry.</li>
+<li><b>Activate </b>the <b>"Servers" view</b> tab in the lower right of the window. <b>Right-click</b> the empty area and <b>select "New-&gt;Server"</b> as shown in this screenshot:<br /> <a href="eclipse_server_view.png"><img src="images/eclipse_server_view.png" alt="" width="523" height="120" /></a></li>
+<li>In the "New Server" window select <b>"WildFly 8"</b> (from the JBoss Community category) <b>as server type</b> and click <b>"Next"</b>.<br /> <img src="images/eclipse_new_server.png" alt="" width="613" height="599" /><br /> <b>Set</b> the <b>"Home Directory"</b> entry to the installation directory of the WildFly AS, e.g. <small><tt>C:\EAI\wildfly-8.2.0.Final</tt></small>, and <b>click "Finish"</b>.</li>
+<li>In the "Servers" view <b>select the newly created server</b> and click the green <b>start button</b>.<br /> <img src="images/eclipse_server_start.png" alt="" width="857" height="86" /><br /> A new "Console" view will open showing the startup logs of the WildFly AS.</li>
+</ol>
+<p>Congratulations, you have successfully installed WildFly and JBoss Tools!<br /> Continue with the <a class="int" href="020_tutorial_jboss_project.html">setup of your first Java EE project</a>.<br /></p>
+<h3><a id="envvar" name="envvar"></a>How To Set Environment Variables</h3>
+<ul>
+<li><b>Windows XP</b>: Open the Control Panel (<i>Systemsteuerung</i>) from the Start Menu, switch to Classic View (<i>Klassische Ansicht</i>) if necessary, open the System Control Panel applet (<i>System</i>), select the Advanced tab (<i>Erweitert</i>), and click on the Environment Variables button (<i>Umgebungsvariablen</i>).</li>
+<li><b>Windows 7</b>: Control Panel (<i>Systemsteuerung</i>) - System - choose Advanced System Settings (<i>Erweiterte Systemeinstellungen</i>) on the left - Advanced tab (<i>Erweitert</i>) - Environment Variables button (<i>Umgebungsvariablen</i>)</li>
+</ul>
