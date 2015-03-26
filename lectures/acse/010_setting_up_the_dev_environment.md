@@ -44,6 +44,29 @@ title: Setting up the Development Environment
 <li><b>Extract </b>the downloaded <b>archive</b>, e.g. <small><tt>eclipse-jee-luna-SR2-win32-x86_64.zip</tt></small>, to a directory on your computer, e.g. <small><tt>C:\EAI</tt></small>. This will create a sub directory, like <small><tt>C:\EAI\eclipse</tt></small>.</li>
 <li><b>Start Eclipse</b>. The <small><tt>eclipse.exe</tt></small> is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and <b>select a workspace directory</b>, for example <small><tt>C:\EAI\projects</tt></small>. This path must <b>not contain any spaces </b>either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click <b>"OK"</b> to close the dialog and get to the workbench window.</li>
 </ol>
+<h3><a id="plugins" name="plugins"></a>Extending Eclipse</h3>
+1. Select **Help** > **Install new Software...**
+1. From the dropdown menu, select **Luna** as the site to work with.
+1. Wait for the list of software to load and select all of the following items:
+
+   * **Modeling** > **QVT Operational SDK**
+      *for model-to-model transformations.*
+   * **Modeling** > **Papyrus UML**
+      *for UML diagrams*
+
+    ![Eclipse --> Install New Software...](images/install_software.png)
+    Eclipse --> Install New Software...
+
+    ![Selected new software for Eclipse](images/install_software_selected.png)
+    Selected new software for Eclipse
+
+1. Click *Next* two times, check *Accept*, click *Finish* and wait for the packages to be installed.
+1. Click Yes when prompted to restart.
+1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
+   1. Once restarted, open **Window** > **Preferences**.
+   1. Choose **Editor** > **Content Assisst** > **Advanced**.
+   1. Enable *Java Proposals*.
+
 <h3><a id="jbosstools" name="jbosstools"></a>Installing JBoss Tools for Eclipse</h3>
 <ol>
 <li><b>Select "Help-&gt;Eclipse Marketplace..."</b> from the Eclipse menu bar. Choose "Eclipse Marketplace" if prompted for a marketplace catalog.</li>
