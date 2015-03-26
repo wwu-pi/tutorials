@@ -40,9 +40,9 @@ title: Setting up the Development Environment
 </ol>
 <h3><a id="eclipse" name="eclipse"></a>Installing Eclipse</h3>
 <ol>
-<li><b>Download </b>the <b>Eclipse IDE for Java EE Developers</b> for your operating system (version 4.4.2, <i>Luna SR2</i>) from <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr2">http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr2</a>.</li>
-<li><b>Extract </b>the downloaded <b>archive</b>, e.g. <small><tt>eclipse-jee-luna-SR2-win32-x86_64.zip</tt></small>, to a directory on your computer, e.g. <small><tt>C:\EAI</tt></small>. This will create a sub directory, like <small><tt>C:\EAI\eclipse</tt></small>.</li>
-<li><b>Start Eclipse</b>. The <small><tt>eclipse.exe</tt></small> is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and <b>select a workspace directory</b>, for example <small><tt>C:\EAI\projects</tt></small>. This path must <b>not contain any spaces </b>either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click <b>"OK"</b> to close the dialog and get to the workbench window.</li>
+<li><b>Download </b>the <b>Eclipse IDE for Java and DSL Developers</b> for your operating system (version 4.4.2, <i>Luna SR2</i>) from <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/lunasr2">http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/lunasr2</a>.</li>
+<li><b>Extract </b>the downloaded <b>archive</b> to a directory on your computer, e.g. <small><tt>C:\ACSE</tt></small>. This will create a sub directory, like <small><tt>C:\ACSE\eclipse</tt></small>.</li>
+<li><b>Start Eclipse</b>. The <small><tt>eclipse.exe</tt></small> is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and <b>select a workspace directory</b>, for example <small><tt>C:\ACSE\projects</tt></small>. This path must <b>not contain any spaces </b>either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click <b>"OK"</b> to close the dialog and get to the workbench window.</li>
 </ol>
 <h3><a id="plugins" name="plugins"></a>Extending Eclipse</h3>
 1. Select **Help** > **Install new Software...**
