@@ -57,10 +57,21 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 1. From the dropdown menu, select **Luna** as the site to work with.
 1. Wait for the list of software to load and select all of the following items:
 
-   * **Modeling** > **QVT Operational SDK**
-      *for model-to-model transformations.*
-   * **Modeling** > **Papyrus UML**
-      *for UML diagrams*
+   * _Modeling_
+      * **QVT Operational SDK**
+        _for model-to-model transformations._
+      * **Papyrus UML**
+        _for UML diagrams_
+   * _Web, XML, Java EE and OSGi Enterprise Development_
+      * **Eclipse Java EE Developer Tools**
+        _for Java EE development_
+      * **Eclipse Java Web Developer Tools**
+        _for Java Web development_
+      * **JSF Tools**
+        _for development of JSF web apps_
+   * _Database Development_
+      * **Data Tools Platform Extender SDK**
+        _for data centric technologies_
 
     ![Eclipse --> Install New Software...](images/install_software.png)
     Eclipse --> Install New Software...
