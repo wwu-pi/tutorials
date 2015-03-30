@@ -34,12 +34,11 @@ title: Setting up the Development Environment
    * username: **sa**
 
 1. **Enable** the new **datasource**.
+1. In order to stop the server, press CTRL-C in the console window that was opened during step 3.
 
 <div class="footnote" markdown="1">
-  Alternatively, you can use the JBoss-CLI to deploy the HSQLDB driver and add the data source: ``./jboss-cli.sh -c "deploy ~/Downloads/hsqldb.jar,data-source add --driver-name=hsqldb.jar --use-ccm=false --jta=false --user-name=sa --name=DefaultDS --jndi-name=java:/DefaultDS --connection-url=jdbc:hsqldb:\$\{jboss.server.data.dir\}\$\{/\}hypersonic\$\{/\}localDB;shutdown=true"``
+Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB driver and add the data source: ``./jboss-cli.sh -c "deploy ~/Downloads/hsqldb.jar,data-source add --driver-name=hsqldb.jar --use-ccm=false --jta=false --user-name=sa --name=DefaultDS --jndi-name=java:/DefaultDS --connection-url=jdbc:hsqldb:\$\{jboss.server.data.dir\}\$\{/\}hypersonic\$\{/\}localDB;shutdown=true"``
 </div>
-
-1. In order to stop the server, press CTRL-C in the console window that was opened during step 3.
 
 ##<a id="eclipse" name="eclipse" />Installing Eclipse##
 
