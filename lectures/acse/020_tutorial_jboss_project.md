@@ -81,7 +81,7 @@ This defines the data source to use ("java:/DefaultDS" is the JNDI address of th
 ###<a id="create-web" name="create-web" />New Web Project### 
 1. Select *File* > *New* > *Dynamic Web Project* from the menu bar.
 1. In the "New Dynamic Web Project" dialog, enter "Test-Web"as **project name**. The "Dynamic web module version" should be set to 3.0.
-1. Under **"Configuration"**, select **"JavaServer Faces v2.2 Project"** from the drop-down menu.
+1. Under **"Configuration"** click **"Modify"** and make sure that **"JavaServer Faces v2.2 Project"** is included in the Project Facets.
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
 1. A **click on "Finish"** will create a new library-web project.
 1. XHTML Pages with Facelets markup go into the ``WebContent`` folder (*New* > *Other...*). Backing beans should be created as Java classes under ``JavaResources/src``.
