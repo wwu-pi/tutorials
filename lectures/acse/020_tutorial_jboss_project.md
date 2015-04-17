@@ -17,7 +17,7 @@ title: Creating Java EE projects with JBoss Tools
 ##<a id="import" name="import" />Importing the Example Application into Eclipse##
 This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next section, [Creating an Enterprise Application from scratch](#create), will show how you can create your own Java EE projects.
 
-1. **Download** the [library application source files](https://github.com/wwu-pi/library-application/archive/master.zip) to a temporary folder.
+1. **Download** the [library application source files](https://github.com/wwu-pi/library-application/archive/master.zip) or **clone** the [library application project](https://github.com/wwu-pi/library-application/) to a temporary folder.
 1. **Select** *File* > *Import...* from the Eclipse menu bar.
 1. Choose *General* > *Existing Projects into Workspace* and click next.
 1. Choose **"Select archive file"** and browse to the archive from step 1.
