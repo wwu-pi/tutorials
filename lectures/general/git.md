@@ -20,6 +20,7 @@ Before you request the free micro plan, ensure that you added your *uni-muenster
 For day-to-day operations users employ various interfaces such as:
 
 * [Git](http://git-scm.com/)
+* [SourceTree for Windows+Mac](http://www.sourcetreeapp.com/)
 * [GitHub for Windows](http://windows.github.com/)
 * [GitHub for Mac](http://mac.github.com/)
 * [EGit for Eclipse](http://eclipse.github.com/)
