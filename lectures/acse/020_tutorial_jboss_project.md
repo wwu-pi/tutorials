@@ -12,7 +12,7 @@ title: Creating Java EE projects with JBoss Tools
 ##<a id="precond" name="precond" />Preconditions##
 * Make sure **WildFly** and **Eclipse with JBoss Tools Plug-in** are properly **installed** and configured ([tutorial](010_tutorial_jboss_setup.html)).
 * **Start Eclipse with JBoss Tools Plug-in** and make sure the **Java EE perspective** is **opened**.
-* Make sure that a **WildFly 8 Runtime Server** is configured in Eclipse as outlined in the [first tutorial](010_tutorial_jboss_setup.html).
+* Make sure that a **WildFly 8 Runtime Server** is configured in Eclipse as outlined in the [first tutorial](010_setting_up_the_dev_environment).
 
 ##<a id="import" name="import" />Importing the Example Application into Eclipse##
 This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next section, [Creating an Enterprise Application from scratch](#create), will show how you can create your own Java EE projects.
