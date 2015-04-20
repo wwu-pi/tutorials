@@ -21,5 +21,6 @@ For day-to-day operations users employ various interfaces such as:
 
 * [Git](http://git-scm.com/)
 * [SourceTree for Windows+Mac](http://www.sourcetreeapp.com/)
+* [SmartGit](http://freecode.com/projects/smartgit)
 
 Or one of many [other interfaces](http://git-scm.com/downloads/guis).
