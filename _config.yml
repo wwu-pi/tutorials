@@ -1,5 +1,5 @@
 # used to address resources (stylesheets, javascript)
-url: http://wwu-pi.github.io/tutorials
+url: https://wwu-pi.github.io/tutorials
 
 # lectures to be included when generating overview
 # - use the directory name within the lectures directory
