@@ -30,7 +30,7 @@ This tutorial will show how to import a Java EE application using the example of
 
     ![](images/library_add.png)
 
-1. Select the **library application** and click *Add >*, then "Finish. <small>Should Eclipse fail to display any applications, ensure that all EAR projects in the workspace contain an ``EarContent`` directory. In case the project was imported from VCS (e.g. git), an empty ``.gitignore`` file within ``EarContent`` will ensure the directory is always present.</small>
+1. Select the **library application** and click *Add >*, then "Finish. <small>Should Eclipse fail to display any applications, ensure that all EAR projects in the workspace contain an ``EarContent`` directory. In case the project was imported from VCS (e.g. git), an empty ``.gitkeep`` file within ``EarContent`` will ensure the directory is always present.</small>
 1. **Start the server** and wait until the application has been deployed.
 1. The Library web application is accessible under [http://localhost:8080/Library-Web/](http://localhost:8080/Library-Web/).
 
