@@ -24,7 +24,7 @@ title: Setting up the Development Environment
 1. Use the script ``<WildFly directory>\bin\standalone.bat`` to start the WildFly server and check the installation. After startup, you should be able to access the web server at [http://localhost:8080](http://localhost:8080).
 1. Open the link **Administration Console** and follow the instructions to add a new management user.
 1. After creating a user revisit the **Administration Console**.
-1. Go to [**Manage Deployments**](http://localhost:9990/console/App.html#deployments) and click **Add Content** to upload [hsqldb.jar](hsqldb.jar). Make sure that the deployed file is **enabled**.
+1. Go to [**Deployments**](http://localhost:9990/console/App.html#deployments) and click **Add Content** to upload [hsqldb.jar](hsqldb.jar). Make sure that the deployed file is **enabled**.
 1. Go to **Configuration** > **Connector** > [**Datasources**](http://localhost:9990/console/App.html#datasources) and click **Add**. Use the following information to create a datasource:
 
    * Name: **DefaultDS**
@@ -83,7 +83,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 1. Click Yes when prompted to restart.
 1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
    1. Once restarted, open **Window** > **Preferences**.
-   1. Choose **Editor** > **Content Assisst** > **Advanced**.
+   1. Choose **Java** > **Editor** > **Content Assisst** > **Advanced**.
    1. Enable *Java Proposals*.
 
 ##<a id="jbosstools" name="jbosstools" />Installing JBoss Tools for Eclipse##
