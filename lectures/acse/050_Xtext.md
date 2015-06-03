@@ -6,9 +6,9 @@ title: Creating a new DSL project with Xtext
 This tutorial briefly explains the steps needed to create a new DSL project with [Xtext](http://www.eclipse.org/Xtext/index.html).
 
 1. Select *File* > *New* > *Project...*, choose *Xtext* > *Xtext Project*.
-1. Choose project name, e.g., `de.wwu.pi.mdsd.customerDsl`.
-1. Choose name of language, e.g., `de.wwu.pi.mdsd.customerDsl.CustomerDsl`, and a file extension that model files in the language will use, e.g., `cdsl`.
-1. A click on *Finish* will create 4 projects, most importantly the main project (*de.wwu.pi.mdsd.customerDsl*). It contains the Xtext grammar (*CustomerDsl.xtext*) and a workflow file for generating the infrastructure from the language description (*GenerateCustomerDsl.mwe2*).
+1. Choose project name, e.g., `de.wwu.pi.acse.customerDsl`.
+1. Choose name of language, e.g., `de.wwu.pi.acse.customerDsl.CustomerDsl`, and a file extension that model files in the language will use, e.g., `cdsl`.
+1. A click on *Finish* will create 4 projects, most importantly the main project (*de.wwu.pi.acse.customerDsl*). It contains the Xtext grammar (*CustomerDsl.xtext*) and a workflow file for generating the infrastructure from the language description (*GenerateCustomerDsl.mwe2*).
 1. Implement your language in *CustomerDsl.xtext*.
 1. Generate the language and infrastructure, for example by selecting the corresponding workflow file and choose ("Run As > MWE2 Workflow") from the dropdown menu next to the "Run" icon in the toolbar.
    
