@@ -17,10 +17,14 @@ title: Accessing HSQLDB from Eclipse
 
   1. Enter the **database name** and specify the **location of the database files, e.g. ``file:/tmp/jboss/standalone/data/hypersonic/localDB``.**
 
-## Creating a Database Connection for Dedicated HSQLDB
-Prior to that, you need to start the dedicated instance (e.g. execute the following on a shell: ``java -cp ~/Downloads/hsqldb.jar org.hsqldb.server.Server --database.0 file:localDB --dbname.0 localDB``).
+## Creating a Database Connection for *Dedicated* HSQLDB
+  1. Start a *dedicated* instance, e.g. *execute* the following *on a shell*: ``java -cp ~/Downloads/hsqldb.jar org.hsqldb.server.Server --database.0 file:localDB --dbname.0 localDB``
+   * Adjust the classpath (``-cp``) to match the location on your system
+   * ``database.0``: the location where the database is stored
+   * ``dbname.0``: remote name/**database name** for the database
 
-Steps 1-3 also apply when using a dedicated HSQLDB. In step 4 specify the database name and the **address/location of HSQLDB**, e.g. ``hsql://localhost/dedicatedDB``.
+  1. Perform steps 1-3 of *In-Process* HSQLDB (they also apply when using a *dedicated* HSQLDB).
+  1. Enter the the **database name** and specify the **address/location of HSQLDB, e.g. ``hsql://localhost/localDB``**.
 
 ## Accessing HSQLDB
   1. *In-Process* HSQLDB only: **Stop JBoss** to shutdown HSQLDB.
