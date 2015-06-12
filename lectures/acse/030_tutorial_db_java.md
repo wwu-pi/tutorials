@@ -26,6 +26,10 @@ title: Accessing HSQLDB from Eclipse
   1. Perform steps 1-3 of *In-Process* HSQLDB (they also apply when using a *dedicated* HSQLDB).
   1. Enter the the **database name** and specify the **address/location of HSQLDB, e.g. ``hsql://localhost/localDB``**.
 
+<div class="footnote" markdown="1">
+For the *dedicated* HSQLDB instance to be used by deployed applications, you need to **adjust the corresponding datasource** to connect to it. Change the **Connection URL** to ``jdbc:hsqldb:hsql://localhost/localDB``, so that it matches your previously defined **database name**.
+</div>
+
 ## Accessing HSQLDB
   1. *In-Process* HSQLDB only: **Stop WildFly** to shutdown HSQLDB.
   1. **Right-click** on connection and select **"Connect"**.
