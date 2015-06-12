@@ -18,8 +18,8 @@ title: Accessing HSQLDB from Eclipse
   1. Enter the **database name** and specify the **location of the database files, e.g. ``file:/tmp/wildfly/standalone/data/hypersonic/localDB``.**
 
 ## Creating a Database Connection for *Dedicated* HSQLDB
-  1. Start a *dedicated* instance, e.g. *execute* the following *on a shell*: ``java -cp ~/Downloads/hsqldb.jar org.hsqldb.server.Server --database.0 file:localDB --dbname.0 localDB``
-   * Adjust the classpath (``-cp``) to match the location on your system
+  1. Start a *dedicated* instance by *executing* the following *on a shell*: ``java -cp ~/Downloads/hsqldb.jar org.hsqldb.server.Server --database.0 file:localDB --dbname.0 localDB``
+   * Adjust Java's classpath (``-cp``) to match the location of ``hsqldb.jar`` on your system
    * ``database.0``: the location where the database is stored
    * ``dbname.0``: remote name/**database name** for the database
 
