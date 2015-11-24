@@ -29,7 +29,7 @@ title: Installing Drools
    * Make sure the checkbox "Contact all update sites during install to find required software" is checked.
 
 4. Create Drools Runtime:
-   * In Eclipse switch to the Drools view (upper right corner).
+   * In Eclipse switch to the **Drools perspective** (upper right corner).
    
    * Select **File** > **New** > **Drools project**.
    
@@ -53,5 +53,9 @@ title: Installing Drools
    
    * Click "Finish" to create the project.
    ![Finish](images/finish.png)
+
+   * Open the class that contains the main method. It is located in the package `com.sample` and has the same name as the project.
+   
+   * In order to execute the project, right-click the editor and select **Debug As** > **Drools Application**. Observe the output. You can ignore the SLF4J warnings.
 
 
