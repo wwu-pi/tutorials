@@ -38,7 +38,8 @@ Note that there is only a 32-bit version for Ubuntu. Therefore we could not test
    `sudo apt-get install unixodbc-dev unixodbc-bin unixodbc`
 
 **First steps:**
- 1. Start DES as described in the last steps above.
+
+1. Start DES as described in the last steps above.
  
     * In subfolder `doc` you can find a manual: `manualDES.pdf`
  
@@ -49,7 +50,7 @@ Note that there is only a 32-bit version for Ubuntu. Therefore we could not test
       flight.dl
       ```
 
- 4. After starting DES: 
+2. After starting DES: 
     * `/help` gives you an overview of all the available commands. Particularly important are:
     * `/r file`         loads a (e.g.) datalog program
     * `/datalog goal`   solves a goal based on the loaded program
