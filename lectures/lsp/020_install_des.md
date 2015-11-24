@@ -54,5 +54,5 @@ Note that there is only a 32-bit version for Ubuntu. Therefore we could not test
 
     * In contrast, `/prolog ancestor(X,Y).` executes the goal as a Prolog program on a tuple by tuple basis
     
-    * `/q`              quits DES
+    * `/q`              quits DES 
 
