@@ -27,8 +27,8 @@ contacts:
     url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/claus-alexander-usener
     name: Claus Alexander Usener
   lsp:
-    url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/steffen-ernsting
-    name: Steffen Ernsting
+    url: https://www.wi.uni-muenster.de/department/groups/pi/people/jan-dagefoerde
+    name: Jan Dageförde
 
 # excluded from Jekyll conversion
 exclude:
