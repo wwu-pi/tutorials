@@ -30,10 +30,9 @@ Note that there is only a 32-bit version for Ubuntu. Therefore we could not test
 3. You can run DES in console mode (`./des`) or in GUI mode (`java -jar des_acide.jar`).
 
    * File `des` needs execute permission:  
-```
-cd /path/to/des
-chmod +x ./des
-```
+    `cd /path/to/des`
+    `chmod +x ./des`
+
    * Note that DES might need the packages `unixodbc-dev`, `unixodbc-bin` and `unixodbc`. Install with:  
    `sudo apt-get install unixodbc-dev unixodbc-bin unixodbc`
 
