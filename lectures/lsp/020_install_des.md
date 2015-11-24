@@ -11,7 +11,7 @@ title: Installing Datalog Educational System
    
 2. Unzip the archive to a folder of your choice.
 
-3. You can run DES in console mode (`des.exe`/`des`) or in GUI mode (`des_acide.jar`).
+3. You can run DES in console mode (`des.exe` or `des`) or in GUI mode (`des_acide.jar`).
 
    * Mac: File `des` needs execute permission:  
     ```
@@ -23,17 +23,17 @@ title: Installing Datalog Educational System
 
 Note that there is only a 32-bit version for Ubuntu. Therefore we could not test the installation routine.
 
-1. [Download](http://sourceforge.net/projects/des/files/des/des3.8/DES3.8ACIDE0.16Linux32SICStus.zip/download?use_mirror=kent&download=) Datalog Educational System (DES).
+1. [Download](http://prdownloads.sourceforge.net/des/DES3.11ACIDE0.16Linux32SICStus.zip?download) Datalog Educational System (DES).
 
 2. Unzip the archive to a folder of your choice.
 
 3. You can run DES in console mode (`./des`) or in GUI mode (`java -jar des_acide.jar`).
 
    * File `des` needs execute permission:  
-    ```
-    cd /path/to/des
-    chmod +x ./des
-    ```
+```
+cd /path/to/des
+chmod +x ./des
+```
    * Note that DES might need the packages `unixodbc-dev`, `unixodbc-bin` and `unixodbc`. Install with:  
    `sudo apt-get install unixodbc-dev unixodbc-bin unixodbc`
 
