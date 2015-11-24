@@ -14,8 +14,10 @@ title: Installing Datalog Educational System
 3. You can run DES in console mode (`des.exe`/`des`) or in GUI mode (`des_acide.jar`).
 
    * Mac: File `des` needs execute permission:  
-    `cd /path/to/des`  
-    `chmod +x des`
+    ```
+    cd /path/to/des
+    chmod +x des
+    ```
     
 **Linux (Ubuntu):**
 
@@ -28,7 +30,37 @@ Note that there is only a 32-bit version for Ubuntu. Therefore we could not test
 3. You can run DES in console mode (`./des`) or in GUI mode (`java -jar des_acide.jar`).
 
    * File `des` needs execute permission:  
-   `cd /path/to/des`  
-   `chmod +x ./des`
+    ```
+    cd /path/to/des
+    chmod +x ./des
+    ```
    * Note that DES might need the packages `unixodbc-dev`, `unixodbc-bin` and `unixodbc`. Install with:  
    `sudo apt-get install unixodbc-dev unixodbc-bin unixodbc`
+
+**First steps:**
+ 1. Start DES as described in the last steps above.
+ 
+    * In subfolder `doc` you can find a manual: `manualDES.pdf`
+ 
+    * In subfolder `examples` you can find many examples. The following examples are particularly interesting: 
+      ```
+      bom.dl
+      family.dl
+      flight.dl
+      ```
+
+ 4. After starting DES: 
+    * `/help` gives you an overview of all the available commands. Particularly important are:
+    * `/r file`         loads a (e.g.) datalog program
+    * `/datalog goal`   solves a goal based on the loaded program
+
+    * example:
+      ```
+      /r examples/family.dl
+      /datalog ancestor(X,Y).   % (or just: ancestor(X,Y).)
+      ```
+    
+    * In contrast, `/prolog ancestor(X,Y).` executes the goal as a Prolog program on a tuple by tuple basis
+    
+    * `/q`              quits DES
+
