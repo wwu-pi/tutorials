@@ -51,7 +51,7 @@ title: Installing Drools
    * Select the created Drools Runtime and click "OK".
    ![Select runtime](images/addedruntime.png)
    
-   * Click "Finish" to create the project.
+   * Enter a `GroupId`, an `ArtifactId`, and a `Version` for your project. You may choose arbitrary non-empty values. Afterwards, click "Finish" to create the project.
    ![Finish](images/finish.png)
 
    * Open the class that contains the main method. It is located in the package `com.sample` and has the same name as the project.
