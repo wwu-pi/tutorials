@@ -3,7 +3,7 @@ layout: recipe
 title: Getting Started with Eclipse Papyrus
 ---
 
-##Creating a new diagram##
+## Creating a new diagram
 
 1. Select *File* > *New* > *Project...*
 1. Select *Papyrus* > *Papyrus Project* and click *Next*.
@@ -23,7 +23,7 @@ Associations can be found in the Edges section of the palette.
 The Properties view provides additional options:
 right-click on an element and select Show Properties View.
 
-##Creating and Applying a UML Profile##
+## Creating and Applying a UML Profile
 
 1. Select  *File* > *New* > *Other...*
 1. Select *Papyrus* > *Papyrus Model*.

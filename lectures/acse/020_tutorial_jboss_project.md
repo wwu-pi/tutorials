@@ -2,19 +2,19 @@
 layout: recipe
 title: Creating Java EE projects with JBoss Tools
 ---
- 
-##Contents##
+
+## Contents
 
 1. [Preconditions](#precond)
 1. [Importing the Example Application into Eclipse](#import)
 1. [Creating an Enterprise Application from scratch](#create)
 
-##<a id="precond" name="precond" />Preconditions##
+## <a id="precond" name="precond" />Preconditions
 * Make sure **WildFly** and **Eclipse with JBoss Tools Plug-in** are properly **installed** and configured ([tutorial](010_setting_up_the_dev_environment)).
 * **Start Eclipse with JBoss Tools Plug-in** and make sure the **Java EE perspective** is **opened**.
 * Make sure that a **WildFly 8 Runtime Server** is configured in Eclipse as outlined in the [first tutorial](010_setting_up_the_dev_environment).
 
-##<a id="import" name="import" />Importing the Example Application into Eclipse##
+## <a id="import" name="import" />Importing the Example Application into Eclipse
 This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next section, [Creating an Enterprise Application from scratch](#create), will show how you can create your own Java EE projects.
 
 1. **Download** the [library application source files](https://github.com/wwu-pi/library-application/archive/master.zip) or **clone** the [library application project](https://github.com/wwu-pi/library-application/) to a temporary folder.
@@ -36,7 +36,7 @@ This tutorial will show how to import a Java EE application using the example of
 
 ---
 
-##<a id="create" name="create" />Creating an Enterprise Application from scratch##
+## <a id="create" name="create" />Creating an Enterprise Application from scratch
 The following instructions show how to create an enterprise application from scratch, without importing existing projects. It may be helpful when you start developing your own application, for example during the practical course.
 
 An enterprise application consists of several projects. In the following, the application is made up of four projects:
@@ -48,11 +48,11 @@ An enterprise application consists of several projects. In the following, the ap
 
 This tutorial uses "Test" and variations thereof as project names. Of course, you are free to choose your own names.
 
-###<a id="create-ear" name="create-ear" />New Enterprise Application Project### 
+### <a id="create-ear" name="create-ear" />New Enterprise Application Project
 1. Select *File* > *New* > *Enterprise Application Project* from the menu bar.
 1. In the "New EAR Application Project" dialog, enter "Test"as **project name**, makesure that WildFly 8 is the target runtime and **click "Finish"**.
 
-###<a id="create-jpa" name="create-jpa" />New JPA Project### 
+### <a id="create-jpa" name="create-jpa" />New JPA Project
 1. Select *File* > *New* > *JPA Project* from the menu bar.
 1. In the "New JPA Project" dialog, enter "Test-Persistence" as **project name**. Again, the target runtime should be WildFly 8. "Minimal JPA 2.1 Configuration" should be selected as "Configuration".
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
@@ -70,7 +70,7 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
 This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".
 1. To **create** your first **Entity**, right-click on the project, select *New* > *Entity* and follow the wizard. <small>You may not use class names that coincide with SQL keywords such as order. Moreover, member names may not contain special characters such as underscores.</small>
 
-###<a id="create-ejb" name="create-ejb" />New EJB Project### 
+### <a id="create-ejb" name="create-ejb" />New EJB Project
 1. Select *File* > *New* > *EJB Project* from the menu bar.
 1. In the "New EJB Project" dialog, enter&nbsp;"Test-EJB"as **project name**. The "EJB module version" should be set to 3.2.
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
@@ -78,7 +78,7 @@ This defines the data source to use ("java:/DefaultDS" is the JNDI address of th
 1. A click on **"Finish"** will create a new library-ejb project.
 1. To **create** a **Session Bean**, right-click on the project, select *New* > *Session Bean (EJB 3.x)* and follow the wizard.
 
-###<a id="create-web" name="create-web" />New Web Project### 
+### <a id="create-web" name="create-web" />New Web Project
 1. Select *File* > *New* > *Dynamic Web Project* from the menu bar.
 1. In the "New Dynamic Web Project" dialog, enter "Test-Web"as **project name**. The "Dynamic web module version" should be set to 3.0.
 1. Under **"Configuration"** click **"Modify"** and make sure that **"JavaServer Faces v2.2 Project"** is included in the Project Facets.
