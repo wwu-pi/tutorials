@@ -26,7 +26,7 @@
           <div class="table_of_content">
             <div class="dimmed">Table of Content</div>
                 {% capture url %}/lectures/{{ curr_lecture }}{% endcapture %}
-                {% capture indexurl %}{{ url }}/index.html{% endcapture %}
+                {% capture indexurl %}{{ url }}/{% endcapture %}
                 {% assign no_index_print = true %}
                 {% include sidebar_content.html %} 
                 {% assign no_index_print = nil %}

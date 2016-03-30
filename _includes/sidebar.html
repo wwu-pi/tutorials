@@ -13,14 +13,14 @@
     <ol class="navigation chapters-list">
       {% for chapter in site.lectures %}
         {% capture url %}/lectures/{{ chapter | replace: ' ', '_' | downcase }}{% endcapture %}
-        {% capture indexurl %}{{ url }}/index.html{% endcapture %}
+        {% capture indexurl %}{{ url }}/{% endcapture %}
           {% if (only_lecture == nil or only_lecture == chapter ) %}
             {% include sidebar_content.html %}
           {% endif %}
       {% endfor %}
       
       {% capture url %}/lectures/general{% endcapture %}
-      {% capture indexurl %}{{ url }}/index.html{% endcapture %}
+      {% capture indexurl %}{{ url }}/{% endcapture %}
       {% include sidebar_content.html %}
     </ol>
   </section>
