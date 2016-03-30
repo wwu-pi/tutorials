@@ -95,6 +95,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 1. When the download is complete, a security warning regarding "Unsigned content" will appear. **Accept with "OK"** to begin with the installation.
 1. When prompted to do so, **"Restart Now"**.
 1. After **closing** the **"Welcome" window** you will see the "Java EE" perspective. The selected perspective is indicated in the upper right corner as shown in the following figure:
+
     ![](images/eclipse_jee_perspective.png)
    
    If the Java EE button is not visible you can change to the Java EE perspective via *Window* > *Open Perspective* > *Other...* . In the "Open Perspective" dialog double click the Java EE entry.
