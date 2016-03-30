@@ -15,7 +15,7 @@ title: Setting up the Development Environment
 1. Make sure that the latest version of the **Java Development Kit** (JDK 7 Update 75 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
 1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 7 Update 75** or later) for the operating system of your computer.
 1. **Install** the **JDK** to a directory on your computer, e.g. **``C:\Java\jdk7_75``**.
-1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk7_75``. 
+1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk7_75``.
 
 ##<a id="wildfly" name="wildfly" />Installing WildFly##
 
@@ -47,7 +47,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
    * EMF -- Eclipse Modeling Framework SDK (for basic modelling features),
    * Xtext Complete SDK (for implementing DSLs), and
    * Xtend IDE (useful for model-to-text transformations).
- 
+
 
 1. **Extract** the downloaded **archive** to a directory on your computer, e.g. ``C:\ACSE``. This will create a sub directory, like ``C:\ACSE\eclipse``.
 1. **Start Eclipse**. The ``eclipse.exe`` is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and **select a workspace directory**, for example ``C:\ACSE\projects``. This path must **not contain any spaces** either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click **"OK"** to close the dialog and get to the workbench window.
@@ -97,17 +97,17 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 1. After **closing** the **"Welcome" window** you will see the "Java EE" perspective. The selected perspective is indicated in the upper right corner as shown in the following figure:
 
     ![](images/eclipse_jee_perspective.png)
-   
+
    If the Java EE button is not visible you can change to the Java EE perspective via *Window* > *Open Perspective* > *Other...* . In the "Open Perspective" dialog double click the Java EE entry.
 1. **Activate** the **"Servers" view** tab in the lower right of the window. **Right-click** the empty area and **select "New-&gt;Server"** as shown in this screenshot:
     ![](images/eclipse_server_view.png)
 1. In the "New Server" window select **"WildFly 8"** (from the JBoss Community category) **as server type** and click **"Next"**.
     ![](images/eclipse_new_server.png)
-    
+
    **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\EAI\wildfly-8.2.0.Final``, and **click "Finish"**.
 1. In the "Servers" view **select the newly created server** and click the green **start button**.
     ![](images/eclipse_server_start.png)
-  
+
    A new "Console" view will open showing the startup logs of the WildFly AS.
 
 Congratulations, you have successfully set-up your development environment!

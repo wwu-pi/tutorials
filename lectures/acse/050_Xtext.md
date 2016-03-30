@@ -11,12 +11,12 @@ This tutorial briefly explains the steps needed to create a new DSL project with
 1. A click on *Finish* will create 4 projects, most importantly the main project (*de.wwu.pi.acse.customerDsl*). It contains the Xtext grammar (*CustomerDsl.xtext*) and a workflow file for generating the infrastructure from the language description (*GenerateCustomerDsl.mwe2*).
 1. Implement your language in *CustomerDsl.xtext*.
 1. Generate the language and infrastructure, for example by selecting the corresponding workflow file and choose ("Run As > MWE2 Workflow") from the dropdown menu next to the "Run" icon in the toolbar.
-   
+
    **This has to be done every time after making changes to the grammar.**
-   
+
 1. When asked "Do you agree to download ...", type `y` in the console of Eclipse and hit enter.
 1. To test your language and its editor, start a new Eclipse instance ("Launch Runtime Eclipse" from the Run dropdown menu).
-	
+
     ![Launch Runtime Eclipse](images/LaunchRuntimeEclipse.png)
     "Launch Runtime Eclipse" from the Run dropdown menu
 
