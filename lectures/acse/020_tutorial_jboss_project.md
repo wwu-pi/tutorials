@@ -12,7 +12,7 @@ title: Creating Java EE projects with JBoss Tools
 ## <a id="precond" name="precond" />Preconditions
 * Make sure **WildFly** and **Eclipse with JBoss Tools Plug-in** are properly **installed** and configured ([tutorial](010_setting_up_the_dev_environment)).
 * **Start Eclipse with JBoss Tools Plug-in** and make sure the **Java EE perspective** is **opened**.
-* Make sure that a **WildFly 8 Runtime Server** is configured in Eclipse as outlined in the [first tutorial](010_setting_up_the_dev_environment).
+* Make sure that a **WildFly 10 Runtime Server** is configured in Eclipse as outlined in the [first tutorial](010_setting_up_the_dev_environment).
 
 ## <a id="import" name="import" />Importing the Example Application into Eclipse
 This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next section, [Creating an Enterprise Application from scratch](#create), will show how you can create your own Java EE projects.
@@ -26,7 +26,7 @@ This tutorial will show how to import a Java EE application using the example of
 
     ![](images/library_projects.png)
 
-1. <a id="import-deploy" name="import-deploy" />In the "Servers" tab, **right-click** on your **WildFly 8 server** and select **"Add and Remove..."**.
+1. <a id="import-deploy" name="import-deploy" />In the "Servers" tab, **right-click** on your **WildFly 10 server** and select **"Add and Remove..."**.
 
     ![](images/library_add.png)
 
@@ -50,15 +50,15 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
 
 ### <a id="create-ear" name="create-ear" />New Enterprise Application Project
 1. Select *File* > *New* > *Enterprise Application Project* from the menu bar.
-1. In the "New EAR Application Project" dialog, enter "Test"as **project name**, makesure that WildFly 8 is the target runtime and **click "Finish"**.
+1. In the "New EAR Application Project" dialog, enter "Test"as **project name**, make sure that WildFly 10 is the target runtime and **click "Finish"**.
 
 ### <a id="create-jpa" name="create-jpa" />New JPA Project
 1. Select *File* > *New* > *JPA Project* from the menu bar.
-1. In the "New JPA Project" dialog, enter "Test-Persistence" as **project name**. Again, the target runtime should be WildFly 8. "Minimal JPA 2.1 Configuration" should be selected as "Configuration".
+1. In the "New JPA Project" dialog, enter "Test-Persistence" as **project name**. Again, the target runtime should be WildFly 10. "Minimal Configuration" should be selected as "Configuration".
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
 1. Click **"Finish"**. (Do **not** switch to the JPA perspective if asked to do so.)
 1. **Open** the file **``persistence.xml``** (under "JPA Content" or under ``src/META-INF/``) and switch to the **"Source" tab**. **Modify** the **node** **``persistence-unit``** to match the following snippet:
-
+          
         <persistence-unit name="Test-Persistence">
           <jta-data-source>java:/DefaultDS</jta-data-source>
           <properties>
@@ -66,16 +66,17 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
               value="create-drop"/>
           </properties>
         </persistence-unit>
-
-This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".
-1. To **create** your first **Entity**, right-click on the project, select *New* > *Entity* and follow the wizard. <small>You may not use class names that coincide with SQL keywords such as order. Moreover, member names may not contain special characters such as underscores.</small>
+             
+     This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".
+            
+1. To **create** your first **Entity**, right-click on the project, select *New* > *JPA Entity* and follow the wizard. <small>You may not use class names that coincide with SQL keywords such as order. Moreover, member names may not contain special characters such as underscores.</small>
 
 ### <a id="create-ejb" name="create-ejb" />New EJB Project
 1. Select *File* > *New* > *EJB Project* from the menu bar.
 1. In the "New EJB Project" dialog, enter&nbsp;"Test-EJB"as **project name**. The "EJB module version" should be set to 3.2.
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
 1. After clicking **"Next" twice** we **disable** the **"Create an EJB Client Jar..."** check box. For the moment we do not need a separate EJB client jar file.
-1. A click on **"Finish"** will create a new library-ejb project.
+1. A click on **"Finish"** will create a new EJB project.
 1. To **create** a **Session Bean**, right-click on the project, select *New* > *Session Bean (EJB 3.x)* and follow the wizard.
 
 ### <a id="create-web" name="create-web" />New Web Project
@@ -83,7 +84,12 @@ This defines the data source to use ("java:/DefaultDS" is the JNDI address of th
 1. In the "New Dynamic Web Project" dialog, enter "Test-Web"as **project name**. The "Dynamic web module version" should be set to 3.0.
 1. Under **"Configuration"** click **"Modify"** and make sure that **"JavaServer Faces v2.2 Project"** is included in the Project Facets.
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
-1. A **click on "Finish"** will create a new library-web project.
+1. A **click on "Finish"** will create a new web project.
 1. XHTML Pages with Facelets markup go into the ``WebContent`` folder (*New* > *Other...*). Backing beans should be created as Java classes under ``JavaResources/src``.
 
 Please refer to [steps 7-9](#import-deploy) of the section "[Importing the Example Application into Eclipse](#import-deploy)" in order to learn how to deploy your project.
+You might want to include a *welcome file list* in your web.xml. 
+         
+    <welcome-file-list>
+        <welcome-file>yourFirstPage.xhtml</welcome-file>
+    </welcome-file-list>
