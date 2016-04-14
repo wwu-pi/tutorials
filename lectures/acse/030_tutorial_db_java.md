@@ -22,15 +22,25 @@ title: Accessing HSQLDB from Eclipse
    * Adjust Java's classpath (``-cp``) to match the location of ``hsqldb.jar`` on your system
    * ``database.0``: the location where the database is stored
    * ``dbname.0``: remote name/**database name** for the database
-
   1. Perform steps 1-3 of *In-Process* HSQLDB (they also apply when using a *dedicated* HSQLDB).
   1. Enter the the **database name** and specify the **address/location of HSQLDB, e.g. ``hsql://localhost/localDB``**.
 
 <div class="footnote" markdown="1">
-For the *dedicated* HSQLDB instance to be used by deployed applications, you need to **adjust the corresponding datasource** to connect to it. Change the **Connection URL** to ``jdbc:hsqldb:hsql://localhost/localDB``, so that it matches your previously defined **database name**.
+For the *dedicated* HSQLDB instance to be used by deployed applications, you need to **adjust the corresponding datasource** to connect to it. Go to the Wildfly Console and change the **Connection URL** to ``jdbc:hsqldb:hsql://localhost/localDB``, so that it matches your previously defined **database name**.
 </div>
 
 ## Accessing HSQLDB
+
+### HSQLDB Database Manager
+  1. *Execute* the following *on a shell*: ``java -cp path-to-your-hsqldb/hsqldb.jar``
+  1. *Connect* to the HSQLDB server.
+   * Type: HSQL Database Engine Server
+   * Driver: org.hsqldb.jdbcDriver
+   * URL: jdbc:hsqldb:hsql://localhost/localDB (adjust to match your database name)
+   * User: sa
+  1. Perform queries on HSQLDB.
+
+### SQL Scrapbook
   1. *In-Process* HSQLDB only: **Stop WildFly** to shutdown HSQLDB.
   1. **Right-click** on connection and select **"Connect"**.
   1. **Right-click** on connection and select **"Open SQL Scrapbook"**.
