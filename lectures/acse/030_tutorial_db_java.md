@@ -32,7 +32,7 @@ For the *dedicated* HSQLDB instance to be used by deployed applications, you nee
 ## Accessing HSQLDB
 
 ### HSQLDB Database Manager
-  1. *Execute* the following *on a shell*: ``java -cp path-to-your-hsqldb/hsqldb.jar``
+  1. *Execute* the following *on a shell*: ``java -cp path-to-your-hsqldb/hsqldb.jar org.hsqldb.util.DatabaseManagerSwing``
   1. *Connect* to the HSQLDB server.
    * Type: HSQL Database Engine Server
    * Driver: org.hsqldb.jdbcDriver
