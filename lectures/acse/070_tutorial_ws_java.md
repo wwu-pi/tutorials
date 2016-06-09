@@ -13,7 +13,7 @@ title: Accessing a Web Service from Java
 <ul>
   <li>From the command line, execute "<small><tt>wsimport -keep &lt;URL of WSDL&gt;</tt></small>". This will generate Java source and class files.
   <ul>
-    <li>Above command assumes that your PATH environment variable includes the "bin" folder from the JDK installation. If this is not the case, <a href="010_setting_up_the_dev_environment.html">modify the environment variable</a> or use the full path to wsimport.</li>
+    <li>Above command assumes that your PATH environment variable includes the "bin" folder from the JDK installation. If this is not the case, [modify the environment variable](010_setting_up_the_dev_environment.html) or use the full path to wsimport.</li>
   </ul>
   </li>
   <li>Import the generated source files into your Eclipse project: "File-&gt;Import" -&gt; "General &gt; File System"</li>
