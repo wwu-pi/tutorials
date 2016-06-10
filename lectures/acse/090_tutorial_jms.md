@@ -7,15 +7,16 @@ title: JMS
 <h2>Configure HornetQ</h2>
 <p>To enable JMS in your WildFly server, the configuration file standalone.xml has to be modified. Changes can be found in the <a class="download" href="standalone.diff">diff file</a>. Add the lines that are marked with '+' at the beginning of the line to your configuration file. <br /> To provide a queue within the WildFly you can either specify them within the configuration file of the server, or by providing a file META-INF/hornetq-jms.xml within your EJB project. We recommend using the last method, as it is easier to handle within the group (see also <a href="https://github.com/wwu-pi/acse-statistics-with-mom">JMS Example</a>). </p>
 <p>To provide a topic 'StatisticsTopic' the file should contain the following:</p>
-<pre>
-	<?xml version="1.0" encoding="UTF-8"?>
-		<messaging-deployment xmlns="urn:jboss:messaging-activemq-deployment:1.0">
-			<server name="hornetq">
-				<jms-destinations>
-					<jms-topic name="StatisticsTopic">
-						<entry name="topic/StatisticsTopic" />
-					</jms-topic>
-				</jms-destinations>
-			</server>
-		</messaging-deployment>
-</pre>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+	<messaging-deployment xmlns="urn:jboss:messaging-activemq-deployment:1.0">
+		<server name="hornetq">
+			<jms-destinations>
+				<jms-topic name="StatisticsTopic">
+					<entry name="topic/StatisticsTopic" />
+				</jms-topic>
+			</jms-destinations>
+		</server>
+	</messaging-deployment>
+```
+
