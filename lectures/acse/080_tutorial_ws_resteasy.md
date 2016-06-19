@@ -7,8 +7,8 @@ title: Using a Java EE RESTEasy resource
 
 This tutorial will show how to import a Java EE RESTEasy application using the example of a simple adder application. It allows you to quickly get started with Eclipse and RESTEasy.
 
-1. Download the [adder service application source files](https://github.com/wwu-pi/resteasy-example/archive/master.zip) ([Project on GitHub](https://github.com/wwu-pi/resteasy-example)) to a temporary folder.
-1. Import the archive as described in the [basic Java EE tutorial](020_tutorial_jboss_project.html#import). 
+1. Download or clone the adder service application source files ([Project on GitHub](https://github.com/wwu-pi/resteasy-example)) to a temporary folder.
+1. Import the project as described in the [basic Java EE tutorial](020_tutorial_jboss_project.html#import). 
 
     ![RESTEasy project in Eclipse](images/resteasy_project.png)
     Imported Project *AdderServiceResteasy*
@@ -18,9 +18,26 @@ This tutorial will show how to import a Java EE RESTEasy application using the e
 1. Also try the <a href="http://localhost:8080/AdderClientResteasy/index.xhtml">sample client</a> that uses the RESTEasy web service.
 
 ### Enabling RESTEasy
+There are two ways to enable RESTEasy: via the web.xml or via an application.
+
+#### web.xml
 Using a dynamic web project, add the following to your `WEB-INF/web.xml` in order to let RESTEasy discover your resources:
 
     <servlet-mapping>
         <servlet-name>javax.ws.rs.core.Application</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+
+	
+#### application
+Create a new class that extends the `Application` interface
+    
+```
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("/api")
+public class AdderServiceApplication extends Application {
+
+}
+```
