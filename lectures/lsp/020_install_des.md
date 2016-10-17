@@ -4,9 +4,9 @@ title: Installing Datalog Educational System
 ---
 **Mac:**
 
-1. `brew install homebrew/science/<formula>`
+1. `brew install homebrew/science/des`
    
-   Or `brew tap homebrew/science` and then `brew install <formula>`.
+   Or `brew tap homebrew/science` and then `brew install des`.
 
 **Windows and Mac:**
 
