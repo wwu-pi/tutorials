@@ -21,10 +21,10 @@ title: Installing Drools
 3. Install Drools:
    * Select **Help** > **Install New Software...**.
    
-   * In the **Work with:** combo box type: http://download.jboss.org/drools/release/6.1.0.Final/org.drools.updatesite/
+   * In the **Work with:** combo box type: http://download.jboss.org/drools/release/6.4.0.Final/org.drools.updatesite/
    
    * Select all.
-   ![Select all](images/drools_plugin.png)
+   ![Select all](images/drools/plugin.png)
    
    * Make sure the checkbox "Contact all update sites during install to find required software" is checked.
 
