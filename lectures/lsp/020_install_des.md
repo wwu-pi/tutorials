@@ -27,7 +27,7 @@ title: Installing Datalog Educational System
 
 Note that there is only a 32-bit version for Ubuntu. Therefore we could not test the installation routine.
 
-1. [Download](http://prdownloads.sourceforge.net/des/DES3.11ACIDE0.16Linux32SICStus.zip?download) Datalog Educational System (DES).
+1. [Download](http://prdownloads.sourceforge.net/des/DES4.1ACIDE0.17Linux32SICStus.zip?download) Datalog Educational System (DES).
 
 2. Unzip the archive to a folder of your choice.
 
