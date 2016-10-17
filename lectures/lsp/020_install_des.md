@@ -2,12 +2,16 @@
 layout: recipe
 title: Installing Datalog Educational System
 ---
+**Mac:**
+1. `brew install homebrew/science/<formula>`
+    Or `brew tap homebrew/science` and then `brew install <formula>`.
 
 **Windows and Mac:**
 
 1. [Download](http://www.fdi.ucm.es/profesor/fernan/des/html/download.html) Datalog Educational System (DES).
 
-   * We recommend using versions with GUI built with SWI-Prolog, e.g. [Win 32-bit](http://sourceforge.net/projects/des/files/des/des3.8/DES3.8ACIDE0.16Windows32SWI.zip/download?use_mirror=netcologne&download=), [Win 64-bit](http://sourceforge.net/projects/des/files/des/des3.8/DES3.8ACIDE0.16Windows64SWI.zip/download?use_mirror=heanet&download=) or [Mac 64-bit](http://sourceforge.net/projects/des/files/des/des3.8/DES3.8ACIDE0.16MacOSX64SWI.zip/download?use_mirror=heanet&download=)
+   * We recommend using versions with GUI built with SWI-Prolog, e.g. [Win 32-bit](http://prdownloads.sourceforge.net/des/DES4.1ACIDE0.17Windows32SWI.zip?download), [Win 64-bit](http://prdownloads.sourceforge.net/des/DES4.1ACIDE0.17Windows64SWI.zip?download) or [Mac 64-bit](http://prdownloads.sourceforge.net/des/DES4.1ACIDE0.17MacOSX64SWI.zip?download)
+   
    
 2. Unzip the archive to a folder of your choice.
 
