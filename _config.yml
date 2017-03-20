@@ -18,17 +18,17 @@ lectures:
 #   name: contact name
 contacts:
   acse:
-    url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/fabian-wrede
-    name: Fabian Wrede
+    url: https://www.wi.uni-muenster.de/department/pi/people/christoph-rieger
+    name: Christoph Rieger
   eai:
-    url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/jan-ernsting
-    name: Jan Ernsting
+    url: https://www.wi.uni-muenster.de/department/pi/people/christoph-rieger
+    name: Christoph Rieger
   mdsd:
-    url: https://www.wi.uni-muenster.de/de/institut/gruppen/pi/personen/claus-alexander-usener
-    name: Claus Alexander Usener
+    url: https://www.wi.uni-muenster.de/department/pi/people/christoph-rieger
+    name: Christoph Rieger
   lsp:
-    url: https://www.wi.uni-muenster.de/department/groups/pi/people/jan-dagefoerde
-    name: Jan Dageförde
+    url: https://www.wi.uni-muenster.de/department/pi/people/vincent-von-hof
+    name: Vincent von Hof
 
 # excluded from Jekyll conversion
 exclude:
