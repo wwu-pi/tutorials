@@ -12,27 +12,27 @@ title: Setting up the Development Environment
 
 ## <a id="jdk" name="jdk" />Installing the latest JDK
 
-1. Make sure that the latest version of the **Java Development Kit** (JDK 8 Update 77 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
-1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 8 Update 77** or later) for the operating system of your computer.
-1. **Install** the **JDK** to a directory on your computer, e.g. **``C:\Java\jdk8_77``**.
-1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk8_77``.
+1. Make sure that the latest version of the **Java Development Kit** (JDK 8 Update 121 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
+1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 8 Update 121** or later) for the operating system of your computer.
+1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_121`` on Windows.
+1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_121``.
 
 ## <a id="wildfly" name="wildfly" />Installing WildFly
 
-1. **Get** the latest stable version of the **WildFly Application Server** (**10.0.0.Final**) from [http://wildfly.org/downloads/](http://wildfly.org/downloads/) (``wildfly-10.0.0.Final.zip``).
-1. **Extract** the **zip** archive to a directory on your computer, e.g. ``C:\ACSE``. The path must **not contain any spaces**. A new directory, e.g. ``C:\ACSE\wildfly-10.0.0.Final``, containing the WildFly files will be created.
-1. Use the script ``<WildFly directory>\bin\standalone.bat`` to start the WildFly server and check the installation. After startup, you should be able to access the web server at [http://localhost:8080](http://localhost:8080).
-1. Open the link **Administration Console** and follow the instructions to add a new management user.
-1. After creating a user revisit the **Administration Console**.
-1. Go to [**Deployments**](http://localhost:9990/console/App.html#standalone-deployments) and click **Add** to upload [hsqldb.jar](hsqldb.jar). Click **Next**, select the hsqldb.jar, and click **Next**. Make sure that the deployed file is **enabled** and click **Finish**.
-1. Go to **Configuration** > **Subsystems** > **Datasources** > **Non-XA** and click **Add**. Use the following information to create a datasource:
+1. **Get** the latest stable version of the **WildFly Application Server** (**10.0.0.Final**) from [http://wildfly.org/downloads/](http://wildfly.org/downloads/) (``wildfly-10.1.0.Final.zip``).
+1. **Extract** the **zip** archive to a directory on your computer, e.g. ``C:\ACSE``. The path must **not contain any spaces**. A new directory, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, containing the WildFly files will be created.
+1. Use the script ``<WildFly directory>\bin\standalone.bat`` (Windows) or ``<WildFly directory>\bin\standalone.sh`` (Linux) to start the WildFly server and check the installation. After startup, you should be able to access the web server at [http://localhost:8080](http://localhost:8080).
+1. Open the link [**Administration Console**](http://localhost:8080/console) and follow the instructions to add a new management user (if asked, the user needs not to be added to a group).
+1. After creating a user revisit the [**Administration Console**](http://localhost:8080/console).
+1. Go to [**Deployments**](http://localhost:9990/console/App.html#standalone-deployments) and click **Add** to upload [hsqldb.jar](hsqldb.jar). Click **Next** to upload a new deployment, select the hsqldb.jar, and click **Next**. Make sure that the deployed file is **enabled** and click **Finish**.
+1. Go to **Configuration** > **Subsystems** > **Datasources** > **Non-XA** and click **Add**. Choose the **Custom** data source and use the following information to create a datasource:
 
-   * Datasource: **Custom**
    * Name: **DefaultDS**
    * JNDI Name: **java:/DefaultDS**
    * JDBC Driver: Click **Detected Driver** and choose **hsqldb.jar**
    * Connection URL: **jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}localDB;shutdown=true**
    * username: **sa**
+   * password can be left blank
 
 1. Ensure that the **datasource** is **enabled** (Configuration > Subsystems > Datasources > Non-XA > DefaultDS).
 1. In order to stop the server, press CTRL-C in the console window that was opened during step 3.
@@ -117,4 +117,4 @@ Continue with the [setup of your first Java EE project](020_tutorial_jboss_proje
 ## <a id="envvar" name="envvar" />How To Set Environment Variables
 
 * **Windows XP**: Open the Control Panel (*Systemsteuerung*) from the Start Menu, switch to Classic View (*Klassische Ansicht*) if necessary, open the System Control Panel applet (*System*), select the Advanced tab (*Erweitert*), and click on the Environment Variables button (*Umgebungsvariablen*).
-* **Windows 7**: Control Panel (*Systemsteuerung*) - System - choose Advanced System Settings (*Erweiterte Systemeinstellungen*) on the left - Advanced tab (*Erweitert*) - Environment Variables button (*Umgebungsvariablen*)
+* **Windows 7 / 8 / 10**: Control Panel (*Systemsteuerung*) - System - choose Advanced System Settings (*Erweiterte Systemeinstellungen*) on the left - Advanced tab (*Erweitert*) - Environment Variables button (*Umgebungsvariablen*)
