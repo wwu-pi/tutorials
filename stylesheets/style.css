@@ -546,7 +546,7 @@ pre > code { display: block; }
 
 .footer {
     border-top: 1px solid #eee;
-    padding-top: 42px;
+    padding-top: 20px;
     font-size: 12px;
     color: #888;
 }
@@ -560,7 +560,7 @@ pre > code { display: block; }
 }
 
 .content-block {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .content-full {
@@ -941,5 +941,3 @@ green:     #859900;
     p, h2, h3 { orphans: 3; widows: 3; }
     h2, h3 { page-break-after: avoid; }
 }
-
-
