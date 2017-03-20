@@ -11,6 +11,10 @@
   <section class="sidebar-block">
     <h5 class="sidebar-title">Overview</h5>
     <ol class="navigation chapters-list">
+      {% capture url %}/lectures/general{% endcapture %}
+      {% capture indexurl %}{{ url }}/{% endcapture %}
+      {% include sidebar_content.html %}
+
       {% for chapter in site.lectures %}
         {% capture url %}/lectures/{{ chapter | replace: ' ', '_' | downcase }}{% endcapture %}
         {% capture indexurl %}{{ url }}/{% endcapture %}
@@ -18,10 +22,6 @@
             {% include sidebar_content.html %}
           {% endif %}
       {% endfor %}
-
-      {% capture url %}/lectures/general{% endcapture %}
-      {% capture indexurl %}{{ url }}/{% endcapture %}
-      {% include sidebar_content.html %}
     </ol>
   </section>
 
