@@ -5,8 +5,8 @@ layout: recipe
 
 ### GitHub for free
 
-Enable your account to receive a free micro plan (5 private repositories) on [github.com/edu](https://github.com/edu).
-Before you request the free micro plan, ensure that you added your *uni-muenster.de* Email address to your GitHub account by [editing your profile](https://github.com/settings/emails).
+Enable your account to receive a free developer plan (with unlimited private repositories) on [github.com/edu](https://github.com/edu).
+Before you request the free plan, ensure that you added your *uni-muenster.de* Email address to your GitHub account by [editing your profile](https://github.com/settings/emails) (it does not need to be the primary e-mail address).
 
 ### Usage
 
@@ -23,4 +23,4 @@ For day-to-day operations users employ various interfaces such as:
 * [SourceTree for Windows+Mac](http://www.sourcetreeapp.com/)
 * [SmartGit](http://freecode.com/projects/smartgit)
 
-Or one of many [other interfaces](http://git-scm.com/downloads/guis).
+Or one of many [other graphical user interfaces](http://git-scm.com/downloads/guis).
