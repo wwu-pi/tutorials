@@ -9,7 +9,7 @@
   </section>
 
   <section class="sidebar-block">
-    <h5 class="sidebar-title"><a href="{{site.url}}">Overview</a></h5>
+    <h5 class="sidebar-title">Overview</h5>
     <ol class="navigation chapters-list">
       {% for chapter in site.lectures %}
         {% capture url %}/lectures/{{ chapter | replace: ' ', '_' | downcase }}{% endcapture %}

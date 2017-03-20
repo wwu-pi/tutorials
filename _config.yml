@@ -5,9 +5,9 @@ url: https://wwu-pi.github.io/tutorials
 # - use the directory name within the lectures directory
 lectures:
  - acse
+ - lsp
  - eai
  - mdsd
- - lsp
 
 # contact data for each lecture is maintained here
 # - use the same lecture name as above for lectures
