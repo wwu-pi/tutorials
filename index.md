@@ -4,7 +4,7 @@ title: overview
 ---
 
 {% comment %}
-INFO: To change this content, please edit /_include/index.md
+INFO: To change this content, please edit /_includes/index.md
 {% endcomment%}
 
 {% include index.md %}
