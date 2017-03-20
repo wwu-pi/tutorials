@@ -15,23 +15,27 @@
   <body>
     {% include body_top.html %}
     <section class="container">
-      
+
       {% include header.html %}
 
       <section class="content">
 
       <article class="content-block">
           {{ content }}
-          
+
           <div class="table_of_content">
-            <div class="dimmed">Table of Content</div>
+            <div><strong>Table of Content</strong></div>
                 {% capture url %}/lectures/{{ curr_lecture }}{% endcapture %}
                 {% capture indexurl %}{{ url }}/{% endcapture %}
                 {% assign no_index_print = true %}
-                {% include sidebar_content.html %} 
+                {% include sidebar_content.html %}
                 {% assign no_index_print = nil %}
             </div>
+
+        </article>
+
         {% include footer.html %}
+
       </section>
 
     </section>
