@@ -55,10 +55,10 @@ Docker is a containerization system that simplifies the development and deployme
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
-<!--1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
+1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
    1. Once restarted, open **Window** > **Preferences**.
    1. Choose **Java** > **Editor** > **Content Assist** > **Advanced**.
-   1. Enable *Java Proposals*.-->
+   1. Enable *Java Proposals*.
 
 ## <a id="install" name="install"></a>Installing Docker
 

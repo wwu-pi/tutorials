@@ -80,10 +80,10 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
-<!--1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
+1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
    1. Once restarted, open **Window** > **Preferences**.
    1. Choose **Java** > **Editor** > **Content Assist** > **Advanced**.
-   1. Enable *Java Proposals*.-->
+   1. Enable *Java Proposals*.
 
 ## <a id="jbosstools" name="jbosstools" />Installing JBoss Tools for Eclipse
 
