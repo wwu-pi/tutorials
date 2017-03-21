@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: Working with Docker
+title: Setting up the development environment
 ---
 Docker is a containerization system that simplifies the development and deployment of software. In ACSE, it is used to avoid overly complex manual configuration steps of the development environment.
 
