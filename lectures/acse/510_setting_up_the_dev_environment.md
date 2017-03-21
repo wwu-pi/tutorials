@@ -81,10 +81,8 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
         _for data-centric technologies_
 
     ![](images/install_software.png)
-    Eclipse --> Install New Software...
 
     ![](images/install_software_selected.png)
-    Selected new software for Eclipse
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.

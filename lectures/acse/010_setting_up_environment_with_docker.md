@@ -6,12 +6,11 @@ Docker is a containerization system that simplifies the development and deployme
 
 ## Contents
 
-1. [Installing Docker](#install)
 1. [Installing the latest JDK](#jdk)
 1. [Installing Eclipse](#eclipse)
 1. [Extending Eclipse](#plugins)
+1. [Installing Docker](#install)
 1. [Installing JBoss Tools](#jbosstools)
-1. [Deploy to application server from Eclipse](#deploy)
 
 ## <a id="jdk" name="jdk"></a>Installing the latest JDK
 
@@ -53,11 +52,9 @@ Docker is a containerization system that simplifies the development and deployme
       * **Data Tools Platform Extender SDK**
         _for data-centric technologies_
 
-    ![Eclipse --> Install New Software...](images/install_software.png)
-    Eclipse --> Install New Software...
+    ![](images/install_software.png)
 
-    ![Selected new software for Eclipse](images/install_software_selected.png)
-    Selected new software for Eclipse
+    ![](images/install_software_selected.png)
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
