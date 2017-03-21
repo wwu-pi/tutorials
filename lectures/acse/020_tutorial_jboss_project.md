@@ -11,7 +11,7 @@ title: Creating Java EE projects with JBoss Tools
 
 ## <a id="precond" name="precond" />Preconditions
 * Make sure **WildFly** and **Eclipse with JBoss Tools Plug-in** are properly **installed** and configured ([tutorial](010_setting_up_the_dev_environment)).
-* **Start Eclipse with JBoss Tools Plug-in** and make sure the **Java EE perspective** is **opened**.
+* **Start Eclipse** and make sure the **Java EE perspective** is opened.
 * Make sure that a **WildFly 10 Runtime Server** is configured in Eclipse as outlined in the [first tutorial](010_setting_up_the_dev_environment).
 
 ## <a id="import" name="import" />Importing the Example Application into Eclipse
@@ -58,7 +58,7 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
 1. Click **"Finish"**. (Do **not** switch to the JPA perspective if asked to do so.)
 1. **Open** the file **``persistence.xml``** (under "JPA Content" or under ``src/META-INF/``) and switch to the **"Source" tab**. **Modify** the **node** **``persistence-unit``** to match the following snippet:
-          
+
         <persistence-unit name="Test-Persistence">
           <jta-data-source>java:/DefaultDS</jta-data-source>
           <properties>
@@ -66,10 +66,10 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
               value="create-drop"/>
           </properties>
         </persistence-unit>
-             
+
      This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".
-            
-1. To **create** your first **Entity**, right-click on the project, select *New* > *JPA Entity* and follow the wizard. <small>You may not use class names that coincide with SQL keywords such as order. Moreover, member names may not contain special characters such as underscores.</small>
+
+1. To create your first **Entity**, right-click on the project, select *New* > *JPA Entity* and follow the wizard (you may not use class names that coincide with SQL keywords such as "order". Moreover, member names may not contain special characters such as underscores).
 
 ### <a id="create-ejb" name="create-ejb" />New EJB Project
 1. Select *File* > *New* > *EJB Project* from the menu bar.
@@ -77,7 +77,7 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
 1. After clicking **"Next" twice** we **disable** the **"Create an EJB Client Jar..."** check box. For the moment we do not need a separate EJB client jar file.
 1. A click on **"Finish"** will create a new EJB project.
-1. To **create** a **Session Bean**, right-click on the project, select *New* > *Session Bean (EJB 3.x)* and follow the wizard.
+1. To create a **Session Bean**, right-click on the project, select *New* > *Session Bean (EJB 3.x)* and follow the wizard.
 
 ### <a id="create-web" name="create-web" />New Web Project
 1. Select *File* > *New* > *Dynamic Web Project* from the menu bar.
@@ -88,8 +88,8 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
 1. XHTML Pages with Facelets markup go into the ``WebContent`` folder (*New* > *Other...*). Backing beans should be created as Java classes under ``JavaResources/src``.
 
 Please refer to [steps 7-9](#import-deploy) of the section "[Importing the Example Application into Eclipse](#import-deploy)" in order to learn how to deploy your project.
-You might want to include a *welcome file list* in your web.xml. 
-         
+You might want to include a *welcome file list* in your web.xml.
+
     <welcome-file-list>
         <welcome-file>yourFirstPage.xhtml</welcome-file>
     </welcome-file-list>
