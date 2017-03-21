@@ -20,9 +20,9 @@ This tutorial briefly explains the steps needed to create a new DSL project with
     ![Launch Runtime Eclipse](images/LaunchRuntimeEclipse.png)
     "Launch Runtime Eclipse" from the Run dropdown menu
 
-1. In the new instance, create a new general project.
+1. In the new instance, create a new general Java project.
    Therein, create a new file that has the extension specified in step 3 (e.g., *test.cdsl*).
    Click *Yes* when asked if you want to add the Xtext nature to the project.
 1. Start typing ...
 
-For further details, please refer to the [Xtext documentation](http://www.eclipse.org/Xtext/documentation.html). If you have any questions, please direct them to the Learnweb discussion forum.
+For further details, please refer to the [Xtext documentation](http://www.eclipse.org/Xtext/documentation/). If you have any questions, feel free to ask them in the Learnweb discussion forum.
