@@ -34,6 +34,7 @@ Docker is a containerization system that simplifies the development and deployme
 ## <a id="plugins" name="plugins"></a>Extending Eclipse
 1. Select **Help** > **Install new Software...**
 1. From the dropdown menu, select **Neon** as the site to work with (the screenshots show another example).
+![](images/install_software.png)
 1. Wait for the list of software to load and select all of the following items:
 
    * _Modeling_
@@ -51,10 +52,6 @@ Docker is a containerization system that simplifies the development and deployme
    * _Database Development_
       * **Data Tools Platform Extender SDK**
         _for data-centric technologies_
-
-    ![](images/install_software.png)
-
-    ![](images/install_software_selected.png)
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.

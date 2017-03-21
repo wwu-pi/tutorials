@@ -16,10 +16,7 @@ title: Manually setting up the Development Environment
 ## <a id="jdk" name="jdk" />Installing the latest JDK
 
 1. Make sure that the latest version of the **Java Development Kit** (JDK 8 Update 121 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
-1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**![](images/install_software.png)
-Eclipse --> Install New Software...
-
-![](images/install_software_selected.png)Java SE 8 Update 121** or later) for the operating system of your computer.
+1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 8 Update 121** or later) for the operating system of your computer.
 1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_121`` on Windows.
 1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_121``.
 
@@ -62,6 +59,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 ## <a id="plugins" name="plugins" />Extending Eclipse
 1. Select **Help** > **Install new Software...**
 1. From the dropdown menu, select **Neon** as the site to work with (the screenshots show another example).
+![](images/install_software.png)
 1. Wait for the list of software to load and select all of the following items:
 
    * _Modeling_
@@ -79,10 +77,6 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
    * _Database Development_
       * **Data Tools Platform Extender SDK**
         _for data-centric technologies_
-
-    ![](images/install_software.png)
-
-    ![](images/install_software_selected.png)
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
