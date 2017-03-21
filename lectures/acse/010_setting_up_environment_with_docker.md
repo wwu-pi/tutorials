@@ -1,47 +1,26 @@
 ---
 layout: recipe
-title: Setting up the Development Environment
+title: Working with Docker
 ---
+Docker is a containerization system that simplifies the development and deployment of software. In ACSE, it is used to avoid overly complex manual configuration steps of the development environment.
+
 ## Contents
 
+1. [Installing Docker](#install)
 1. [Installing the latest JDK](#jdk)
-1. [Installing WildFly](#wildfly)
 1. [Installing Eclipse](#eclipse)
 1. [Extending Eclipse](#plugins)
 1. [Installing JBoss Tools](#jbosstools)
+1. [Deploy to application server from Eclipse](#deploy)
 
-## <a id="jdk" name="jdk" />Installing the latest JDK
+## <a id="jdk" name="jdk"></a>Installing the latest JDK
 
 1. Make sure that the latest version of the **Java Development Kit** (JDK 8 Update 121 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
 1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 8 Update 121** or later) for the operating system of your computer.
 1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_121`` on Windows.
 1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_121``.
 
-## <a id="wildfly" name="wildfly" />Installing WildFly
-
-1. **Get** the latest stable version of the **WildFly Application Server** (**10.0.0.Final**) from [http://wildfly.org/downloads/](http://wildfly.org/downloads/) (``wildfly-10.1.0.Final.zip``).
-1. **Extract** the **zip** archive to a directory on your computer, e.g. ``C:\ACSE``. The path must **not contain any spaces**. A new directory, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, containing the WildFly files will be created.
-1. Use the script ``<WildFly directory>\bin\standalone.bat`` (Windows) or ``<WildFly directory>\bin\standalone.sh`` (Linux) to start the WildFly server and check the installation. After startup, you should be able to access the web server at [http://localhost:8080](http://localhost:8080).
-1. Open the link [**Administration Console**](http://localhost:8080/console) and follow the instructions to add a new management user (if asked, the user needs not to be added to a group).
-1. After creating a user revisit the [**Administration Console**](http://localhost:8080/console).
-1. Go to [**Deployments**](http://localhost:9990/console/App.html#standalone-deployments) and click **Add** to upload [hsqldb.jar](hsqldb.jar). Click **Next** to upload a new deployment, select the hsqldb.jar, and click **Next**. Make sure that the deployed file is **enabled** and click **Finish**.
-1. Go to **Configuration** > **Subsystems** > **Datasources** > **Non-XA** and click **Add**. Choose the **Custom** data source and use the following information to create a datasource:
-
-   * Name: **DefaultDS**
-   * JNDI Name: **java:/DefaultDS**
-   * JDBC Driver: Click **Detected Driver** and choose **hsqldb.jar**
-   * Connection URL: **jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}localDB;shutdown=true**
-   * username: **sa**
-   * password can be left blank
-
-1. Ensure that the **datasource** is **enabled** (Configuration > Subsystems > Datasources > Non-XA > DefaultDS).
-1. In order to stop the server, press CTRL-C in the console window that was opened during step 3.
-
-<div class="footnote" markdown="1">
-Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB driver and add the data source: ``./jboss-cli.sh -c "deploy ~/Downloads/hsqldb.jar,data-source add --driver-name=hsqldb.jar --use-ccm=false --jta=false --user-name=sa --name=DefaultDS --jndi-name=java:/DefaultDS --connection-url=jdbc:hsqldb:\$\{jboss.server.data.dir\}\$\{/\}hypersonic\$\{/\}localDB;shutdown=true"``
-</div>
-
-## <a id="eclipse" name="eclipse" />Installing Eclipse
+## <a id="eclipse" name="eclipse"></a>Installing Eclipse
 
 1. **Download** the **Eclipse IDE for Java and DSL Developers** for your operating system (version 4.6.2, *Neon.2*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon2](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon2). It includes:
 
@@ -53,7 +32,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 1. **Extract** the downloaded **archive** to a directory on your computer, e.g. ``C:\ACSE``. This will create a sub directory, like ``C:\ACSE\eclipse``.
 1. **Start Eclipse**. The ``eclipse.exe`` is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and **select a workspace directory**, for example ``C:\ACSE\projects``. This path must **not contain any spaces** either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click **"OK"** to close the dialog and get to the workbench window.
 
-## <a id="plugins" name="plugins" />Extending Eclipse
+## <a id="plugins" name="plugins"></a>Extending Eclipse
 1. Select **Help** > **Install new Software...**
 1. From the dropdown menu, select **Neon** as the site to work with (the screenshots show another example).
 1. Wait for the list of software to load and select all of the following items:
@@ -87,7 +66,27 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
    1. Choose **Java** > **Editor** > **Content Assist** > **Advanced**.
    1. Enable *Java Proposals*.-->
 
-## <a id="jbosstools" name="jbosstools" />Installing JBoss Tools for Eclipse
+## <a id="install" name="install"></a>Installing Docker
+
+1. Which tool to install depends on your operating system:
+
+ * Windows 10 Professional 64-bit: [Docker for Windows](https://www.docker.com/docker-windows)
+ * Other Windows versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+ * Linux (various distros): [Docker for Linux](https://docs.docker.com/engine/installation/linux/)
+ * Mac 2010 or newer with macOS 10.10.3. Yosemite or newer: [Docker for Mac](https://www.docker.com/docker-mac)
+ * Older Mac versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+
+2. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
+<br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) but not yet fixed and should have no impact on running docker.</small>
+
+3. You can continue with the Docker tutorial starting from [Step 3](https://docs.docker.com/engine/getstarted/step_one/#step-3-verify-your-installation) to get some insights in how to handle Docker and learn about containers, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
+
+
+## <a id="jbosstools" name="jbosstools"></a>Installing JBoss Tools for Eclipse
+
+For some exercises, you are required to deploy an application to the Wildfly application server.
+To spare the manual installation and configuration, you can use the provided docker container.
+However, you need to configure Eclipse in order to automatically deploy your work in progress from within your IDE.
 
 1. Select **Help** > **Eclipse Marketplace...** from the Eclipse menu bar. Choose "Eclipse Marketplace" if prompted for a marketplace catalog.
 1. Search for "JBoss Tools" and **install JBoss Tools**, version 4.4.3.Final.
@@ -100,12 +99,22 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
     ![](images/eclipse_jee_perspective.png)
 
    If the Java EE button is not visible you can change to the Java EE perspective via *Window* > *Perspective* > *Open Perspective* > *Other...* . In the "Open Perspective" dialog double click the Java EE entry.
-1. **Activate** the **"Servers" view** tab in the lower right of the window. **Right-click** the empty area and **select "New-&gt;Server"** as shown in this screenshot:
-    ![](images/eclipse_server_view.png)
-1. In the "New Server" window select **"WildFly 10.1"** (from the JBoss Community category) **as server type** and click **"Next"** two times.
-    ![](images/eclipse_new_server.png)
 
-   **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.
+1. In your file system, create a folder, e.g. ``C:\ACSE\deployments``.
+1. In your Docker command line, check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
+1. Now fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
+```
+docker run -it -p 8080:8080 -v /c/ACSE/deployments/:/opt/jboss/wildlfy/standalone/deployments/:rw jboss/wildfly
+```
+<small>Watch the conversion of Windows backslashes to forward slashes and that "C:\" becomes "/c/" (on Linux you can use normal paths).</small>
+
+1. In Eclipse, activate the **"Servers" view** tab in the lower right of the window. **Right-click** the empty area and **select "New > Server"** as shown in this screenshot:
+    ![](images/eclipse_server_view.png)
+1. In the "New Server" window select **"WildFly 10.1"** (from the JBoss Community category) **as server type**, set the docker IP as "Server's host name" and click **Next**.
+    ![](images/eclipse_new_server.png)
+1. On the next pages, **activate** "Server lifecycle is externally managed", and after clicking **Next** untick both checkboxes in the "Deployment scanners" section.
+1. Finally, **select** "Use a custom deploy folder" and set it to your local folder created in Step 8.
+<!--   **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.-->
 1. In the "Servers" view **select the newly created server** and click the green **start button**.
     ![](images/eclipse_server_start.png)
 

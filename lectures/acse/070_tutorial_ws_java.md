@@ -12,7 +12,7 @@ In order to conveniently access a Web service, regardless of its implementation 
 This procedure uses standardized JAX-WS technology (part of Java EE). It does, however, require more manual work than alternative 2.
 
 1. From the command line, execute ``wsimport -keep <URL of WSDL>``. This will generate Java source and class files.
-  <small>Above command assumes that your PATH environment variable includes the "bin" folder from the JDK installation. If this is not the case, <a href="010_setting_up_the_dev_environment.html">modify the environment variable</a> or use the full path to wsimport.</small>
+  <small>Above command assumes that your PATH environment variable includes the "bin" folder from the JDK installation. If this is not the case, [modify the environment variable](010_setting_up_environment_with_docker.html) or use the full path to wsimport.</small>
 1. Import the generated source files into your Eclipse project: *File* > *Import* > *General* > *File System*
 1. Depending on the Web service, several message and data classes will be generated. Furthermore, there will be a service class which inherits from *javax.xml.ws.Service*. Instantiate this class or, in a managed environment, use dependency injection with the annotation ``@WebServiceRef`` (see lecture). The service instance will offer a method that returns a proxy providing the Web service operation(s).
 
