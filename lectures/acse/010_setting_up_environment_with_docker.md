@@ -69,10 +69,16 @@ Docker is a containerization system that simplifies the development and deployme
    * Mac (2010+) with macOS 10.10.3 Yosemite or newer: [Docker for Mac](https://www.docker.com/docker-mac)
    * Older Mac versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
-2. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
+1. For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
+  1. In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.
+  1. Open VirtualBox, select the "default" machine, click on **Change**.
+  1. In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.
+  1. Close all dialogues with **OK**.
+
+1. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
 <br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) but not yet fixed and should have no impact on running docker.</small>
 
-3. You can continue with the Docker tutorial starting from [Step 3](https://docs.docker.com/engine/getstarted/step_one/#step-3-verify-your-installation) to get some insights in how to handle Docker and learn about containers, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
+1. You can continue with the Docker tutorial starting from [Step 3](https://docs.docker.com/engine/getstarted/step_one/#step-3-verify-your-installation) to get some insights in how to handle Docker and learn about containers, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
 
 
 ## <a id="jbosstools" name="jbosstools"></a>Installing JBoss Tools for Eclipse
@@ -81,7 +87,9 @@ For some exercises, you are required to deploy an application to the Wildfly app
 To spare the manual installation and configuration, you can use the provided docker container.
 However, you need to configure Eclipse in order to automatically deploy your work from within your IDE.
 
-1. Select **Help** > **Eclipse Marketplace...** from the Eclipse menu bar. Choose "Eclipse Marketplace" if prompted for a marketplace catalog.
+1. Unfortunately, you still need a Wildfly installation for Eclipse to work. Therefore **get** the latest stable version of the **WildFly Application Server** (**10.1.0.Final**) from [http://wildfly.org/downloads/](http://wildfly.org/downloads/) (``wildfly-10.1.0.Final.zip``).
+1. **Extract** the **zip** archive to a directory on your computer, e.g. ``C:\ACSE``. The path must **not contain any spaces**. A new directory, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, containing the WildFly files will be created.
+1. In Eclipse, select **Help** > **Eclipse Marketplace...** from the Eclipse menu bar. Choose "Eclipse Marketplace" if prompted for a marketplace catalog.
 1. Search for "JBoss Tools" and **install JBoss Tools**, version 4.4.3.Final.
 1. Wait until "Calculating requirements..." has finished and make sure that all features are checked, then **confirm**.
 1. **Accept the license agreements** and click **"Finish"**.
@@ -93,21 +101,24 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 
    If the Java EE button is not visible you can change to the Java EE perspective via *Window* > *Perspective* > *Open Perspective* > *Other...* . In the "Open Perspective" dialog double click the Java EE entry.
 
-1. In your file system, create a folder, e.g. ``C:\ACSE\deployments``.
+1. In your file system, create a folder, e.g. ``C:\ACSE\dockerShared\deployments`` (for Windows users with Docker Toolbox, it must be in the shared folder established while [installing Docker](#install)).
 1. In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
 ```
-docker run -it -p 8080:8080 -v /c/ACSE/deployments/:/opt/jboss/wildlfy/standalone/deployments/:rw jboss/wildfly
+docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw jboss/wildfly
 ```
-<small>Watch the conversion of Windows backslashes to forward slashes and that "C:\" becomes "/c/" (on Linux you can use normal paths).</small>
+<small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
 
 1. Now check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
 1. In Eclipse, activate the **"Servers" view** tab in the lower right of the window. **Right-click** the empty area and **select "New > Server"** as shown in this screenshot:
     ![](images/eclipse_server_view.png)
-1. In the "New Server" window select **"WildFly 10.1"** (from the JBoss Community category) **as server type**, set the docker IP as "Server's host name" and click **Next**.
+1. In the "New Server" window select **"WildFly 10.0"** (from the JBoss Community category) **as server type**, set the docker IP as "Server's host name" and click **Next**.
     ![](images/eclipse_new_server.png)
-1. On the next pages, **activate** "Server lifecycle is externally managed", and after clicking **Next** untick both checkboxes in the "Deployment scanners" section.
-1. Finally, **select** "Use a custom deploy folder" and set it to your local folder created in Step 8.
-<!--   **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.-->
+1. On the next pages, **activate** "Server lifecycle is externally managed" and click **Next**.
+1. **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.
+1. Right-click the new Wildfly entry and choose **"Open"**.
+1. In the "Deployment Scanners" section, **unselect** both checkboxes.
+1. In the Deployment tab (bottom of the window), switch to the "Deployment" tab, **select** "Use a custom deployment folder" and set both paths to your local folder created in Step 8.
+1. **Click on the "Save" icon** in the menu bar.
 1. In the "Servers" view **select the newly created server** and click the green **start button**.
     ![](images/eclipse_server_start.png)
 
