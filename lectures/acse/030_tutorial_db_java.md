@@ -4,7 +4,7 @@ title: Accessing HSQLDB from Eclipse
 ---
 
 ## Preconditions
-  * Make sure **Eclipse with JBoss Tools Plug-in** is **installed** properly ([tutorial](010_tutorial_jboss_setup)).
+  * Make sure **Eclipse with JBoss Tools Plug-in** is **installed** properly ([tutorial](010_setting_up_environment_with_docker.html)).
   * **HSQLDB's connection string** should include **``shutdown=true``** on **WildFly** to ensure the database is closed correctly. This is needed to overcome the limitation of [*in-process* HSQLDBs](http://www.hsqldb.org/doc/guide/running-chapt.html#rgc_inprocess) supporting just one, its creating, thread.
   * Alternatively (No need to stop WildFly server): Start [HSQLDB as a dedicated instance](http://www.hsqldb.org/doc/guide/running-chapt.html#rgc_hsql_server) and [change JDBC connection strings accordingly](http://www.hsqldb.org/doc/guide/running-chapt.html#rgc_connecting_db).
 

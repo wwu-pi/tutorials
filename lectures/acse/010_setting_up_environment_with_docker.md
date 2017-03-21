@@ -64,11 +64,11 @@ Docker is a containerization system that simplifies the development and deployme
 
 1. Which tool to install depends on your operating system:
 
- * Windows 10 Professional 64-bit: [Docker for Windows](https://www.docker.com/docker-windows)
- * Other Windows versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
- * Linux (various distros): [Docker for Linux](https://docs.docker.com/engine/installation/linux/)
- * Mac 2010 or newer with macOS 10.10.3. Yosemite or newer: [Docker for Mac](https://www.docker.com/docker-mac)
- * Older Mac versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+   * Windows 10 Professional 64-bit: [Docker for Windows](https://www.docker.com/docker-windows)
+   * Other Windows versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+   * Linux (various distros): [Docker for Linux](https://docs.docker.com/engine/installation/linux/)
+   * Mac (2010+) with macOS 10.10.3 Yosemite or newer: [Docker for Mac](https://www.docker.com/docker-mac)
+   * Older Mac versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
 2. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
 <br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) but not yet fixed and should have no impact on running docker.</small>
@@ -80,7 +80,7 @@ Docker is a containerization system that simplifies the development and deployme
 
 For some exercises, you are required to deploy an application to the Wildfly application server.
 To spare the manual installation and configuration, you can use the provided docker container.
-However, you need to configure Eclipse in order to automatically deploy your work in progress from within your IDE.
+However, you need to configure Eclipse in order to automatically deploy your work from within your IDE.
 
 1. Select **Help** > **Eclipse Marketplace...** from the Eclipse menu bar. Choose "Eclipse Marketplace" if prompted for a marketplace catalog.
 1. Search for "JBoss Tools" and **install JBoss Tools**, version 4.4.3.Final.
@@ -95,13 +95,13 @@ However, you need to configure Eclipse in order to automatically deploy your wor
    If the Java EE button is not visible you can change to the Java EE perspective via *Window* > *Perspective* > *Open Perspective* > *Other...* . In the "Open Perspective" dialog double click the Java EE entry.
 
 1. In your file system, create a folder, e.g. ``C:\ACSE\deployments``.
-1. In your Docker command line, check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
-1. Now fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
+1. In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
 ```
 docker run -it -p 8080:8080 -v /c/ACSE/deployments/:/opt/jboss/wildlfy/standalone/deployments/:rw jboss/wildfly
 ```
 <small>Watch the conversion of Windows backslashes to forward slashes and that "C:\" becomes "/c/" (on Linux you can use normal paths).</small>
 
+1. Now check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
 1. In Eclipse, activate the **"Servers" view** tab in the lower right of the window. **Right-click** the empty area and **select "New > Server"** as shown in this screenshot:
     ![](images/eclipse_server_view.png)
 1. In the "New Server" window select **"WildFly 10.1"** (from the JBoss Community category) **as server type**, set the docker IP as "Server's host name" and click **Next**.
