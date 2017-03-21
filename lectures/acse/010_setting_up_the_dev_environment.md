@@ -43,7 +43,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 
 ## <a id="eclipse" name="eclipse" />Installing Eclipse
 
-1. **Download** the **Eclipse IDE for Java and DSL Developers** for your operating system (version 4.5.2, *Mars.2*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars2](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/mars2). It includes:
+1. **Download** the **Eclipse IDE for Java and DSL Developers** for your operating system (version 4.6.3, *Neon.3*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon3rc3](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon3rc3). It includes:
 
    * EMF -- Eclipse Modeling Framework SDK (for basic modelling features),
    * Xtext Complete SDK (for implementing DSLs), and
@@ -55,7 +55,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 
 ## <a id="plugins" name="plugins" />Extending Eclipse
 1. Select **Help** > **Install new Software...**
-1. From the dropdown menu, select **Mars** as the site to work with (the screenshots show another example).
+1. From the dropdown menu, select **Neon** as the site to work with (the screenshots show another example).
 1. Wait for the list of software to load and select all of the following items:
 
    * _Modeling_
@@ -72,7 +72,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
         _for development of JSF web apps_
    * _Database Development_
       * **Data Tools Platform Extender SDK**
-        _for data centric technologies_
+        _for data-centric technologies_
 
     ![Eclipse --> Install New Software...](images/install_software.png)
     Eclipse --> Install New Software...
@@ -80,17 +80,17 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
     ![Selected new software for Eclipse](images/install_software_selected.png)
     Selected new software for Eclipse
 
-1. Click *Next* two times, check *Accept*, click *Finish* and wait for the packages to be installed.
-1. Click Yes when prompted to restart.
-1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
+1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
+1. Click **Yes** when prompted to restart.
+<!--1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
    1. Once restarted, open **Window** > **Preferences**.
-   1. Choose **Java** > **Editor** > **Content Assisst** > **Advanced**.
-   1. Enable *Java Proposals*.
+   1. Choose **Java** > **Editor** > **Content Assist** > **Advanced**.
+   1. Enable *Java Proposals*.-->
 
 ## <a id="jbosstools" name="jbosstools" />Installing JBoss Tools for Eclipse
 
 1. Select **Help** > **Eclipse Marketplace...** from the Eclipse menu bar. Choose "Eclipse Marketplace" if prompted for a marketplace catalog.
-1. Search for "JBoss Tools" and **install JBoss Tools**, version 4.3.0.Final.
+1. Search for "JBoss Tools" and **install JBoss Tools**, version 4.4.3.Final.
 1. Wait until "Calculating requirements..." has finished and make sure that all features are checked, then **confirm**.
 1. **Accept the license agreements** and click **"Finish"**.
 1. When the download is complete, a security warning regarding "Unsigned content" will appear. **Accept with "OK"** to begin with the installation.
@@ -102,10 +102,10 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
    If the Java EE button is not visible you can change to the Java EE perspective via *Window* > *Perspective* > *Open Perspective* > *Other...* . In the "Open Perspective" dialog double click the Java EE entry.
 1. **Activate** the **"Servers" view** tab in the lower right of the window. **Right-click** the empty area and **select "New-&gt;Server"** as shown in this screenshot:
     ![](images/eclipse_server_view.png)
-1. In the "New Server" window select **"WildFly 10.0"** (from the JBoss Community category) **as server type** and click **"Next"** two times.
+1. In the "New Server" window select **"WildFly 10.1"** (from the JBoss Community category) **as server type** and click **"Next"** two times.
     ![](images/eclipse_new_server.png)
 
-   **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.0.0.Final``, and **click "Finish"**.
+   **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.
 1. In the "Servers" view **select the newly created server** and click the green **start button**.
     ![](images/eclipse_server_start.png)
 
