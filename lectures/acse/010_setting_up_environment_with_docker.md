@@ -63,7 +63,6 @@ Docker is a containerization system that simplifies the development and deployme
 ## <a id="install" name="install"></a>Installing Docker
 
 1. Which tool to install depends on your operating system:
-
    * Windows 10 Professional 64-bit: [Docker for Windows](https://www.docker.com/docker-windows)
    * Other Windows versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
    * Linux (various distros): [Docker for Linux](https://docs.docker.com/engine/installation/linux/)
