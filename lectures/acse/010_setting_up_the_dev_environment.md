@@ -43,7 +43,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 
 ## <a id="eclipse" name="eclipse" />Installing Eclipse
 
-1. **Download** the **Eclipse IDE for Java and DSL Developers** for your operating system (version 4.6.3, *Neon.3*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon3rc3](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon3rc3). It includes:
+1. **Download** the **Eclipse IDE for Java and DSL Developers** for your operating system (version 4.6.2, *Neon.2*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon2](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon2). It includes:
 
    * EMF -- Eclipse Modeling Framework SDK (for basic modelling features),
    * Xtext Complete SDK (for implementing DSLs), and
