@@ -31,8 +31,14 @@ This tutorial will show how to import a Java EE application using the example of
     ![](images/library_add.png)
 
 1. Select the **library application** and click *Add >*, then "Finish. <small>Should Eclipse fail to display any applications, ensure that all EAR projects in the workspace contain an ``EarContent`` directory. In case the project was imported from VCS (e.g. git), an empty ``.gitkeep`` file within ``EarContent`` will ensure the directory is always present.</small>
-1. **Start the server** and wait until the application has been deployed.
-1. The Library web application is accessible under [http://localhost:8080/Library-Web/](http://localhost:8080/Library-Web/).
+1. You don't have to start the server from within Eclipse, as it is managed by Docker. In the "Servers" tab, **right-click** on the WildFly server and **click on "Publish"**. This will create the package in the deployment directory specified in [Step 11 of the installation](010_setting_up_environment_with_docker.html).
+1. Check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
+1. In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
+```
+docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw jboss/wildfly
+```
+<small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
+1. Wait until the application has been deployed. The Library web application is then accessible under [http://dockerIP:8080/Library-Web/](http://dockerIP:8080/Library-Web/) using the IP from Step 10.
 
 ---
 

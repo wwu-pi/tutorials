@@ -118,10 +118,8 @@ docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/stan
 1. In the "Deployment Scanners" section, **unselect** both checkboxes.
 
     ![](images/eclipse_server_config.png)
-1. In the Deployment tab (bottom of the window), switch to the "Deployment" tab, **select** "Use a custom deployment folder" and set both paths to your local folder created in Step 8.
+1. In the Deployment tab (bottom of the window), switch to the "Deployment" tab, **select** "Use a custom deployment folder" and set both paths to your local folder created in Step 11.
 1. **Click on the "Save" icon** in the menu bar.
-1. In the "Servers" view **select the newly created server** and click the green **start button**.
-    ![](images/eclipse_server_start.png)
 
 Congratulations, you have successfully set-up your development environment!
 Continue with the [setup of your first Java EE project](020_tutorial_jboss_project.html).
