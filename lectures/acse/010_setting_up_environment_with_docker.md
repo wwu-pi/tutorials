@@ -100,7 +100,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 1. Check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
 1. In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
 ```
-docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw jboss/wildfly
+docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
 ```
 <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
 
