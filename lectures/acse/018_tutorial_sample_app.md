@@ -9,18 +9,18 @@ title: Running and extending a sample app
 1. [Importing the Example Application into Eclipse](#import)
 
 ## <a id="run" name="run"></a>Running the Example Application
-In case you ask yourself, what benefit exists from installing and configuring Docker, the main reason is the simple deployment of applications through Docker containers.
-To see the example Java EE application of a library application in action requires only two steps:
+In case you ask yourself what is the benefit of installing and configuring Docker, the main reason is the simple deployment of applications through Docker containers.
+To see the example Java EE application of a library application in action requires only three steps:
 
-1. Make sure **Docker** is properly **installed** and configured ([tutorial](010_setting_up_environment_with_docker.html)).
+1. Make sure **Docker** is properly **installed**  ([tutorial](010_setting_up_environment_with_docker.html)) and you know your Docker IP (run `docker-machine ip` on your command line).
 1. Open your Docker command line and run
 ```
 docker run -it -p 8080:8080 wwupi/library-application
 ```
-
+1. Wait while Docker loads the application and then go to `http://Docker-IP:8080/Library-Web` in your browser. That's all it takes!
 
 ## <a id="import" name="import"></a>Importing the Example Application into Eclipse
-This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next section, [Creating an Enterprise Application from scratch](#create), will show how you can create your own Java EE projects.
+This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next tutorial, [Creating Java EE projects with JBoss Tools](020_tutorial_jboss_project.html), will show how you can create your own Java EE projects.
 
 1. Make sure **Docker** and **Eclipse with JBoss Tools Plug-in** are properly **installed** and configured ([tutorial](010_setting_up_environment_with_docker.html)).
 1. **Start Eclipse** and make sure the **Java EE perspective** is opened.
