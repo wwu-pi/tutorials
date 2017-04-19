@@ -66,17 +66,6 @@ Docker is a containerization system that simplifies the development and deployme
     * **Xtend IDE** (at least version 2.11!)
       _for model-to-text transformations_
 
-   <!--* _Web, XML, Java EE and OSGi Enterprise Development_
-      * **Eclipse Java EE Developer Tools**
-        _for Java EE development_
-      * **Eclipse Java Web Developer Tools**
-        _for Java Web development_
-      * **JSF Tools**
-        _for development of JSF web apps_
-   * _Database Development_
-      * **Data Tools Platform Extender SDK**
-        _for data-centric technologies_ -->
-
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
 
