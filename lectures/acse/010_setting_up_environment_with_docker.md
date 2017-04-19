@@ -40,13 +40,7 @@ Docker is a containerization system that simplifies the development and deployme
 
 ## <a id="eclipse" name="eclipse"></a>Installing Eclipse
 
-1. **Download** the **Eclipse IDE for Java EE Developers** for your operating system (version 4.6.3, *Neon.3*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3). It includes:
-
-   * EMF -- Eclipse Modeling Framework SDK (for basic modelling features),
-   * Xtext Complete SDK (for implementing DSLs), and
-   * Xtend IDE (useful for model-to-text transformations).
-
-
+1. **Download** the **Eclipse IDE for Java EE Developers** for your operating system (version 4.6.3, *Neon.3*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3).
 1. **Extract** the downloaded **archive** to a directory on your computer, e.g. ``C:\ACSE``. This will create a sub directory, like ``C:\ACSE\eclipse``.
 1. **Start Eclipse**. The ``eclipse.exe`` is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and **select a workspace directory**, for example ``C:\ACSE\projects``. This path must **not contain any spaces** either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click **"OK"** to close the dialog and get to the workbench window.
 
