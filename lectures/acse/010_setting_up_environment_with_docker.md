@@ -40,7 +40,7 @@ Docker is a containerization system that simplifies the development and deployme
 
 ## <a id="eclipse" name="eclipse"></a>Installing Eclipse
 
-1. **Download** the **Eclipse IDE for Java and DSL Developers** for your operating system (version 4.6.2, *Neon.2*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon2](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon2). It includes:
+1. **Download** the **Eclipse IDE for Java EE Developers** for your operating system (version 4.6.3, *Neon.3*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3). It includes:
 
    * EMF -- Eclipse Modeling Framework SDK (for basic modelling features),
    * Xtext Complete SDK (for implementing DSLs), and
@@ -52,16 +52,21 @@ Docker is a containerization system that simplifies the development and deployme
 
 ## <a id="plugins" name="plugins"></a>Extending Eclipse
 1. Select **Help** > **Install new Software...**
-1. From the dropdown menu, select **Neon** as the site to work with (the screenshots show another example).
+1. Click **Add...**, enter `http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/` as new update site, and click **OK**.
+1. From the dropdown menu, select **All Available Sites** to work with (the screenshots show another example).
 ![](images/install_software.png)
 1. Wait for the list of software to load and select all of the following items:
 
-   * _Modeling_
-      * **QVT Operational SDK**
-        _for model-to-model transformations._
-      * **Papyrus UML**
-        _for UML diagrams_
-   * _Web, XML, Java EE and OSGi Enterprise Development_
+  * _Modeling_
+    * **QVT Operational SDK**
+      _for model-to-model transformations_
+  * _Xtext_
+    * **Xtext Complete SDK** (at least version 2.11!)
+      _for domain-specific language development_
+    * **Xtend IDE** (at least version 2.11!)
+      _for model-to-text transformations_
+
+   <!--* _Web, XML, Java EE and OSGi Enterprise Development_
       * **Eclipse Java EE Developer Tools**
         _for Java EE development_
       * **Eclipse Java Web Developer Tools**
@@ -70,7 +75,7 @@ Docker is a containerization system that simplifies the development and deployme
         _for development of JSF web apps_
    * _Database Development_
       * **Data Tools Platform Extender SDK**
-        _for data-centric technologies_
+        _for data-centric technologies_ -->
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
@@ -108,7 +113,7 @@ docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/stan
 1. In the "New Server" window select **"WildFly 10.0"** (from the JBoss Community category) **as server type**, set the docker IP from step 12 as "Server's host name" and click **Next**.
 
     ![](images/eclipse_new_server.png)
-1. On the next pages, **activate** "Server lifecycle is externally managed", **deactivate** "Assign a runtime to this server", and click **Next**.
+1. On the next pages, **activate** "Server lifecycle is externally managed", and click **Next**.
 
     ![](images/eclipse_new_server_2.png)
 1. **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.
