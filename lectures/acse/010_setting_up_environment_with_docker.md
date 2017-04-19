@@ -50,7 +50,6 @@ Docker is a containerization system that simplifies the development and deployme
 1. From the dropdown menu, select **All Available Sites** to work with (the screenshots show another example).
 ![](images/install_software.png)
 1. Wait for the list of software to load and select all of the following items:
-
   * _Modeling_
     * **QVT Operational SDK**
       _for model-to-model transformations_
@@ -59,7 +58,6 @@ Docker is a containerization system that simplifies the development and deployme
       _for domain-specific language development_
     * **Xtend IDE** (at least version 2.11!)
       _for model-to-text transformations_
-
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
 
