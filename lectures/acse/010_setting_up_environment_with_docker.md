@@ -21,11 +21,22 @@ Docker is a containerization system that simplifies the development and deployme
    * Mac (2010+) with macOS 10.10.3 Yosemite or newer: [Docker for Mac](https://www.docker.com/docker-mac)
    * Older Mac versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 
-1. For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
-  1. In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.
-  1. Open VirtualBox, select the "default" machine, click on **Change**.
-  1. In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.
-  1. Close all dialogues with **OK**.
+   <div class="accordion vertical">
+       <section id="windows">
+           <h2><a href="#windows">Windows 10 Professional 64-bit</a></h2><div>
+           Install the current [Docker for Windows](https://www.docker.com/docker-windows) application.
+           In case this does not work you can fall back to the [Docker Toolbox](#windowslegacy) for other Windows versions.
+       </div></section>
+       <section id="windowslegacy">
+   		      <h2><a href="#windowslegacy">Other Windows versions</a></h2><div>
+   		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
+              1. In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.
+              1. Open VirtualBox, select the "default" machine, click on **Change**.
+              1. In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.
+              1. Close all dialogues with **OK**.
+   		  </div></section>
+
+  </div>
 
 1. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
 <br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) but not yet fixed and should have no impact on running docker.</small>
@@ -59,7 +70,7 @@ Docker is a containerization system that simplifies the development and deployme
         _for domain-specific language development_
       * **Xtend IDE** (at least version 2.11!)
         _for model-to-text transformations_
-        
+
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
 
