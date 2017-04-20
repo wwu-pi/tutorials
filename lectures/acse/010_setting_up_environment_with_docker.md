@@ -23,19 +23,20 @@ Docker is a containerization system that simplifies the development and deployme
 
    <div class="accordion vertical">
        <section id="windows">
-           <h2><a href="#windows">Windows 10 Professional 64-bit</a></h2><div>
+           <h5><a href="#windows">Windows 10 Professional 64-bit</a></h5><div>
            Install the current [Docker for Windows](https://www.docker.com/docker-windows) application.
            In case this does not work you can fall back to the [Docker Toolbox](#windowslegacy) for other Windows versions.
        </div></section>
        <section id="windowslegacy">
-   		      <h2><a href="#windowslegacy">Other Windows versions</a></h2><div>
+   		      <h5><a href="#windowslegacy">Other Windows versions</a></h5><div>
    		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
-              1. In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.
-              1. Open VirtualBox, select the "default" machine, click on **Change**.
-              1. In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.
-              1. Close all dialogues with **OK**.
+            <ol>
+              <li> In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.
+              </li><li> Open VirtualBox, select the "default" machine, click on **Change**.
+              </li><li> In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.
+              </li><li> Close all dialogues with **OK**.
+              </ol>
    		  </div></section>
-
   </div>
 
 1. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
