@@ -88,6 +88,7 @@
 .content pre {
     font-size: 0.8em;
     padding: 12px 24px;
+	box-sizing:border-box;
 }
 
 .tip {
