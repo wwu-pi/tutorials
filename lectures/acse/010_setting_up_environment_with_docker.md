@@ -88,43 +88,89 @@ For some exercises, you are required to deploy an application to the Wildfly app
 To spare the manual installation and configuration, you can use the provided docker container.
 However, you need to configure Eclipse in order to automatically deploy your work from within your IDE.
 
-1. Unfortunately, you still need a Wildfly installation locally on your machine for Eclipse to work properly (although it does not need to be configured). Therefore **get** the latest stable version of the **WildFly Application Server** (**10.1.0.Final**) from [http://wildfly.org/downloads/](http://wildfly.org/downloads/) (``wildfly-10.1.0.Final.zip``).
-1. **Extract** the **zip** archive to a directory on your computer, e.g. ``C:\ACSE``. The path must **not contain any spaces**. A new directory, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, containing the WildFly files will be created.
-1. Open Eclipse, select **Help** > **Eclipse Marketplace...** from the Eclipse menu bar.
-1. Search for "JBoss Tools" and **install JBoss Tools** (current version 4.4.3.Final).
-1. Wait until "Calculating requirements..." has finished and make sure that all features are checked, then **confirm**.
-1. When receiving "the installation cannot be completed as requested", choose the selected option to modify the items being installed and **Confirm**.
-1. **Accept the license agreements** and click **Finish**.
-1. When the download is complete, a security warning regarding "Unsigned content" will appear. **Accept with "OK"** to begin with the installation.
-1. When prompted to do so, **Restart Now**.
-1. After **closing** the **"Welcome" window**, switch to the "Java EE" perspective via *Window* > *Perspective* > *Open Perspective* > *Other...*. The selected perspective is indicated in the upper right corner as shown in the following figure:
+<div class="accordion vertical">
+  <section id="docker">
+      <h5><a href="#docker">Linux</a></h5><div>
+      <ol>
+      </li><li> Open Eclipse, select **Help** > **Eclipse Marketplace...** from the Eclipse menu bar.
+      </li><li> Search for "JBoss Tools" and **install JBoss Tools** (current version 4.4.3.Final).
+      </li><li> Wait until "Calculating requirements..." has finished and make sure that all features are checked, then **confirm**.
+      </li><li> When receiving "the installation cannot be completed as requested", choose the selected option to modify the items being installed and **Confirm**.
+      </li><li> **Accept the license agreements** and click **Finish**.
+      </li><li> When the download is complete, a security warning regarding "Unsigned content" will appear. **Accept with "OK"** to begin with the installation.
+      </li><li> When prompted to do so, **Restart Now**.
+      </li><li> After **closing** the **"Welcome" window**, switch to the "Java EE" perspective via *Window* > *Perspective* > *Open Perspective* > *Other...*. The selected perspective is indicated in the upper right corner as shown in the following figure:
 
-    ![](images/eclipse_jee_perspective.png)
+          ![](images/eclipse_jee_perspective.png)
 
-1. In your file system, create a folder, e.g. ``C:\ACSE\dockerShared\deployments`` (for Windows users with Docker Toolbox, it must be in the shared folder established while [installing Docker](#install)).
-1. Check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
-1. In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
-```
-docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
-```
-<small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
+      </li><li> In your Docker command line, fire up the docker container for the Wildfly server using
+      ```
+      docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2017
+      ```
+      In your browser, you should be able to see a Wildlfy welcome page when navigating to `http://localhost:8080`.
 
-1. In Eclipse, activate the **"Servers" view** tab in the lower part of the window via *Window* > *Show view* > *Others...* . **Right-click** the empty area and **select "New > Server"** as shown in this screenshot:
+      </li><li> In Eclipse, activate the **"Servers" view** tab in the lower part of the window via *Window* > *Show view* > *Others...* . **Right-click** the empty area and **select "New > Server"** as shown in this screenshot:
 
-    ![](images/eclipse_server_view.png)
-1. In the "New Server" window select **"WildFly 10.0"** (from the JBoss Community category) **as server type**, set the docker IP from step 12 as "Server's host name" and click **Next**.
+          ![](images/eclipse_server_view.png)
+      </li><li> In the "New Server" window select **"WildFly 10.0"** (from the JBoss Community category) **as server type**, set `localhost` as "Server's host name" and click **Next**.
 
-    ![](images/eclipse_new_server.png)
-1. On the next pages, **activate** "Server lifecycle is externally managed", and click **Next**.
+          ![](images/eclipse_new_server.png)
+      </li><li> On the next pages, **choose** "Remote" server,**choose** the server to be controlled by "Management Operations", **activate** "Server lifecycle is externally managed", **deselect** to assign a runtime, and click **Finish**.
 
-    ![](images/eclipse_new_server_2.png)
-1. **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.
-1. Right-click the new Wildfly entry and choose **"Open"**.
-1. In the "Deployment Scanners" section, **unselect** both checkboxes.
+          ![](images/eclipse_new_server_2b.png)
+      </li><li> Right-click the new Wildfly entry and choose **"Open"**.
+      </li><li> In the Management Login Credentials tab **enter** the user name "admin" and the password "docker#admin".
+      </li><li> In the "Deployment Scanners" section, **unselect** both checkboxes.
 
-    ![](images/eclipse_server_config.png)
-1. In the Deployment tab (bottom of the window), switch to the "Deployment" tab, **select** "Use a custom deployment folder" and set both paths to your local folder created in Step 11.
-1. **Click on the "Save" icon** in the menu bar.
+          ![](images/eclipse_server_config.png)
+      </li><li> **Click on the "Save" icon** in the menu bar.
+      </li></ol>
+  </div></section>
+   <section id="windows">
+       <h5><a href="#windows">Docker Toolbox users (old Windows/Mac version)</a></h5><div>
+
+       Unfortunately, you still need a Wildfly installation locally on your machine for Eclipse to work properly (although it does not need to be configured).
+       <ol>
+       <li>Therefore **get** the latest stable version of the **WildFly Application Server** (**10.1.0.Final**) from [http://wildfly.org/downloads/](http://wildfly.org/downloads/) (``wildfly-10.1.0.Final.zip``).
+       </li><li>Extract the **zip** archive to a directory on your computer, e.g. ``C:\ACSE``. The path must **not contain any spaces**. A new directory, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, containing the WildFly files will be created.
+       </li><li> Open Eclipse, select **Help** > **Eclipse Marketplace...** from the Eclipse menu bar.
+       </li><li> Search for "JBoss Tools" and **install JBoss Tools** (current version 4.4.3.Final).
+       </li><li> Wait until "Calculating requirements..." has finished and make sure that all features are checked, then **confirm**.
+       </li><li> When receiving "the installation cannot be completed as requested", choose the selected option to modify the items being installed and **Confirm**.
+       </li><li> **Accept the license agreements** and click **Finish**.
+       </li><li> When the download is complete, a security warning regarding "Unsigned content" will appear. **Accept with "OK"** to begin with the installation.
+       </li><li> When prompted to do so, **Restart Now**.
+       </li><li> After **closing** the **"Welcome" window**, switch to the "Java EE" perspective via *Window* > *Perspective* > *Open Perspective* > *Other...*. The selected perspective is indicated in the upper right corner as shown in the following figure:
+
+           ![](images/eclipse_jee_perspective.png)
+
+       </li><li> In your file system, create a folder, e.g. ``C:\ACSE\dockerShared\deployments`` (it must be in the shared folder established while [installing Docker](#install)).
+       </li><li> Check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
+       </li><li> In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
+       ```
+       docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
+       ```
+       <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
+
+       </li><li> In Eclipse, activate the **"Servers" view** tab in the lower part of the window via *Window* > *Show view* > *Others...* . **Right-click** the empty area and **select "New > Server"** as shown in this screenshot:
+
+           ![](images/eclipse_server_view.png)
+       </li><li> In the "New Server" window select **"WildFly 10.0"** (from the JBoss Community category) **as server type**, set the docker IP from step 12 as "Server's host name" and click **Next**.
+
+           ![](images/eclipse_new_server.png)
+       </li><li> On the next pages, **activate** "Server lifecycle is externally managed", and click **Next**.
+
+           ![](images/eclipse_new_server_2.png)
+       </li><li> **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.
+       </li><li> Right-click the new Wildfly entry and choose **"Open"**.
+       </li><li> In the "Deployment Scanners" section, **unselect** both checkboxes.
+
+           ![](images/eclipse_server_config.png)
+       </li><li> In the Deployment tab (bottom of the window), switch to the "Deployment" tab, **select** "Use a custom deployment folder" and set both paths to your local deployment folder created earlier (e.g. `C:\ACSE\dockerShared\deployments`).
+       </li><li> **Click on the "Save" icon** in the menu bar.
+       </li></ol>
+   </div></section>
+</div>
 
 Congratulations, you have successfully set-up your development environment!
 Continue with the [setup of your first Java EE project](020_tutorial_jboss_project.html).
