@@ -14,30 +14,37 @@ Docker is a containerization system that simplifies the development and deployme
 
 ## <a id="install" name="install"></a>Installing Docker
 
-1. Which tool to install depends on your operating system:
-   * Windows 10 Professional 64-bit: [Docker for Windows](https://www.docker.com/docker-windows)
-   * Other Windows versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
-   * Linux (various distros): [Docker for Linux](https://docs.docker.com/engine/installation/linux/)
-   * Mac (2010+) with macOS 10.10.3 Yosemite or newer: [Docker for Mac](https://www.docker.com/docker-mac)
-   * Older Mac versions: [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+Which tool to install depends on your operating system:
+<div class="accordion vertical">
+   <section id="windows">
+       <h5><a href="#windows">Windows 10 Professional 64-bit</a></h5><div>
+       Install the current <a href="https://www.docker.com/docker-windows">Docker for Windows</a> application.
+       In case this does not work you can fall back to the <a href="#windowslegacy">Docker Toolbox</a> for other Windows versions.
+   </div></section>
+   <section id="linux">
+       <h5><a href="#linux">Linux</a></h5><div>
+       Install the current <a href="https://docs.docker.com/engine/installation/linux/">Docker for Linux</a> application that is available for multiple distros.
+   </div></section>
+   <section id="mac">
+       <h5><a href="#mac">Mac (2010+) with macOS 10.10.3 Yosemite or newer</a></h5><div>
+       Install the current <a href="https://www.docker.com/docker-mac">Docker for Mac</a> application.
+   </div></section>
+   <section id="legacy">
+		      <h5><a href="#legacy">Other Windows or Mac versions</a></h5><div>
+          Older Versions of Windows or Mac that are not supported by the current tool can use the  <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox</a> application.
+          Internally, Docker is installed within a virtual machine so that you can use it.
+          However, this makes the environment setup a bit more complicated as will be highlighted in the following sections.
+          <br/><br/>
 
-   <div class="accordion vertical">
-       <section id="windows">
-           <h5><a href="#windows">Windows 10 Professional 64-bit</a></h5><div>
-           Install the current <a href="https://www.docker.com/docker-windows">Docker for Windows</a> application.
-           In case this does not work you can fall back to the <a href="#windowslegacy">Docker Toolbox</a> for other Windows versions.
-       </div></section>
-       <section id="windowslegacy">
-   		      <h5><a href="#windowslegacy">Other Windows versions</a></h5><div>
-   		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
-            <ol>
-              <li> In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.</li>
-              <li> Open VirtualBox, select the "default" machine, click on **Change**.</li>
-              <li> In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.</li>
-              <li> Close all dialogues with **OK**.</li>
-            </ol>
-   		  </div></section>
-  </div>
+		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
+        <ol>
+          <li> In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.</li>
+          <li> Open VirtualBox, select the "default" machine, click on **Change**.</li>
+          <li> In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.</li>
+          <li> Close all dialogues with **OK**.</li>
+        </ol>
+		  </div></section>
+</div>
 
 1. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
 <br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) but not yet fixed and should have no impact on running docker.</small>

@@ -134,7 +134,14 @@
 /* (Vertical) Accordion 
 (based on http://www.hongkiat.com/blog/create-css-based-content/)
 ========================================================================*/
-.accordion { width:830px; overflow:hidden; margin:10px auto; color:#474747; background:#414141; padding:10px; }
+.accordion { 
+	width:830px; 
+	overflow:hidden; 
+	margin:10px auto; 
+	color:#474747; 
+	background:#414141; 
+	padding:10px; 
+}
 
 /*Set style of open slide*/
 .accordion section:target { background:#FFF; padding:10px;}
@@ -142,7 +149,14 @@
 .accordion section:target h5 {width:100%;}
 .accordion section:target h5 a{ color:#333; padding:0;}
 .accordion section:target > div {display:block;}
-.accordion section h5 a{padding:8px 10px;display:block; font-size:16px; font-weight:normal;color:#eee; text-decoration:none; }
+.accordion section h5 a{
+	padding:8px 10px;
+	display:block; 
+	font-size:16px; 
+	font-weight:bold;
+	color:#eee; 
+	text-decoration:none; 
+}
 
 /*set style of closed slide*/
 .accordion section{ 
@@ -174,7 +188,11 @@
 /*Set height of the slide*/
 .vertical :target{ max-height:50em; width:97%; }
 
-.vertical section h5 { position:relative; left:0; top:-15px; }
+/*.vertical section h5 { 
+	position:relative; 
+	left:0; 
+	top:-15px; 
+}*/
 
 /*Set position of the number on the slide*/
 /*.vertical section:after{ top:-60px;left:810px;}
