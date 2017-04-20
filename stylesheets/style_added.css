@@ -155,12 +155,12 @@
 }
 .accordion section:hover {background:#444;}
 .accordion section > div { display:none; }
-.accordion section:after{
+/*.accordion section:after{
 	position:relative;
 	font-size:24px;
 	color:#000;
 	font-weight:bold;}
-.accordion section:after{content:'>';}
+.accordion section:after{content:'>';}*/
 
 .vertical section{ 
 	width:100%; 
@@ -172,10 +172,11 @@
   	transition:height 0.2s ease-out;
 }
 /*Set height of the slide*/
-.vertical :target{ height:250px; width:97%; }
+.vertical :target{ max-height:50em; width:97%; }
 
 .vertical section h5 { position:relative; left:0; top:-15px; }
 
 /*Set position of the number on the slide*/
-.vertical section:after{ top:-60px;left:810px;}
-.vertical section:target:after{ left:-9999px;}
+/*.vertical section:after{ top:-60px;left:810px;}
+.vertical section:target:after{ left:-9999px;}*/
+

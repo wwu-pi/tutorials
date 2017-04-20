@@ -24,18 +24,18 @@ Docker is a containerization system that simplifies the development and deployme
    <div class="accordion vertical">
        <section id="windows">
            <h5><a href="#windows">Windows 10 Professional 64-bit</a></h5><div>
-           Install the current [Docker for Windows](https://www.docker.com/docker-windows) application.
-           In case this does not work you can fall back to the [Docker Toolbox](#windowslegacy) for other Windows versions.
+           Install the current <a href="https://www.docker.com/docker-windows">Docker for Windows</a> application.
+           In case this does not work you can fall back to the <a href="#windowslegacy">Docker Toolbox</a> for other Windows versions.
        </div></section>
        <section id="windowslegacy">
    		      <h5><a href="#windowslegacy">Other Windows versions</a></h5><div>
    		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
             <ol>
-              <li> In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.
-              </li><li> Open VirtualBox, select the "default" machine, click on **Change**.
-              </li><li> In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.
-              </li><li> Close all dialogues with **OK**.
-              </ol>
+              <li> In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.</li>
+              <li> Open VirtualBox, select the "default" machine, click on **Change**.</li>
+              <li> In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.</li>
+              <li> Close all dialogues with **OK**.</li>
+            </ol>
    		  </div></section>
   </div>
 
