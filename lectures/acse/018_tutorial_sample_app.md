@@ -42,7 +42,7 @@ This tutorial will show how to import a Java EE application using the example of
 
 <div class="accordion vertical">
   <section id="runWithDocker">
-      <h5><a href="#jbossDocker">Docker for Linux/Windows/Mac</a></h5><div>
+      <h5><a href="#runWithDocker">Docker for Linux/Windows/Mac</a></h5><div>
       In your Docker command line, fire up the Docker container for the Wildfly server using
 
       <pre class="highlight"><code>docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2017
@@ -50,18 +50,18 @@ This tutorial will show how to import a Java EE application using the example of
 
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
       <br />
-      Now, <b>click on "Publish"</b> to create the package and deploy it to the server.
-      <br />,br />
+      <b>Right-click</b> on the WildFly server again and <b>click on "Publish"</b> to create the package and deploy it to the server.
+      <br /><br />
 
       Wait until the application has been deployed.
       The Library web application is then accessible under <a href="http://localhost:8080/Library-Web/">http://localhost:8080/Library-Web/</a> and the server output is shown in the Docker command line.
   </div></section>
    <section id="runWithToolbox">
-       <h5><a href="#jbossToolbox">Docker Toolbox (old Windows/Mac versions)</a></h5><div>
+       <h5><a href="#runWithToolbox">Docker Toolbox (old Windows/Mac versions)</a></h5><div>
+       Check the current IP of Docker using <code class="highlighter-rouge">docker-machine ip</code>.
+       On your local machine, this might output something like <code class="highlighter-rouge">192.168.99.100</code>.
+       <br /><br />
        In your Docker command line, fire up the Docker container for the Wildfly server using
-
-       Check the current IP of Docker using <code class="highlighter-rouge">docker-machine ip</code>. On your local machine, this might output something like <code class="highlighter-rouge">192.168.99.100</code>.
-
        <pre class="highlight"><code>docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
        </code></pre>
 
@@ -70,8 +70,8 @@ This tutorial will show how to import a Java EE application using the example of
 
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
       <br />
-      Now, <b>click on "Publish"</b> to create the package and deploy it to the server.
-      <br />,br />
+      <b>Right-click</b> on the WildFly server again and <b>click on "Publish"</b> to create the package and deploy it to the server.
+      <br /><br />
       Wait until the application has been deployed. The Library web application is then accessible under <a href="http://dockerIP:8080/Library-Web/">http://dockerIP:8080/Library-Web/</a> using the above IP.
       The server output is shown in the Docker command line.
    </div></section>
