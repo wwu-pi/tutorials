@@ -38,10 +38,10 @@ Which tool to install depends on your operating system:
 
 		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
         <ol>
-          <li> In your file system, create a folder, e.g. `C:\ACSE\dockerShared`.</li>
-          <li> Open VirtualBox, select the "default" machine, click on **Change**.</li>
-          <li> In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name `/dockerShared`. Also, **activate** the checkboxes for automatic mounting and persistent creation.</li>
-          <li> Close all dialogues with **OK**.</li>
+          <li> In your file system, create a folder, e.g. <code class="highlighter-rouge">C:\\ACSE\\dockerShared</code>.</li>
+          <li> Open VirtualBox, select the "default" machine, click on <b>Change</b>.</li>
+          <li> In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name <code class="highlighter-rouge">/dockerShared</code>. Also, <b>activate</b> the checkboxes for automatic mounting and persistent creation.</li>
+          <li> Close all dialogues with <b>OK</b>.</li>
         </ol>
 		  </div></section>
 </div>
@@ -105,16 +105,15 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 
       </li><li> In your Docker command line, fire up the docker container for the Wildfly server using
 
-      <pre class="highlight"><code>
-      docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2017
+      <pre class="highlight"><code>docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2017
       </code></pre>
 
-      In your browser, you should be able to see a Wildlfy welcome page when navigating to <code class="highlighter-rouge">http://localhost:8080`.
+      In your browser, you should be able to see a Wildlfy welcome page when navigating to <code class="highlighter-rouge">http://localhost:8080</code>.
 
       </li><li> In Eclipse, activate the <b>"Servers" view</b> tab in the lower part of the window via <em>Window</em> > <em>Show view</em> > <em>Others...</em> . <b>Right-click</b> the empty area and <b>select "New > Server"</b> as shown in this screenshot:
 
           <img href="images/eclipse_server_view.png" />
-      </li><li> In the "New Server" window select <b>"WildFly 10.0"</b> (from the JBoss Community category) <b>as server type</b>, set <code class="highlighter-rouge">localhost` as "Server's host name" and click <b>Next</b>.
+      </li><li> In the "New Server" window select <b>"WildFly 10.0"</b> (from the JBoss Community category) <b>as server type</b>, set <code class="highlighter-rouge">localhost</code> as "Server's host name" and click <b>Next</b>.
 
           <img href="images/eclipse_new_server.png" />
       </li><li> On the next pages, <b>choose</b> "Remote" server,<b>choose</b> the server to be controlled by "Management Operations", <b>activate</b> "Server lifecycle is externally managed", <b>deselect</b> to assign a runtime, and click <b>Finish</b>.
@@ -150,8 +149,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
        </li><li> Check the current IP of docker using <code class="highlighter-rouge">docker-machine ip</code>. On your local machine, this might output something like <code class="highlighter-rouge">192.168.99.100</code>.
        </li><li> In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
 
-       <pre class="highlight"><code>
-       docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
+       <pre class="highlight"><code>docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
        </code></pre>
 
        <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
