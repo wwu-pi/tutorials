@@ -10,14 +10,14 @@ title: Running and extending a sample app
 
 ## <a id="run" name="run"></a>Running the Example Application
 In case you ask yourself what is the benefit of installing and configuring Docker, the main reason is the simple deployment of applications through Docker containers.
-To see the example Java EE application of a library application in action requires only three steps:
+To see the Java EE example of a library application in action, only three steps are required:
 
 1. Make sure **Docker** is properly **installed**  ([tutorial](010_setting_up_environment_with_docker.html)) and you know your Docker IP (run `docker-machine ip` on your command line).
 1. Open your Docker command line and run
 ```
 docker run -it -p 8080:8080 wwupi/library-application
 ```
-1. Wait while Docker loads the application and then go to `http://Docker-IP:8080/Library-Web` in your browser. That's all it takes!
+1. Wait while Docker loads the application and then go to `http://DockerIP:8080/Library-Web` in your browser. That's all it takes!
 
 ## <a id="import" name="import"></a>Importing the Example Application into Eclipse
 This tutorial will show how to import a Java EE application using the example of a library application. It allows you to quickly get started with Eclipse, Java EE and JBoss Tools. The next tutorial, [Creating Java EE projects with JBoss Tools](020_tutorial_jboss_project.html), will show how you can create your own Java EE projects.
@@ -38,13 +38,45 @@ This tutorial will show how to import a Java EE application using the example of
     ![](images/library_add.png)
 
 1. Select the **library application** and click *Add >*, then "Finish. <small>Should Eclipse fail to display any applications, ensure that all EAR projects in the workspace contain an ``EarContent`` directory. In case the project was imported from VCS (e.g. git), an empty ``.gitkeep`` file within ``EarContent`` will ensure the directory is always present.</small>
-1. You don't have to start the server from within Eclipse, as it is managed by Docker. In the "Servers" tab, **right-click** on the WildFly server and **click on "Publish"**. This will create the package in the deployment directory specified in [Step 11 of the installation](010_setting_up_environment_with_docker.html).
-1. Check the current IP of docker using ``docker-machine ip``. On your local machine, this might output something like ``192.168.99.100``.
-1. In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
-```
-docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
-```
-<small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
-1. Wait until the application has been deployed. The Library web application is then accessible under [http://dockerIP:8080/Library-Web/](http://dockerIP:8080/Library-Web/) using the IP from Step 10.
+1. Finally, deploy the application to the Wildfly application server:
+
+<div class="accordion vertical">
+  <section id="runWithDocker">
+      <h5><a href="#jbossDocker">Docker for Linux/Windows/Mac</a></h5><div>
+      In your Docker command line, fire up the Docker container for the Wildfly server using
+
+      <pre class="highlight"><code>docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2017
+      </code></pre>
+
+      In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
+      <br />
+      Now, <b>click on "Publish"</b> to create the package and deploy it to the server.
+      <br />,br />
+
+      Wait until the application has been deployed.
+      The Library web application is then accessible under <a href="http://localhost:8080/Library-Web/">http://localhost:8080/Library-Web/</a> and the server output is shown in the Docker command line.
+  </div></section>
+   <section id="runWithToolbox">
+       <h5><a href="#jbossToolbox">Docker Toolbox (old Windows/Mac versions)</a></h5><div>
+       In your Docker command line, fire up the Docker container for the Wildfly server using
+
+       Check the current IP of Docker using <code class="highlighter-rouge">docker-machine ip</code>. On your local machine, this might output something like <code class="highlighter-rouge">192.168.99.100</code>.
+
+       <pre class="highlight"><code>docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
+       </code></pre>
+
+      <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
+      <br /><br />
+
+      In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
+      <br />
+      Now, <b>click on "Publish"</b> to create the package and deploy it to the server.
+      <br />,br />
+      Wait until the application has been deployed. The Library web application is then accessible under <a href="http://dockerIP:8080/Library-Web/">http://dockerIP:8080/Library-Web/</a> using the above IP.
+      The server output is shown in the Docker command line.
+   </div></section>
+</div>
+
+
 
 ---

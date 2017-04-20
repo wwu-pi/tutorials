@@ -115,15 +115,12 @@ However, you need to configure Eclipse in order to automatically deploy your wor
           <img src="images/eclipse_server_view.png" />
       </li><li> In the "New Server" window select <b>"WildFly 10.0"</b> (from the JBoss Community category) <b>as server type</b>, set <code class="highlighter-rouge">localhost</code> as "Server's host name" and click <b>Next</b>.
 
-          <img src="images/eclipse_new_server.png" />
-      </li><li> On the next pages, <b>choose</b> "Remote" server,<b>choose</b> the server to be controlled by "Management Operations", <b>activate</b> "Server lifecycle is externally managed", <b>deselect</b> to assign a runtime, and click <b>Finish</b>.
+          <img src="images/eclipse_new_server_b.png" />
+      </li><li> On the next pages, <b>choose</b> the "Remote" server option, <b>choose</b> the server to be controlled by "Management Operations", <b>activate</b> "Server lifecycle is externally managed", <b>deselect</b> to assign a runtime, and click <b>Finish</b>.
 
           <img src="images/eclipse_new_server_2b.png" />
       </li><li> Right-click the new Wildfly entry and choose <b>"Open"</b>.
       </li><li> In the Management Login Credentials tab <b>enter</b> the user name "admin" and the password "docker#admin".
-      </li><li> In the "Deployment Scanners" section, <b>unselect</b> both checkboxes.
-
-          <img src="images/eclipse_server_config.png" />
       </li><li> <b>Click on the "Save" icon</b> in the menu bar.
       </li></ol>
   </div></section>
@@ -132,7 +129,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 
        Unfortunately, you still need a Wildfly installation locally on your machine for Eclipse to work properly (although it does not need to be configured).
        <ol>
-       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/">http://wildfly.org/downloads/</a> (<code class="highlighter-rouge">wildfly-10.1.0.Final.zip</code>).
+       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/wildfly-10.1.0.Final.zip">http://wildfly.org/downloads/wildfly-10.1.0.Final.zip</a>.
        </li><li>Extract the <b>zip</b> archive to a directory on your computer, e.g. <code class="highlighter-rouge">C:\ACSE</code> The path must <b>not contain any spaces</b>. A new directory, e.g. <code class="highlighter-rouge">C:\ACSE\wildfly-10.1.0.Final</code>, containing the WildFly files will be created.
        </li><li> Open Eclipse, select <b>Help</b> > <b>Eclipse Marketplace...</b> from the Eclipse menu bar.
        </li><li> Search for "JBoss Tools" and <b>install JBoss Tools</b> (current version 4.4.3.Final).
@@ -175,7 +172,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 </div>
 
 Congratulations, you have successfully set-up your development environment!
-Continue with the [setup of your first Java EE project](020_tutorial_jboss_project.html).
+Continue with [running the sample application](018_tutorial_sample_app.html) or [setup your first Java EE project](020_tutorial_jboss_project.html).
 
 ## <a id="envvar" name="envvar" />How To Set Environment Variables
 
