@@ -38,7 +38,7 @@ Which tool to install depends on your operating system:
 
 		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
         <ol>
-          <li> In your file system, create a folder, e.g. <code class="highlighter-rouge">C:\\ACSE\\dockerShared</code>.</li>
+          <li> In your file system, create a folder, e.g. <code class="highlighter-rouge">C:\ACSE\dockerShared</code>.</li>
           <li> Open VirtualBox, select the "default" machine, click on <b>Change</b>.</li>
           <li> In the "Shared directory" tab, add a new entry that points to the local folder you just created and give it the name <code class="highlighter-rouge">/dockerShared</code>. Also, <b>activate</b> the checkboxes for automatic mounting and persistent creation.</li>
           <li> Close all dialogues with <b>OK</b>.</li>
@@ -89,8 +89,8 @@ To spare the manual installation and configuration, you can use the provided doc
 However, you need to configure Eclipse in order to automatically deploy your work from within your IDE.
 
 <div class="accordion vertical">
-  <section id="docker">
-      <h5><a href="#docker">Docker for Linux/Windows/Mac</a></h5><div>
+  <section id="jbossDocker">
+      <h5><a href="#jbossDocker">Docker for Linux/Windows/Mac</a></h5><div>
       <ol>
       <li> Open Eclipse, select <b>Help</b> > <b>Eclipse Marketplace...</b> from the Eclipse menu bar.
       </li><li> Search for "JBoss Tools" and <b>install JBoss Tools</b> (current version 4.4.3.Final).
@@ -127,13 +127,13 @@ However, you need to configure Eclipse in order to automatically deploy your wor
       </li><li> <b>Click on the "Save" icon</b> in the menu bar.
       </li></ol>
   </div></section>
-   <section id="windows">
-       <h5><a href="#windows">Docker Toolbox (old Windows/Mac versions)</a></h5><div>
+   <section id="jbossToolbox">
+       <h5><a href="#jbossToolbox">Docker Toolbox (old Windows/Mac versions)</a></h5><div>
 
        Unfortunately, you still need a Wildfly installation locally on your machine for Eclipse to work properly (although it does not need to be configured).
        <ol>
-       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/>http://wildfly.org/downloads/</a> (<code class="highlighter-rouge">wildfly-10.1.0.Final.zip</code>).
-       </li><li>Extract the <b>zip</b> archive to a directory on your computer, e.g. <code class="highlighter-rouge">C:\\ACSE</code> The path must <b>not contain any spaces</b>. A new directory, e.g. </code>C:\\ACSE\\wildfly-10.1.0.Final</code>, containing the WildFly files will be created.
+       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/">http://wildfly.org/downloads/</a> (<code class="highlighter-rouge">wildfly-10.1.0.Final.zip</code>).
+       </li><li>Extract the <b>zip</b> archive to a directory on your computer, e.g. <code class="highlighter-rouge">C:\ACSE</code> The path must <b>not contain any spaces</b>. A new directory, e.g. <code class="highlighter-rouge">C:\ACSE\wildfly-10.1.0.Final</code>, containing the WildFly files will be created.
        </li><li> Open Eclipse, select <b>Help</b> > <b>Eclipse Marketplace...</b> from the Eclipse menu bar.
        </li><li> Search for "JBoss Tools" and <b>install JBoss Tools</b> (current version 4.4.3.Final).
        </li><li> Wait until "Calculating requirements..." has finished and make sure that all features are checked, then <b>confirm</b>.
@@ -145,7 +145,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 
            <img src="images/eclipse_jee_perspective.png" />
 
-       </li><li> In your file system, create a folder, e.g. <code class="highlighter-rouge">C:\\ACSE\\dockerShared\\deployments</code> (it must be in the shared folder established while <a href="#install">installing Docker</a>).
+       </li><li> In your file system, create a folder, e.g. <code class="highlighter-rouge">C:\ACSE\dockerShared\deployments</code> (it must be in the shared folder established while <a href="#install">installing Docker</a>).
        </li><li> Check the current IP of docker using <code class="highlighter-rouge">docker-machine ip</code>. On your local machine, this might output something like <code class="highlighter-rouge">192.168.99.100</code>.
        </li><li> In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
 
@@ -163,12 +163,12 @@ However, you need to configure Eclipse in order to automatically deploy your wor
        </li><li> On the next pages, <b>activate</b> "Server lifecycle is externally managed", and click <b>Next</b>.
 
            <img src="images/eclipse_new_server_2.png" />
-       </li><li> <b>Set</b> the <b>"Home Directory"</b> entry to the installation directory of the WildFly AS, e.g. <code class="highlighter-rouge">C:\\ACSE\\wildfly-10.1.0.Final</code>, and <b>click "Finish"</b>.
+       </li><li> <b>Set</b> the <b>"Home Directory"</b> entry to the installation directory of the WildFly AS, e.g. <code class="highlighter-rouge">C:\ACSE\wildfly-10.1.0.Final</code>, and <b>click "Finish"</b>.
        </li><li> Right-click the new Wildfly entry and choose <b>"Open"</b>.
        </li><li> In the "Deployment Scanners" section, <b>unselect</b> both checkboxes.
 
            <img src="images/eclipse_server_config.png" />
-       </li><li> In the Deployment tab (bottom of the window), switch to the "Deployment" tab, <b>select</b> "Use a custom deployment folder" and set both paths to your local deployment folder created earlier (e.g. </code>C:\\ACSE\\dockerShared\\deployments</code>).
+       </li><li> In the Deployment tab (bottom of the window), switch to the "Deployment" tab, <b>select</b> "Use a custom deployment folder" and set both paths to your local deployment folder created earlier (e.g. <code>C:\ACSE\dockerShared\deployments</code>).
        </li><li> <b>Click on the "Save" icon</b> in the menu bar.
        </li></ol>
    </div></section>
