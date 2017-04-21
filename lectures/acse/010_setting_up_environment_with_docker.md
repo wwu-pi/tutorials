@@ -129,7 +129,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 
        Unfortunately, you still need a Wildfly installation locally on your machine for Eclipse to work properly (although it does not need to be configured).
        <ol>
-       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/wildfly-10.1.0.Final.zip">http://wildfly.org/downloads/wildfly-10.1.0.Final.zip</a>.
+       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/">http://wildfly.org/downloads/</a>.
        </li><li>Extract the <b>zip</b> archive to a directory on your computer, e.g. <code class="highlighter-rouge">C:\ACSE</code> The path must <b>not contain any spaces</b>. A new directory, e.g. <code class="highlighter-rouge">C:\ACSE\wildfly-10.1.0.Final</code>, containing the WildFly files will be created.
        </li><li> Open Eclipse, select <b>Help</b> > <b>Eclipse Marketplace...</b> from the Eclipse menu bar.
        </li><li> Search for "JBoss Tools" and <b>install JBoss Tools</b> (current version 4.4.3.Final).
