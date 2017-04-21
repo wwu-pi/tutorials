@@ -19,7 +19,7 @@ Which tool to install depends on your operating system:
    <section id="windows">
        <h5><a href="#windows">Windows 10 Professional 64-bit</a></h5><div>
        Install the current <a href="https://www.docker.com/docker-windows">Docker for Windows</a> application.
-       In case this does not work you can fall back to the <a href="#legacy">solution for other Windows versions</a>.
+       In case this does not work (there are some hardware requirements such as a processor with Hyper-V support and virtualization enabled in the BIOS settings) you can fall back to the <a href="#legacy">solution for other Windows versions</a>.
    </div></section>
    <section id="linux">
        <h5><a href="#linux">Linux</a></h5><div>
