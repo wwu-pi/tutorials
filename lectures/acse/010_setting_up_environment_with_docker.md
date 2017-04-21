@@ -46,7 +46,7 @@ Which tool to install depends on your operating system:
 		  </div></section>
 </div>
 
-1. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
+1. To verify your installation, start a docker command line and run ``docker --version`` which should output some information.
 <br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) but not yet fixed and should have no impact on running docker.</small>
 1. You can continue with the Docker tutorial starting from [Step 3](https://docs.docker.com/engine/getstarted/step_one/#step-3-verify-your-installation) to get some insights in how to handle Docker and learn about containers, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
 
