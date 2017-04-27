@@ -100,7 +100,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
    If the Java EE button is not visible you can change to the Java EE perspective via *Window* > *Perspective* > *Open Perspective* > *Other...* . In the "Open Perspective" dialog double click the Java EE entry.
 1. **Activate** the **"Servers" view** tab in the lower right of the window. **Right-click** the empty area and **select "New-&gt;Server"** as shown in this screenshot:
     ![](images/eclipse_server_view.png)
-1. In the "New Server" window select **"WildFly 10.1"** (from the JBoss Community category) **as server type** and click **"Next"** two times.
+1. In the "New Server" window select **"WildFly 10.1"** (from the JBoss Community category) **as server type**, set the server host name to "localhost" and click **"Next"** two times.
     ![](images/eclipse_new_server.png)
 
    **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.
