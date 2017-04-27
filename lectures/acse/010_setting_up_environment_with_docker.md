@@ -19,7 +19,7 @@ Which tool to install depends on your operating system:
    <section id="windows">
        <h5><a href="#windows">Windows 10 Professional 64-bit</a></h5><div>
        Install the current <a href="https://www.docker.com/docker-windows">Docker for Windows</a> application.
-       In case this does not work you can fall back to the <a href="#legacy">solution for other Windows versions</a>.
+       In case this does not work (there are some hardware requirements such as a processor with Hyper-V support and virtualization enabled in the BIOS settings) you can fall back to the <a href="#legacy">solution for other Windows versions</a>.
    </div></section>
    <section id="linux">
        <h5><a href="#linux">Linux</a></h5><div>
@@ -46,7 +46,7 @@ Which tool to install depends on your operating system:
 		  </div></section>
 </div>
 
-1. To verify your installation, start a docker command line and run ``docker version`` which should output some information.
+1. To verify your installation, start a docker command line and run ``docker --version`` which should output some information.
 <br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) but not yet fixed and should have no impact on running docker.</small>
 1. You can continue with the Docker tutorial starting from [Step 3](https://docs.docker.com/engine/getstarted/step_one/#step-3-verify-your-installation) to get some insights in how to handle Docker and learn about containers, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
 
@@ -129,7 +129,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 
        Unfortunately, you still need a Wildfly installation locally on your machine for Eclipse to work properly (although it does not need to be configured).
        <ol>
-       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/wildfly-10.1.0.Final.zip">http://wildfly.org/downloads/wildfly-10.1.0.Final.zip</a>.
+       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/">http://wildfly.org/downloads/</a>.
        </li><li>Extract the <b>zip</b> archive to a directory on your computer, e.g. <code class="highlighter-rouge">C:\ACSE</code> The path must <b>not contain any spaces</b>. A new directory, e.g. <code class="highlighter-rouge">C:\ACSE\wildfly-10.1.0.Final</code>, containing the WildFly files will be created.
        </li><li> Open Eclipse, select <b>Help</b> > <b>Eclipse Marketplace...</b> from the Eclipse menu bar.
        </li><li> Search for "JBoss Tools" and <b>install JBoss Tools</b> (current version 4.4.3.Final).
