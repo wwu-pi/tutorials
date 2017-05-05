@@ -37,6 +37,15 @@ title: Manually setting up the Development Environment
    * username: **sa**
    * password can be left blank
 
+1. Add a second datasource, i.e. repeat the previous steps using the following information:
+
+    * Name: **FoodDeliveryX** (replacing X with your group number)
+    * JNDI Name: **java:/FoodDeliveryX**
+    * JDBC Driver: Click **Detected Driver** and choose **hsqldb.jar**
+    * Connection URL: **jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}FoodDeliveryX;shutdown=true**
+    * username: **sa**
+    * password can be left blank
+
 1. Ensure that the **datasource** is **enabled** (Configuration > Subsystems > Datasources > Non-XA > DefaultDS).
 1. In order to stop the server, press CTRL-C in the console window that was opened during step 3.
 
