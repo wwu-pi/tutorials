@@ -37,9 +37,9 @@ title: Manually setting up the Development Environment
    * username: **sa**
    * password can be left blank
 
-1. Add a second datasource, i.e. repeat the previous steps using the following information:
+1. Add a second datasource, i.e. repeat the previous steps using the following information (replacing the occurences of X with your group number):
 
-    * Name: **FoodDeliveryX** (replacing X with your group number)
+    * Name: **FoodDeliveryX**
     * JNDI Name: **java:/FoodDeliveryX**
     * JDBC Driver: Click **Detected Driver** and choose **hsqldb.jar**
     * Connection URL: **jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}FoodDeliveryX;shutdown=true**
