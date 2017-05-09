@@ -3,27 +3,27 @@ layout: recipe-merged-into-acse
 title: Getting Started with Eclipse Papyrus
 ---
 
-##Creating a new diagram##
+## Creating a new diagram
 
 1. Select *File* > *New* > *Project...*
 1. Select *Papyrus* > *Papyrus Project* and click *Next*.
 1. Choose a project name and click *Next*.
 1. Select *UML* as *Diagram Language* and click *Next*.
 1. Choose a name for your diagram, select *UML Class Diagram*, and load the template with basic primitive types.
-    
+
     ![Create new Papyrus Project](images/new_papyrus_project.png)
     Create new Papyrus Project
-    
+
 1. Finish.
 
 Select model elements from the palette on the right-hand side and add them to the diagram.
 Properties and operations are likewise added to classes by selecting them and clicking on the respective class.
 
 Associations can be found in the Edges section of the palette.
-The Properties view provides additional options: 
+The Properties view provides additional options:
 right-click on an element and select Show Properties View.
 
-##Creating and Applying a UML Profile##
+## Creating and Applying a UML Profile
 
 1. Select  *File* > *New* > *Other...*
 1. Select *Papyrus* > *Papyrus Model*.
