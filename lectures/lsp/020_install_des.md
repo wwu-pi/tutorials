@@ -46,45 +46,44 @@ This requires an installation of SWI-Prolog 7.x.
 
 1. [Download](https://sourceforge.net/projects/des/files/des/des5.0.1/DES5.0.1ACIDE0.17UnixesSWI.zip/download) the source code of Datalog Educational System (DES).
 
-2. Unzip the archive to a folder of your choice (e.g., /home/name/des).
+2. Unzip the archive to a folder of your choice (e.g. `/home/name/des`).
 
 3. Edit des.pl, find the next line, and place a preceding '%' (single-line remark symbol). So:
 
-   :- initialization(call_cleanup(start,process_out)).
+      `:- initialization(call_cleanup(start,process_out)).`
   
    becomes:
   
-   % :- initialization(call_cleanup(start,process_out)).
+      `% :- initialization(call_cleanup(start,process_out)).`
 
 4. Execute SWI-Prolog. Typically, you should open a terminal and type 'swipl', as follows, where '$' is assumed to be the command prompt (you may have other prompts as well):
 
-   $ swipl
+   `$ swipl`
    
 5. Change current working directory to the folder where the file des.pl is located, i.e., /home/name/des in this guide:
    
-   ?- working_directory(_,'/home/name/des').
+   `?- working_directory(_,'/home/name/des').`
    
 6. Consult des.pl:
 
-   ?- [des].
+   `?- [des].`
 
 7. Edit des.pl and place a preceding '%' in the following line as shown:
 
-    % :- include('des_ini.pl').
+    `% :- include('des_ini.pl').`
 
 8. Consult again des.pl:  
 
-   ?- [des].
+   `?- [des].`
 
 9. Build a command shell application with:
 
-   ?- qsave_program(des,[goal=start]).
-   
-10. Exit Prolog with:
+   `?- qsave_program(des,[goal=start]).`
 
-   ?- halt.
-   
-11. If everything worked correctly, you can run DES with `./des` or `java -jar des_acide.jar`.
+1. Exit Prolog with:
+   `?- halt.`
+
+1. If everything worked correctly, you can run DES with `./des` or `java -jar des_acide.jar`.
 
 **First steps:**
 
