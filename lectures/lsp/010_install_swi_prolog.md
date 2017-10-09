@@ -34,5 +34,6 @@ title: Installing SWI-Prolog
 4. In SWI-Prolog, type `[program]` to load the program, i.e. the file name in brackets, but without the ending.
 5. In order to query the loaded program, type goals and watch the output.
 6. Alternatively, you can also load the program by passing its name as a parameter to SWI-Prolog: `swipl -s program.pl`.
+7. To exit SWI-Prolog, type `halt.`.
 
 For more **Getting started** advice, please refer to the [SWI-Prolog Tutorials](http://www.swi-prolog.org/pldoc/man?section=quickstart).
