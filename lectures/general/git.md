@@ -24,3 +24,5 @@ For day-to-day operations users employ various interfaces such as:
 * [SmartGit](http://freecode.com/projects/smartgit)
 
 Or one of many [other graphical user interfaces](http://git-scm.com/downloads/guis).
+
+Please note that additional tools might incur new errors. For example eGit (the Eclipse plugin) may introduce encoding errors in the code base when using guillemets (`<<`, french quotation marks) as used in the Xtend language.
