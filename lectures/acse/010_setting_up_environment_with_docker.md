@@ -47,20 +47,21 @@ Which tool to install depends on your operating system:
 </div>
 
 1. To verify your installation, start a docker command line and run ``docker --version`` which should output some information.
-<br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) but not yet fixed and should have no impact on running docker.</small>
-1. You can continue with the Docker tutorial starting from [Step 3](https://docs.docker.com/engine/getstarted/step_one/#step-3-verify-your-installation) to get some insights in how to handle Docker and learn about containers, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
+<br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) and fixed as of version 17.04; anyway it should have no impact on running Docker.</small>
+1. You can continue with the Docker tutorial starting from [Step 2](https://docs.docker.com/get-started/part2/) to get some insights in how to handle Docker and learn about containers, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
 
 ## <a id="jdk" name="jdk"></a>Installing the latest JDK
 
-1. Make sure that the latest version of the **Java Development Kit** (JDK 8 Update 121 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
-1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 8 Update 121** or later) for the operating system of your computer.
-1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_121`` on Windows.
+1. Make sure that the latest version of the **Java Development Kit** (JDK 8 Update 161 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
+<br><small>Java 9 has introduced some new features which might lead to errors in combination with other software used in the lecture. We are still testing whether Java 9 works with our tools.</small>
+1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 8 Update 161** or later) for the operating system of your computer.
+1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_161`` on Windows.
 1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_121``.
 1. You can check your installation by typing ``javac -version`` on your command line which should output the java version you just installed. If this is not the case you might also add the ``/bin`` directory of your Java installation to your ``PATH`` environment variable (keep in mind you have to open a new command line in order to see changes to the environment variables).
 
 ## <a id="eclipse" name="eclipse"></a>Installing Eclipse
 
-1. **Download** the **Eclipse IDE for Java EE Developers** for your operating system (version 4.6.3, *Neon.3*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/neon3).
+1. **Download** the **Eclipse IDE for Java EE Developers** for your operating system (e.g. *Oxygen.2*) from [https://www.eclipse.org/downloads/packages/release/oxygen/2](https://www.eclipse.org/downloads/packages/release/oxygen/2).
 1. **Extract** the downloaded **archive** to a directory on your computer, e.g. ``C:\ACSE``. This will create a sub directory, like ``C:\ACSE\eclipse``.
 1. **Start Eclipse**. The ``eclipse.exe`` is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and **select a workspace directory**, for example ``C:\ACSE\projects``. This path must **not contain any spaces** either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click **"OK"** to close the dialog and get to the workbench window.
 
@@ -177,6 +178,5 @@ Continue with [running the sample application](018_tutorial_sample_app.html) or 
 
 ## <a id="envvar" name="envvar" />How To Set Environment Variables
 
-* **Windows XP**: Open the Control Panel (*Systemsteuerung*) from the Start Menu, switch to Classic View (*Klassische Ansicht*) if necessary, open the System Control Panel applet (*System*), select the Advanced tab (*Erweitert*), and click on the Environment Variables button (*Umgebungsvariablen*).
 * **Windows 7 / 8 / 10**: Control Panel (*Systemsteuerung*) - System - choose Advanced System Settings (*Erweiterte Systemeinstellungen*) on the left - Advanced tab (*Erweitert*) - Environment Variables button (*Umgebungsvariablen*)
 * **Linux**: Open a terminal window and type `export JAVA_HOME=/usr/lib/jvm/java-8-oarcle` (using your installation path, of course). If Java is still not found you might need to add it to the path environment variable using `export PATH=$PATH:$JAVA_HOME/bin`.
