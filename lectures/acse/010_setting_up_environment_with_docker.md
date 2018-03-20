@@ -179,4 +179,4 @@ Continue with [running the sample application](018_tutorial_sample_app.html) or 
 ## <a id="envvar" name="envvar" />How To Set Environment Variables
 
 * **Windows 7 / 8 / 10**: Control Panel (*Systemsteuerung*) - System - choose Advanced System Settings (*Erweiterte Systemeinstellungen*) on the left - Advanced tab (*Erweitert*) - Environment Variables button (*Umgebungsvariablen*)
-* **Linux**: Open a terminal window and type `export JAVA_HOME=/usr/lib/jvm/java-8-oarcle` (using your installation path, of course). If Java is still not found you might need to add it to the path environment variable using `export PATH=$PATH:$JAVA_HOME/bin`.
+* **Linux**: Open a terminal window and type `export JAVA_HOME=/usr/lib/jvm/java-8-oracle` (using your installation path, of course). If Java is still not found you might need to add it to the path environment variable using `export PATH=$PATH:$JAVA_HOME/bin`.
