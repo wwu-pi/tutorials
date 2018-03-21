@@ -3,7 +3,7 @@ layout: recipe
 title: Manually setting up the Development Environment
 ---
 
-**Please note:** As of summer 2017, we will provide Docker images for your convenience. This page describes the old, manual installation process. Please visit the [current instructions of setting up the development environment based on docker](010_setting_up_environment_with_docker.html).
+**Please note:** Starting with the lecture in summer 2017, we will provide Docker images for your convenience. This page describes the old, manual installation process. Please visit the [current instructions of setting up the development environment based on Docker](010_setting_up_environment_with_docker.html).
 
 ## Contents
 

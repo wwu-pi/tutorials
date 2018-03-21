@@ -50,11 +50,11 @@ Which tool to install depends on your operating system:
 <br><small>For windows users: An annoying message "Unable to use system certificate pool: crypto/x509: system root pool is not available on Windows" might appear frequently. Nothing to worry, it's a [known issue](https://github.com/docker/docker/issues/30450) and fixed as of version 17.04; anyway it should have no impact on running Docker.</small>
 1. You can continue with the Docker tutorial starting from [Step 2](https://docs.docker.com/get-started/part2/) to get some insights in how to handle Docker and learn about containers, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
 
-## <a id="jdk" name="jdk"></a>Installing the latest JDK
+## <a id="jdk" name="jdk"></a>Installing the latest Java 8 JDK
 
-1. Make sure that the latest version of the **Java Development Kit** (JDK 8 Update 161 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
-<br><small>Java 9 has introduced some new features which might lead to errors in combination with other software used in the lecture. We are still testing whether Java 9 works with our tools.</small>
-1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 8 Update 161** or later) for the operating system of your computer.
+1. Make sure that the latest version of the **Java 8 Development Kit** (JDK 8 Update 161 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
+<br><small>Java 9 has introduced a new module structure which leads to errors or additional adaptations in combination with other software used in the lecture. We therefore do not recommend using Java 9 for the ACSE exercises.</small>
+1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **Java 8 Development Kit** (**Java SE 8 Update 161** or later) for the operating system of your computer.
 1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_161`` on Windows.
 1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_121``.
 1. You can check your installation by typing ``javac -version`` on your command line which should output the java version you just installed. If this is not the case you might also add the ``/bin`` directory of your Java installation to your ``PATH`` environment variable (keep in mind you have to open a new command line in order to see changes to the environment variables).
@@ -76,9 +76,9 @@ Which tool to install depends on your operating system:
       * **QVT Operational SDK**
         _for model-to-model transformations_
     * _Xtext_
-      * **Xtext Complete SDK** (at least version 2.11!)
+      * **Xtext Complete SDK** (at least version 2.13!)
         _for domain-specific language development_
-      * **Xtend IDE** (at least version 2.11!)
+      * **Xtend IDE** (at least version 2.13!)
         _for model-to-text transformations_
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
