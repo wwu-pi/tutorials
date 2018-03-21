@@ -56,7 +56,7 @@ Which tool to install depends on your operating system:
 <br><small>Java 9 has introduced a new module structure which leads to errors or additional adaptations in combination with other software used in the lecture. We therefore do not recommend using Java 9 for the ACSE exercises.</small>
 1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **Java 8 Development Kit** (**Java SE 8 Update 161** or later) for the operating system of your computer.
 1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_161`` on Windows.
-1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_121``.
+1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_161``.
 1. You can check your installation by typing ``javac -version`` on your command line which should output the java version you just installed. If this is not the case you might also add the ``/bin`` directory of your Java installation to your ``PATH`` environment variable (keep in mind you have to open a new command line in order to see changes to the environment variables).
 
 ## <a id="eclipse" name="eclipse"></a>Installing Eclipse

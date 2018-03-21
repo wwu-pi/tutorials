@@ -5,28 +5,20 @@ title: Manually setting up the Development Environment
 
 **Please note:** Starting with the lecture in summer 2017, we will provide Docker images for your convenience. This page describes the old, manual installation process. Please visit the [current instructions of setting up the development environment based on Docker](010_setting_up_environment_with_docker.html).
 
+For this tutorial the installation of a suitable JDK and Eclipse version with addition plugins is required as described [here](010_setting_up_environment_with_docker.html).
+
 ## Contents
 
-1. [Installing the latest JDK](#jdk)
 1. [Installing WildFly](#wildfly)
-1. [Installing Eclipse](#eclipse)
-1. [Extending Eclipse](#plugins)
 1. [Installing JBoss Tools](#jbosstools)
-
-## <a id="jdk" name="jdk" />Installing the latest JDK
-
-1. Make sure that the latest version of the **Java Development Kit** (JDK 8 Update 121 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
-1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **JDK** (**Java SE 8 Update 121** or later) for the operating system of your computer.
-1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_121`` on Windows.
-1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_121``.
 
 ## <a id="wildfly" name="wildfly" />Installing WildFly
 
-1. **Get** the latest stable version of the **WildFly Application Server** (**10.0.0.Final**) from [http://wildfly.org/downloads/](http://wildfly.org/downloads/) (``wildfly-10.1.0.Final.zip``).
-1. **Extract** the **zip** archive to a directory on your computer, e.g. ``C:\ACSE``. The path must **not contain any spaces**. A new directory, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, containing the WildFly files will be created.
+1. **Get** the latest stable version of the **WildFly Application Server** (**12.0.0.Final**) from [http://wildfly.org/downloads/](http://wildfly.org/downloads/) (``wildfly-12.0.0.Final.zip``).
+1. **Extract** the **zip** archive to a directory on your computer, e.g. ``C:\ACSE``. The path must **not contain any spaces**. A new directory, e.g. ``C:\ACSE\wildfly-12.0.0.Final``, containing the WildFly files will be created.
 1. Use the script ``<WildFly directory>\bin\standalone.bat`` (Windows) or ``<WildFly directory>\bin\standalone.sh`` (Linux) to start the WildFly server and check the installation. After startup, you should be able to access the web server at [http://localhost:8080](http://localhost:8080).
-1. Open the link [**Administration Console**](http://localhost:8080/console) and follow the instructions to add a new management user (if asked, the user needs not to be added to a group).
-1. After creating a user revisit the [**Administration Console**](http://localhost:8080/console).
+1. Open the link [**Administration Console**](http://localhost:8080/console) and follow the instructions to add a new **management user** (if asked, the user needs not to be added to a group and won't be used to connect to another AS process).
+1. After creating a user, restart WildFly and revisit the [**Administration Console**](http://localhost:8080/console).
 1. Go to [**Deployments**](http://localhost:9990/console/App.html#standalone-deployments) and click **Add** to upload [hsqldb.jar](hsqldb.jar). Click **Next** to upload a new deployment, select the hsqldb.jar, and click **Next**. Make sure that the deployed file is **enabled** and click **Finish**.
 1. Go to **Configuration** > **Subsystems** > **Datasources** > **Non-XA** and click **Add**. Choose the **Custom** data source and use the following information to create a datasource:
 
@@ -37,62 +29,22 @@ title: Manually setting up the Development Environment
    * username: **sa**
    * password can be left blank
 
+1. Reload the server when requested to do so.
 1. Add a second datasource, i.e. repeat the previous steps using the following information (replacing the occurences of X with your group number):
 
-    * Name: **FoodDeliveryX**
-    * JNDI Name: **java:/FoodDeliveryX**
+    * Name: **BirdsongX**
+    * JNDI Name: **java:/BirdsongX**
     * JDBC Driver: Click **Detected Driver** and choose **hsqldb.jar**
-    * Connection URL: **jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}FoodDeliveryX;shutdown=true**
+    * Connection URL: **jdbc:hsqldb:${jboss.server.data.dir}${/}hypersonic${/}BirdsongX;shutdown=true**
     * username: **sa**
     * password can be left blank
 
-1. Ensure that the **datasource** is **enabled** (Configuration > Subsystems > Datasources > Non-XA > DefaultDS).
+1. Ensure that the datasources are **enabled** (Configuration > Subsystems > Datasources > Non-XA > YourDatabase > View).
 1. In order to stop the server, press CTRL-C in the console window that was opened during step 3.
 
 <div class="footnote" markdown="1">
 Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB driver and add the data source: ``./jboss-cli.sh -c "deploy ~/Downloads/hsqldb.jar,data-source add --driver-name=hsqldb.jar --use-ccm=false --jta=false --user-name=sa --name=DefaultDS --jndi-name=java:/DefaultDS --connection-url=jdbc:hsqldb:\$\{jboss.server.data.dir\}\$\{/\}hypersonic\$\{/\}localDB;shutdown=true"``
 </div>
-
-## <a id="eclipse" name="eclipse" />Installing Eclipse
-
-1. **Download** the **Eclipse IDE for Java and DSL Developers** for your operating system (version 4.6.2, *Neon.2*) from [http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon2](http://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon2). It includes:
-
-   * EMF -- Eclipse Modeling Framework SDK (for basic modelling features),
-   * Xtext Complete SDK (for implementing DSLs), and
-   * Xtend IDE (useful for model-to-text transformations).
-
-
-1. **Extract** the downloaded **archive** to a directory on your computer, e.g. ``C:\ACSE``. This will create a sub directory, like ``C:\ACSE\eclipse``.
-1. **Start Eclipse**. The ``eclipse.exe`` is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and **select a workspace directory**, for example ``C:\ACSE\projects``. This path must **not contain any spaces** either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click **"OK"** to close the dialog and get to the workbench window.
-
-## <a id="plugins" name="plugins" />Extending Eclipse
-1. Select **Help** > **Install new Software...**
-1. From the dropdown menu, select **Neon** as the site to work with (the screenshots show another example).
-![](images/install_software.png)
-1. Wait for the list of software to load and select all of the following items:
-
-   * _Modeling_
-      * **QVT Operational SDK**
-        _for model-to-model transformations._
-      * **Papyrus UML**
-        _for UML diagrams_
-   * _Web, XML, Java EE and OSGi Enterprise Development_
-      * **Eclipse Java EE Developer Tools**
-        _for Java EE development_
-      * **Eclipse Java Web Developer Tools**
-        _for Java Web development_
-      * **JSF Tools**
-        _for development of JSF web apps_
-   * _Database Development_
-      * **Data Tools Platform Extender SDK**
-        _for data-centric technologies_
-
-1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
-1. Click **Yes** when prompted to restart.
-1. Enable Java code completion, otherwise, you may miss out on code completion for Java classes:
-   1. Once restarted, open **Window** > **Preferences**.
-   1. Choose **Java** > **Editor** > **Content Assist** > **Advanced**.
-   1. Enable *Java Proposals*.
 
 ## <a id="jbosstools" name="jbosstools" />Installing JBoss Tools for Eclipse
 
@@ -120,8 +72,3 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 
 Congratulations, you have successfully set-up your development environment!
 Continue with the [setup of your first Java EE project](020_tutorial_jboss_project.html).
-
-## <a id="envvar" name="envvar" />How To Set Environment Variables
-
-* **Windows XP**: Open the Control Panel (*Systemsteuerung*) from the Start Menu, switch to Classic View (*Klassische Ansicht*) if necessary, open the System Control Panel applet (*System*), select the Advanced tab (*Erweitert*), and click on the Environment Variables button (*Umgebungsvariablen*).
-* **Windows 7 / 8 / 10**: Control Panel (*Systemsteuerung*) - System - choose Advanced System Settings (*Erweiterte Systemeinstellungen*) on the left - Advanced tab (*Erweitert*) - Environment Variables button (*Umgebungsvariablen*)
