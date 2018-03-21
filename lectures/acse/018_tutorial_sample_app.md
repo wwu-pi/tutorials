@@ -12,7 +12,7 @@ title: Running and extending a sample app
 In case you ask yourself what is the benefit of installing and configuring Docker, the main reason is the simple deployment of applications through Docker containers.
 To see the Java EE example of a library application in action, only three steps are required:
 
-1. Make sure **Docker** is properly **installed**  ([tutorial](010_setting_up_environment_with_docker.html)) and you know your Docker IP (run `docker-machine ip` on your command line).
+1. Make sure **Docker** is properly **installed**  ([tutorial](010_setting_up_environment_with_docker.html)) and you know your Docker IP (typically `localhost`; when using Docker Toolbox, run  `docker-machine ip` on your command line).
 1. Open your Docker command line and run
 ```
 docker run -it -p 8080:8080 wwupi/library-application
@@ -33,7 +33,7 @@ This tutorial will show how to import a Java EE application using the example of
 
     ![](images/library_projects.png)
 
-1. <a id="import-deploy" name="import-deploy" />In the "Servers" tab, **right-click** on your **WildFly 10 server** and select **"Add and Remove..."**.
+1. <a id="import-deploy" name="import-deploy" />In the "Servers" tab, **right-click** on your **WildFly 12 server** and select **"Add and Remove..."**.
 
     ![](images/library_add.png)
 
@@ -45,7 +45,7 @@ This tutorial will show how to import a Java EE application using the example of
       <h5><a href="#runWithDocker">Docker for Linux/Windows/Mac</a></h5><div>
       In your Docker command line, fire up the Docker container for the Wildfly server using
 
-      <pre class="highlight"><code>docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2017
+      <pre class="highlight"><code>docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2018
       </code></pre>
 
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
@@ -62,7 +62,7 @@ This tutorial will show how to import a Java EE application using the example of
        On your local machine, this might output something like <code class="highlighter-rouge">192.168.99.100</code>.
        <br /><br />
        In your Docker command line, fire up the Docker container for the Wildfly server using
-       <pre class="highlight"><code>docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
+       <pre class="highlight"><code>docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2018
        </code></pre>
 
       <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>

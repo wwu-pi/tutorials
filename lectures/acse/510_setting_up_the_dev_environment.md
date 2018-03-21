@@ -64,7 +64,7 @@ Alternatively to steps 4-8, you can use the JBoss-CLI to deploy the HSQLDB drive
 1. In the "New Server" window select **"WildFly 10.1"** (from the JBoss Community category) **as server type**, set the server host name to "localhost" and click **"Next"** two times.
     ![](images/eclipse_new_server.png)
 
-   **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-10.1.0.Final``, and **click "Finish"**.
+   **Set** the **"Home Directory"** entry to the installation directory of the WildFly AS, e.g. ``C:\ACSE\wildfly-12.0.0.Final``, and **click "Finish"**.
 1. In the "Servers" view **select the newly created server** and click the green **start button**.
     ![](images/eclipse_server_start.png)
 

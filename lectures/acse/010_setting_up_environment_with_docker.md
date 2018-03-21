@@ -107,7 +107,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 
       </li><li> In your Docker command line, fire up the docker container for the Wildfly server using
 
-      <pre class="highlight"><code>docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2017
+      <pre class="highlight"><code>docker run -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2018
       </code></pre>
 
       In your browser, you should be able to see a Wildlfy welcome page when navigating to <code class="highlighter-rouge">http://localhost:8080</code>.
@@ -115,7 +115,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
       </li><li> In Eclipse, activate the <b>"Servers" view</b> tab in the lower part of the window via <em>Window</em> > <em>Show view</em> > <em>Others...</em> . <b>Right-click</b> the empty area and <b>select "New > Server"</b> as shown in this screenshot:
 
           <img src="images/eclipse_server_view.png" />
-      </li><li> In the "New Server" window select <b>"WildFly 10.0"</b> (from the JBoss Community category) <b>as server type</b>, set <code class="highlighter-rouge">localhost</code> as "Server's host name" and click <b>Next</b>.
+      </li><li> In the "New Server" window select <b>"WildFly 12.0"</b> (from the JBoss Community category) <b>as server type</b>, set <code class="highlighter-rouge">localhost</code> as "Server's host name" and click <b>Next</b>.
 
           <img src="images/eclipse_new_server_b.png" />
       </li><li> On the next pages, <b>choose</b> the "Remote" server option, <b>choose</b> the server to be controlled by "Management Operations", <b>activate</b> "Server lifecycle is externally managed", <b>deselect</b> to assign a runtime, and click <b>Finish</b>.
@@ -131,7 +131,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
 
        Unfortunately, you still need a Wildfly installation locally on your machine for Eclipse to work properly (although it does not need to be configured).
        <ol>
-       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>10.1.0.Final</b>) from <a href="http://wildfly.org/downloads/">http://wildfly.org/downloads/</a>.
+       <li>Therefore <b>get</b> the latest stable version of the <b>WildFly Application Server</b> (<b>12.0.0.Final</b>) from <a href="http://wildfly.org/downloads/">http://wildfly.org/downloads/</a>.
        </li><li>Extract the <b>zip</b> archive to a directory on your computer, e.g. <code class="highlighter-rouge">C:\ACSE</code> The path must <b>not contain any spaces</b>. A new directory, e.g. <code class="highlighter-rouge">C:\ACSE\wildfly-10.1.0.Final</code>, containing the WildFly files will be created.
        </li><li> Open Eclipse, select <b>Help</b> > <b>Eclipse Marketplace...</b> from the Eclipse menu bar.
        </li><li> Search for "JBoss Tools" and <b>install JBoss Tools</b> (current version 4.4.3.Final).
@@ -148,7 +148,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
        </li><li> Check the current IP of docker using <code class="highlighter-rouge">docker-machine ip</code>. On your local machine, this might output something like <code class="highlighter-rouge">192.168.99.100</code>.
        </li><li> In your Docker command line, fire up the docker container for the Wildfly server and pass this directory to the virtual filesystem using
 
-       <pre class="highlight"><code>docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2017
+       <pre class="highlight"><code>docker run -it -p 8080:8080 -v /dockerShared/deployments:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2018
        </code></pre>
 
        <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
@@ -156,13 +156,13 @@ However, you need to configure Eclipse in order to automatically deploy your wor
        </li><li> In Eclipse, activate the <b>"Servers" view</b> tab in the lower part of the window via <em>Window</em> > <em>Show view</em> > <em>Others...</em> . <b>Right-click</b> the empty area and <b>select "New > Server"</b> as shown in this screenshot:
 
            <img src="images/eclipse_server_view.png" />
-       </li><li> In the "New Server" window select <b>"WildFly 10.0"</b> (from the JBoss Community category) <b>as server type</b>, set the docker IP retrieved before as "Server's host name" and click <b>Next</b>.
+       </li><li> In the "New Server" window select <b>"WildFly 12.0"</b> (from the JBoss Community category) <b>as server type</b>, set the docker IP retrieved before as "Server's host name" and click <b>Next</b>.
 
            <img src="images/eclipse_new_server.png" />
        </li><li> On the next pages, <b>activate</b> "Server lifecycle is externally managed", and click <b>Next</b>.
 
            <img src="images/eclipse_new_server_2.png" />
-       </li><li> <b>Set</b> the <b>"Home Directory"</b> entry to the installation directory of the WildFly AS, e.g. <code class="highlighter-rouge">C:\ACSE\wildfly-10.1.0.Final</code>, and <b>click "Finish"</b>.
+       </li><li> <b>Set</b> the <b>"Home Directory"</b> entry to the installation directory of the WildFly AS, e.g. <code class="highlighter-rouge">C:\ACSE\wildfly-12.0.0.Final</code>, and <b>click "Finish"</b>.
        </li><li> Right-click the new Wildfly entry and choose <b>"Open"</b>.
        </li><li> In the "Deployment Scanners" section, <b>unselect</b> both checkboxes.
 
