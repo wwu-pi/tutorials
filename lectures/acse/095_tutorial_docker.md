@@ -14,7 +14,6 @@ title: Create Docker images for Java microservices
 1. Copy the [example applications](https://wiwi-gitlab.uni-muenster.de/pi-examples/acse-docker-simple-service) to your projects folder, e.g. with
 ```
 git clone https://wiwi-gitlab.uni-muenster.de/pi-examples/acse-docker-simple-service.git
-
 cd acse-docker-simple-service
 ```
 1. Use Docker Compose to build the Docker images by running
