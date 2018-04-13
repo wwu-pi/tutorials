@@ -11,7 +11,7 @@ title: Creating Java EE projects with JBoss Tools
 ## <a id="precond" name="precond" />Preconditions
 * Make sure **Docker** and **Eclipse with JBoss Tools Plug-in** are properly **installed** and configured ([tutorial](010_setting_up_environment_with_docker.html)).
 * **Start Eclipse** and make sure the **Java EE perspective** is opened.
-* Make sure that a **WildFly 10 Runtime Server** is configured in Eclipse as outlined in the [first tutorial](010_setting_up_environment_with_docker.html).
+* Make sure that a **WildFly 12 Runtime Server** is configured in Eclipse as outlined in the [first tutorial](010_setting_up_environment_with_docker.html).
 
 ## <a id="create" name="create" />Creating an Enterprise Application from scratch
 The following instructions show how to create an enterprise application from scratch, without importing existing projects. It may be helpful when you start developing your own application, for example during the practical course.
@@ -31,7 +31,7 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
 
 ### <a id="create-jpa" name="create-jpa" />New JPA Project
 1. Select *File* > *New* > *JPA Project* from the menu bar.
-1. In the "New JPA Project" dialog, enter "Test-Persistence" as **project name**. Again, the target runtime should be WildFly 10. "Minimal Configuration" should be selected as "Configuration".
+1. In the "New JPA Project" dialog, enter "Test-Persistence" as **project name**. Again, the target runtime should be WildFly 12. "Minimal Configuration" should be selected as "Configuration".
 1. As we want this project to be part of the enterprise application, we **select "Add project to an EAR"** and **choose** our **Test project** from the **"EAR Project Name" menu**.
 1. Click **"Finish"**. (Do **not** switch to the JPA perspective if asked to do so.)
 1. **Open** the file **``persistence.xml``** (under "JPA Content" or under ``src/META-INF/``) and switch to the **"Source" tab**. **Modify** the **node** **``persistence-unit``** to match the following snippet:
