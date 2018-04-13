@@ -23,7 +23,7 @@ Which tool to install depends on your operating system:
        <br /><br />
        After successfully installing Docker, open the Docker settings (right click on the Docker icon in the Windows toolbar), select "Shared drives" and make sure your drive that contains the ACSE files (see below, "C:" in this tutorial) is checked.
        <br />
-       ![](images/docker_shared_drives.png)
+       <img src="images/docker_shared_drives.png" />
    </div></section>
    <section id="linux">
        <h5><a href="#linux">Linux</a></h5><div>
