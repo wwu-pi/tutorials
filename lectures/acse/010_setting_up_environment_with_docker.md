@@ -10,7 +10,7 @@ Docker is a containerization system that simplifies the development and deployme
 1. [Installing the latest JDK](#jdk)
 1. [Installing Eclipse](#eclipse)
 1. [Extending Eclipse](#plugins)
-1. [Installing JBoss Tools](#jbosstools)
+<!-- 1. [Installing JBoss Tools](#jbosstools) -->
 
 ## <a id="install" name="install"></a>Installing Docker
 
@@ -72,9 +72,10 @@ Which tool to install depends on your operating system:
 ![](images/install_software.png)
 1. Wait for the list of software to load and select all of the following items:
 
-    * _Modeling_
+    <!--* _Modeling_
       * **QVT Operational SDK**
         _for model-to-model transformations_
+    -->
     * _Xtext_
       * **Xtext Complete SDK** (at least version 2.13!)
         _for domain-specific language development_
@@ -84,6 +85,7 @@ Which tool to install depends on your operating system:
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
 
+<!--
 ## <a id="jbosstools" name="jbosstools"></a>Installing JBoss Tools for Eclipse
 
 For some exercises, you are required to deploy an application to the Wildfly application server.
@@ -172,6 +174,7 @@ However, you need to configure Eclipse in order to automatically deploy your wor
        </li></ol>
    </div></section>
 </div>
+-->
 
 Congratulations, you have successfully set-up your development environment!
 Continue with [running the sample application](018_tutorial_sample_app.html) or [setup your first Java EE project](020_tutorial_jboss_project.html).
