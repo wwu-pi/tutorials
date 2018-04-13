@@ -20,6 +20,10 @@ Which tool to install depends on your operating system:
        <h5><a href="#windows">Windows 10 Professional 64-bit</a></h5><div>
        Install the current <a href="https://www.docker.com/docker-windows">Docker for Windows</a> application.
        In case this does not work (there are some hardware requirements such as a processor with Hyper-V support and virtualization enabled in the BIOS settings) you can fall back to the <a href="#legacy">solution for other Windows versions</a>.
+       <br /><br />
+       After successfully installing Docker, open the Docker settings (right click on the Docker icon in the Windows toolbar), select "Shared drives" and make sure your drive that contains the ACSE files (see below, "C:" in this tutorial) is checked.
+       <br />
+       ![](images/docker_shared_drives.png)
    </div></section>
    <section id="linux">
        <h5><a href="#linux">Linux</a></h5><div>
@@ -36,7 +40,7 @@ Which tool to install depends on your operating system:
           However, this makes the environment setup a bit more complicated as will be highlighted in the following sections.
           <br/><br/>
 
-		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the docker machine. Therefore:
+		      For Windows users with Docker Toolbox, you additionally need to establish a file system connection to the Docker machine. Therefore:
         <ol>
           <li> In your file system, create a folder, e.g. <code class="highlighter-rouge">C:\ACSE\dockerShared</code>.</li>
           <li> Open VirtualBox, select the "default" machine, click on <b>Change</b>.</li>
@@ -51,12 +55,12 @@ Which tool to install depends on your operating system:
 1. You can continue with the Docker tutorial starting from [Step 2](https://docs.docker.com/get-started/part2/) to get some insights in how to handle Docker and learn about containers, images, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
 
 [Docker Compose](https://docs.docker.com/compose/overview/) is an additional tool, which allows to manage multiple containers at once.
-Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.docker.com/compose/install/) seperatly; Docker Toolbox already bundles a version.
+Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.docker.com/compose/install/) separately; Docker Toolbox already bundles a version.
 
 ## <a id="jdk" name="jdk"></a>Installing the latest Java 8 JDK
 
 1. Make sure that the latest version of the **Java 8 Development Kit** (JDK 8 Update 161 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
-<br><small>Java 9 has introduced a new module structure which leads to errors or additional adaptations in combination with other software used in the lecture. We therefore do not recommend using Java 9 for the ACSE exercises.</small>
+<br><small>Java 9 has introduced a new module structure which leads to errors or additional adaptations in combination with other software used in the lecture. We therefore do not recommend using Java 9+ for the ACSE exercises.</small>
 1. Go to [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions on Oracle's website to **download** the latest version of the **Java 8 Development Kit** (**Java SE 8 Update 161** or later) for the operating system of your computer.
 1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_161`` on Windows.
 1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_161``.
