@@ -33,11 +33,13 @@ This tutorial will show how to import a Java EE application using the example of
 
     ![](images/library_projects.png)
 
+<!--
 1. <a id="import-deploy" name="import-deploy" />In the "Servers" tab, **right-click** on your **WildFly 12 server** and select **"Add and Remove..."**.
 
     ![](images/library_add.png)
 
 1. Select the **library application** and click *Add >*, then "Finish. <small>Should Eclipse fail to display any applications, ensure that all EAR projects in the workspace contain an ``EarContent`` directory. In case the project was imported from VCS (e.g. git), an empty ``.gitkeep`` file within ``EarContent`` will ensure the directory is always present.</small>
+-->
 1. Finally, deploy the application to the Wildfly application server:
 
 <div class="accordion vertical">
@@ -45,15 +47,23 @@ This tutorial will show how to import a Java EE application using the example of
       <h5><a href="#runWithDocker">Docker for Linux/Windows/Mac</a></h5><div>
       In your Docker command line, fire up the Docker container for the Wildfly server using
 
-      <pre class="highlight"><code>docker run --rm -it -p 8080:8080 -p 9990:9990 wwupi/wildfly-acse-2018
+      <pre class="highlight"><code>docker run --rm -it -p 8080:8080 -v local-path:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2018
       </code></pre>
 
+      The <i>local-path</i>should point to the "deployments" folder established while [setting up the development environment](010_setting_up_environment_with_docker.html).
+      <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
+      <br /><br />
+
+      In Eclipse, right-click on the "Library" project and choose "Export" | "EAR file".
+      The destination should be the deployments folder mentioned above (allow overwriting existing files when re-deploying).
+      Wildfly will notice the new/updated file and automatically start the deployment.
+<!--
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
       <br />
       <b>Right-click</b> on the WildFly server again and <b>click on "Publish"</b> to create the package and deploy it to the server.
       <br /><br />
-
-      Wait until the application has been deployed.
+-->
+      Wait until the application has been deployed (check the Docker command line output).
       The Library web application is then accessible under <a href="http://localhost:8080/Library-Web/">http://localhost:8080/Library-Web/</a> and the server output is shown in the Docker command line.
   </div></section>
    <section id="runWithToolbox">
@@ -68,10 +78,15 @@ This tutorial will show how to import a Java EE application using the example of
       <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
       <br /><br />
 
+      In Eclipse, right-click on the "Library" project and choose "Export" | "EAR file".
+      The destination should be the deployments folder mentioned above (allow overwriting existing files when re-deploying).
+      Wildfly will notice the new/updated file and automatically start the deployment.
+      <!--
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
       <br />
       <b>Right-click</b> on the WildFly server again and <b>click on "Publish"</b> to create the package and deploy it to the server.
       <br /><br />
+      -->
       Wait until the application has been deployed. The Library web application is then accessible under <a href="http://dockerIP:8080/Library-Web/">http://dockerIP:8080/Library-Web/</a> using the above IP.
       The server output is shown in the Docker command line.
    </div></section>

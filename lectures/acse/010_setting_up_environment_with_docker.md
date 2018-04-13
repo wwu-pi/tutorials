@@ -21,7 +21,7 @@ Which tool to install depends on your operating system:
        Install the current <a href="https://www.docker.com/docker-windows">Docker for Windows</a> application.
        In case this does not work (there are some hardware requirements such as a processor with Hyper-V support and virtualization enabled in the BIOS settings) you can fall back to the <a href="#legacy">solution for other Windows versions</a>.
        <br /><br />
-       After successfully installing Docker, open the Docker settings (right click on the Docker icon in the Windows toolbar), select "Shared drives" and make sure your drive that contains the ACSE files (see below, "C:" in this tutorial) is checked.
+       After successfully installing Docker, open the Docker settings (right click on the Docker icon in the Windows toolbar), select "Shared drives" and make sure your drive that contains the ACSE files (see "Installing Eclipse" section below; "C:" in this tutorial) is checked.
        <br />
        <img src="images/docker_shared_drives.png" />
    </div></section>
