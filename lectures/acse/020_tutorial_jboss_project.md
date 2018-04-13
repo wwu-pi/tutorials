@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: Creating Java EE projects with JBoss Tools
+title: Creating Java EE projects from scratch
 ---
 
 ## Contents
@@ -47,6 +47,8 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
      This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".
 
 1. To create your first **Entity**, right-click on the project, select *New* > *JPA Entity* and follow the wizard (you may not use class names that coincide with SQL keywords such as "order". Moreover, member names may not contain special characters such as underscores).
+
+1. When using Docker containers for deploying the application (without local WildFly installation), Eclipse will not be able to resolve many JavaEE-related imports (e.g. javax.ejb.* classes) because no server runtime is specified. You can solve this by including a jar with the JavaEE API (download it from [https://mvnrepository.com/artifact/javax/javaee-api/8.0](https://mvnrepository.com/artifact/javax/javaee-api/8.0)) in your project. This will also be required for the EJB and Web projects described in the following, if they use respective features from the JavaEE specification.
 
 ### <a id="create-ejb" name="create-ejb" />New EJB Project
 1. Select *File* > *New* > *EJB Project* from the menu bar.

@@ -56,6 +56,7 @@ This tutorial will show how to import a Java EE application using the example of
 
       In Eclipse, right-click on the "Library" project and choose "Export" | "EAR file".
       The destination should be the deployments folder mentioned above (allow overwriting existing files when re-deploying).
+      <br />
       Wildfly will notice the new/updated file and automatically start the deployment.
 <!--
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
@@ -63,6 +64,7 @@ This tutorial will show how to import a Java EE application using the example of
       <b>Right-click</b> on the WildFly server again and <b>click on "Publish"</b> to create the package and deploy it to the server.
       <br /><br />
 -->
+      <br /><br />
       Wait until the application has been deployed (check the Docker command line output).
       The Library web application is then accessible under <a href="http://localhost:8080/Library-Web/">http://localhost:8080/Library-Web/</a> and the server output is shown in the Docker command line.
   </div></section>
@@ -80,6 +82,7 @@ This tutorial will show how to import a Java EE application using the example of
 
       In Eclipse, right-click on the "Library" project and choose "Export" | "EAR file".
       The destination should be the deployments folder mentioned above (allow overwriting existing files when re-deploying).
+      <br />
       Wildfly will notice the new/updated file and automatically start the deployment.
       <!--
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
@@ -87,6 +90,7 @@ This tutorial will show how to import a Java EE application using the example of
       <b>Right-click</b> on the WildFly server again and <b>click on "Publish"</b> to create the package and deploy it to the server.
       <br /><br />
       -->
+      <br /><br />
       Wait until the application has been deployed. The Library web application is then accessible under <a href="http://dockerIP:8080/Library-Web/">http://dockerIP:8080/Library-Web/</a> using the above IP.
       The server output is shown in the Docker command line.
    </div></section>
