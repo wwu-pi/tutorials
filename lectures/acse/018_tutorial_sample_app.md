@@ -57,7 +57,7 @@ This tutorial will show how to import a Java EE application using the example of
       In Eclipse, right-click on the "Library" project and choose "Export" | "EAR file".
       The destination should be the deployments folder mentioned above (allow overwriting existing files when re-deploying).
       <br />
-      Wildfly will notice the new/updated file and automatically start the deployment.
+      WildFly will notice the new/updated file and automatically start the deployment.
 <!--
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
       <br />
@@ -83,7 +83,7 @@ This tutorial will show how to import a Java EE application using the example of
       In Eclipse, right-click on the "Library" project and choose "Export" | "EAR file".
       The destination should be the deployments folder mentioned above (allow overwriting existing files when re-deploying).
       <br />
-      Wildfly will notice the new/updated file and automatically start the deployment.
+      WildFly will notice the new/updated file and automatically start the deployment.
       <!--
       In the "Servers" tab in Eclipse, <b>right-click</b> on the WildFly server and <b>click on "Start"</b> (you don't actually start the server as it is managed by Docker, so it will quickly move to the state "Started").
       <br />

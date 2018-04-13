@@ -79,10 +79,6 @@ Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.do
 ![](images/install_software.png)
 1. Wait for the list of software to load and select all of the following items:
 
-    <!--* _Modeling_
-      * **QVT Operational SDK**
-        _for model-to-model transformations_
-    -->
     * _Xtext_
       * **Xtext Complete SDK** (at least version 2.13!)
         _for domain-specific language development_
