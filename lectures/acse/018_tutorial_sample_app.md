@@ -50,8 +50,8 @@ This tutorial will show how to import a Java EE application using the example of
       <pre class="highlight"><code>docker run --rm -it -p 8080:8080 -v local-path:/opt/jboss/wildfly/standalone/deployments/:rw wwupi/wildfly-acse-2018
       </code></pre>
 
-      The <i>local-path</i>should point to the "deployments" folder established while [setting up the development environment](010_setting_up_environment_with_docker.html).
-      <small>For Windows users: Watch the conversion of backslashes to forward slashes.</small>
+      The <code>local-path</code> should point to the "deployments" folder established while <a href="010_setting_up_environment_with_docker.html">setting up the development environment</a>.
+      On Windows, folders need to be specified with forward slashes, e.g. "C:/ACSE/deployments".
       <br /><br />
 
       In Eclipse, right-click on the "Library" project and choose "Export" | "EAR file".
