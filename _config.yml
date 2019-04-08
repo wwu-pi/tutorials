@@ -18,17 +18,17 @@ lectures:
 #   name: contact name
 contacts:
   acse:
-    url: https://www.wi.uni-muenster.de/department/pi/people/christoph-rieger
-    name: Christoph Rieger
+    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/matthias-neugebauer
+    name: Matthias Neugebauer
   eai:
-    url: https://www.wi.uni-muenster.de/department/pi/people/christoph-rieger
-    name: Christoph Rieger
+    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/matthias-neugebauer
+    name: Matthias Neugebauer
   mdsd:
-    url: https://www.wi.uni-muenster.de/department/pi/people/christoph-rieger
-    name: Christoph Rieger
+    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/matthias-neugebauer
+    name: Matthias Neugebauer
   lsp:
-    url: https://www.wi.uni-muenster.de/department/pi/people/vincent-von-hof
-    name: Vincent von Hof
+    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/breno-menezes
+    name: Breno Menezes
 
 # excluded from Jekyll conversion
 exclude:
