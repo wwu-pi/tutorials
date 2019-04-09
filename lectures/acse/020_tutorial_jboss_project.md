@@ -36,15 +36,19 @@ This tutorial uses "Test" and variations thereof as project names. Of course, yo
 1. Click **"Finish"**. (Do **not** switch to the JPA perspective if asked to do so.)
 1. **Open** the file **``persistence.xml``** (under "JPA Content" or under ``src/META-INF/``) and switch to the **"Source" tab**. **Modify** the **node** **``persistence-unit``** to match the following snippet:
 
-        <persistence-unit name="Test-Persistence">
-          <jta-data-source>java:/DefaultDS</jta-data-source>
-          <properties>
-            <property name="hibernate.hbm2ddl.auto"
-              value="create-drop"/>
-          </properties>
-        </persistence-unit>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <persistence version="2.1"
+          xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+          <persistence-unit name="Library-Persistence">
+            <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+            <properties>
+              <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+            </properties>
+          </persistence-unit>
+        </persistence>
 
-     This defines the data source to use ("java:/DefaultDS" is the JNDI address of the HSQL database you installed on WildFly) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".
+     This defines the data source to use ("java:jboss/datasources/ExampleDS" is the JNDI address of the H2 database installed on WildFly by default) and ensures that you always start with a fresh database after deployment. When you've reached a stable data schema, you can use "validate" or "update" instead of "create-drop".
 
 1. To create your first **Entity**, right-click on the project, select *New* > *JPA Entity* and follow the wizard (you may not use class names that coincide with SQL keywords such as "order". Moreover, member names may not contain special characters such as underscores).
 
