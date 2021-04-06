@@ -18,8 +18,8 @@ lectures:
 #   name: contact name
 contacts:
   acse:
-    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/matthias-neugebauer
-    name: Matthias Neugebauer
+    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/hendrik-winkelmann-1
+    name: Hendrik Winkelmann
   eai:
     url: https://www.wi.uni-muenster.de/de/institut/pi/personen/matthias-neugebauer
     name: Matthias Neugebauer
@@ -27,8 +27,8 @@ contacts:
     url: https://www.wi.uni-muenster.de/de/institut/pi/personen/matthias-neugebauer
     name: Matthias Neugebauer
   lsp:
-    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/breno-menezes
-    name: Breno Menezes
+    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/hendrik-winkelmann-1
+    name: Hendrik Winkelmann
 
 # excluded from Jekyll conversion
 exclude:
