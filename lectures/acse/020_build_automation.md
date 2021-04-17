@@ -4,7 +4,7 @@ title: Using Maven
 ---
 
 
-## Maven
+# Maven
 [Apache Maven](https://maven.apache.org/) is a build automation tool used for Java applications. Maven can be used
 to efficiently manage and retrieve software dependencies. With Maven, for instance, it can be made sure that multiple 
 developers use the same version of dependencies, without them having to find and include various .jar-packages themselves.

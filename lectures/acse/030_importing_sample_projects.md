@@ -3,6 +3,8 @@ layout: recipe
 title: Importing Sample Sprint Projects into Eclipse
 ---
 
+# Importing Sample Projects
+
 This tutorial will demonstrate how to set up and execute the different sample projects. Note that there are multiple
 ways you can proceed here.
 
@@ -19,7 +21,7 @@ Spring Boot applications are preconfigured and, e.g., have classpath scanning en
 Since initial projects will be provided for most tasks, it will often not be necessary to initialize a new 
 project. Nevertheless, in the following, the simple set-up process is demonstrated.
 
-### Creating a new skeleton
+#### Creating a new skeleton
 In Spring Initializr we can create a skeleton which we can use to, e.g., build a new Web Application. 
 For ACSE, we will let Spring Initializr generate a Maven Project using the language 'Java' version 8.
 We will use the default Spring Boot version and choose 'Jar' for packaging.
@@ -33,7 +35,7 @@ skeleton with the shown dependencies will create the pom.xml used in the
 [MVC Adder Application](https://github.com/wwu-pi/adder-application) (there might be some slight differences due to
 different versions of Spring being used).
 
-### Importing the skeleton into Eclipse
+#### Importing the skeleton into Eclipse
 1. Generating the template will automatically download a .zip. Extract the .zip-folder to a position of your liking.
 1. Open Eclipse with a (new) workspace.
 1. In Eclipse, select "Import projects..." > "Maven" > "Existing Maven Projects".
@@ -107,7 +109,7 @@ The [MVC Adder Application](https://github.com/wwu-pi/adder-application) is a sm
 the MVC pattern. This section will explain how to import the application into Eclipse. For running the application, 
 refer to [Run the Spring Boot Application](#run). The running web application can be accessed under <code>localhost:8080</code>.
 
-### Cloning and importing the project using the command line
+#### Cloning and importing the project using the command line
 If you want to use the command line to get the application, navigate to a folder where the application should be cloned to and type 
 <code>git clone https://github.com/wwu-pi/adder-application </code>. 
 
@@ -116,7 +118,7 @@ You can already execute the project by running <code>./mvnw spring-boot:run</cod
 Now, open Eclipse with a new workspace. Click "Import projects..." > "Maven" > "Existing Maven Projects". Navigate
 to the folder of the project to and click "Open". The pom.xml should be automatically detected, click "Finish".
 
-### Cloning and importing the project using the Eclipse Git integration
+#### Cloning and importing the project using the Eclipse Git integration
 If you prefer using the Git integration for Eclipse, open a (new) workspace. Then, press 
 "Import projects..." > "Git" > "Projects from Git" > "Next" > "Clone URI". In the "URI" field, enter https://github.com/wwu-pi/adder-application.
 The "Host" and "Repository path" fields should be set automatically. Press "Next" and make sure that the master-branch is selected.
@@ -147,17 +149,17 @@ of the client small.</b> The clients here solely consist of a one-time main-meth
 you should make use of <code>@Autowired</code> for the <code>RestTemplate</code> and the <code>SOAPClient</code>. 
 Also refer to the "Best Practices" tutorial.
 
-### Importing the project into Eclipse after cloning via the command line
+#### Importing the project into Eclipse after cloning via the command line
 After cloning, again, open a new workspace. Click "Import project..." > "Maven" > "Existing Maven Projects". 
 Select the overall project folder. Two different pom.xmls should be displayed. 
 Make sure both are selected and press "Finish". Both programs should be imported adequately.
 
-### Cloning the project using the Eclipse Git integration and importing the project
+#### Cloning the project using the Eclipse Git integration and importing the project
 Again, open a new workspace. Clone the project using the Eclipse Git integration as demonstrated for the [MVC Adder Application](#mvc). 
 Again, choose "Import as general project" > "Next" > "Finish". Now, right-click the project and select "Configure" > "Configure and Detect Nested Projects".
 Two subprojects should be detected. Click "Finish".
 
-### <a id="soapgen" name="soapgen"></a>Generating the SOAP Data Model
+#### <a id="soapgen" name="soapgen"></a>Generating the SOAP Data Model
 The error in the <code>soap_rest_client_example</code>-subproject is the result of the plugin used in the pom.xml. The
 plugin tries to retrieve the WSDL-file from the server to generate the data model specified in XSD. However, since the local 
 server which provides the WSDL has not yet been started, the request cannot be fulfilled. 
