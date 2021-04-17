@@ -76,7 +76,8 @@ an existing branch.
   executing <code>git commit -am <i>commit message</i></code>. This should only be done if you want to include all
   <i>tracked</i> files into the commit. Each file in the working directory is tracked or untracked. After cloning, all cloned files are tracked. If you wish to untrack a file, you must
   do so explicitly. You can also "skip" the explicit <code>git add</code>-call by specifying the files that should be commited
-  in the commit call: <code>git commit <i>file0</i> <i>file1</i> ... -m <i>commit message</i></code>.
+  in the commit call: <code>git commit <i>file0</i> <i>file1</i> ... -m <i>commit message</i></code>. Note that this only works if you 
+  already track the files you want to commit. If this is not the case, <code>add</code> them first.
 * <code>git diff</code> shows the difference between the two Git data sources. Example: <code>git diff</code> will show
   the difference between your current, uncommitted local changes and your committed changes.
 * <code>git push</code> applies the changes which reside in your local repository to the remote repository. If you switched
