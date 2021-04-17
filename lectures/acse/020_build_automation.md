@@ -63,7 +63,7 @@ and simply copy and paste the dependency into your pom.xml.
 
 **For the exercises, please refrain from using 3rd party libraries where not specified otherwise.**
 
-##<a id="springbootplugin" name="springbootplugin"></a>Spring Boot Maven plugin
+## <a id="springbootplugin" name="springbootplugin"></a>Spring Boot Maven plugin
 The [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/) facilitates
 building Spring Boot applications using Maven. You can see that it is also defined at the very end of 
 the [exemplary project](https://github.com/wwu-pi/adder-application/blob/master/pom.xml)
