@@ -2,14 +2,16 @@
 layout: recipe
 title: Setting up the development environment
 ---
-Docker is a containerization system that simplifies the development and deployment of software. In ACSE, it is used to avoid overly complex manual configuration steps of the development environment.
-
 ## Contents
 
+1. [Installing Git](#git)
 1. [Installing Docker](#install)
 1. [Installing the latest Java 8 JDK](#jdk)
 1. [Installing Eclipse](#eclipse)
 1. [Extending Eclipse](#plugins)
+
+## <a id="git" name="git"></a>Installing Git
+Git can, for example, be downloaded [here](https://git-scm.com/downloads).
 
 ## <a id="install" name="install"></a>Installing Docker
 
@@ -73,12 +75,13 @@ Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.do
 1. **Extract** the downloaded **archive** to a directory on your computer, e.g. ``C:\ACSE``. This will create a sub directory, like ``C:\ACSE\eclipse``.
 1. **Start Eclipse**. The executable (``eclipse.exe`` or ``eclipse``) is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and **select a workspace directory**, for example ``C:\ACSE\projects``. This path must **not contain any spaces** either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click **"OK"** to close the dialog and get to the workbench window.
 
+The Eclipse IDE comes with a Git integration tool, Java Development tools, and a Maven integration.
+
 ## <a id="plugins" name="plugins"></a>Extending Eclipse
 1. Select **Help** > **Install new Software...**
-1. From the dropdown menu, select **All Available Sites** to work with (the screenshots show another example).
-![](images/install_software.png)
+1. Specify Work with: Xtend - http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/. This can take some time.
+![](images/XtendXtextInstallation.png)
 1. Wait for the list of software to load (this can take some time) and select all of the following items:
-
     * _General Purpose Tools_
       * **Xtext Complete SDK** (at least version 2.13!)
         _for domain-specific language development_
@@ -89,9 +92,10 @@ Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.do
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
 
-Congratulations, you have successfully set-up your development environment!
-
 ## <a id="envvar" name="envvar" />How To Set Environment Variables
 
 * **Windows 7 / 8 / 10**: Control Panel (*Systemsteuerung*) - System - choose Advanced System Settings (*Erweiterte Systemeinstellungen*) on the left - Advanced tab (*Erweitert*) - Environment Variables button (*Umgebungsvariablen*)
 * **Linux / macOS**: Open you ~/.profile- and ~/.bashrc- or ~/.bash_profile-files.  Type `export JAVA_HOME=/usr/lib/jvm/<your version>` (using your installation path, of course). If Java is still not found you might need to add it to the path environment variable using `export PATH=$PATH:$JAVA_HOME/bin`. You need to log out and log back in again for the changes to be applied.
+
+
+Congratulations, you have successfully set-up your development environment!
