@@ -104,7 +104,7 @@ an existing branch.
   
   Another scenario where it makes sense to pull changes is to add a feature to the master branch. If you currently have
   checked out the feature branch, you might want to execute <code>git checkout master</code> followed by <code>git pull origin
-  <i>feature_branch</i></code>.
+  <i>feature_branch</i></code>. You then will have to push the pulled changes to the remote repository.
 * <code>git fetch</code> retrieves the most recent metadata from the specified repository. If, for instance, a colleague
   created and pushed a new branch which you too want to work on, you first might need to fetch the metainformation to see
   that this branch is available before executing <code>git checkout <i>new_feature_branch</i></code>.
