@@ -114,15 +114,15 @@ an existing branch.
   <code>git remote add origin <i>repository-url.git</i></code>. Lastly, push the branches to the new repository via
   <code>git push -u origin --all</code>. Example: 
   
-  <code>git clone https://github.com/wwu-pi/adder-application </code>
+    <code>git clone https://github.com/wwu-pi/adder-application </code>
     
-    <code>cd adder-application
-  
-    git remote rename origin old-origin
-  
-    git remote add origin https://zivgitlab.uni-muenster.de/yourUserName/my-adder-application 
-  
-    git push -u origin --all</code>.
+    <code>cd adder-application</code>
+
+    <code>git remote rename origin old-origin</code>
+
+    <code>git remote add origin https://zivgitlab.uni-muenster.de/yourUserName/my-adder-application </code>
+
+    <code>git push -u origin --all </code>.
   
   
   
