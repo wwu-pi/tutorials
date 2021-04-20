@@ -108,6 +108,24 @@ an existing branch.
 * <code>git fetch</code> retrieves the most recent metadata from the specified repository. If, for instance, a colleague
   created and pushed a new branch which you too want to work on, you first might need to fetch the metainformation to see
   that this branch is available before executing <code>git checkout <i>new_feature_branch</i></code>.
+* To push an existing repository to a new repository, a sequence of commands can be executed. First, clone the repository via
+  <code>git clone <i>existing repository url</i></code>. Then, rename the remote origin to avoid conflicts via
+  <code>git remote rename origin <i>some other name</i></code>. As the third step, add the new remote origin via
+  <code>git remote add origin <i>repository-url.git</i></code>. Lastly, push the branches to the new repository via
+  <code>git push -u origin --all</code>. Example: 
+  
+  <code>git clone https://github.com/wwu-pi/adder-application </code>
+    
+    <code>cd adder-application
+  
+    git remote rename origin old-origin
+  
+    git remote add origin https://zivgitlab.uni-muenster.de/yourUserName/my-adder-application 
+  
+    git push -u origin --all</code>.
+  
+  
+  
 
 ### The .gitignore file
 In a repository there usually is a .gitignore file. In the .gitignore-file you can specify patterns and specific names
