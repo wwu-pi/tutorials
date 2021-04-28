@@ -1,6 +1,6 @@
 ---
 layout: recipe
-title: Importing Sample Sprint Projects into Eclipse
+title: Importing Sample Spring Projects into Eclipse
 ---
 
 # Importing Sample Projects
@@ -16,7 +16,7 @@ ways you can proceed here.
 1. [Statistics Example with MoM](#jms)
 
 ## <a id="init" name="init"></a>Spring Initializr
-[Sprint Initializr](https://start.spring.io/) makes it easy to set up new Spring Boot projects. Spring applications using
+[Spring Initializr](https://start.spring.io/) makes it easy to set up new Spring Boot projects. Spring applications using
 Spring Boot applications are preconfigured and, e.g., have classpath scanning enabled by default. 
 Since initial projects will be provided for most tasks, it will often not be necessary to initialize a new 
 project. Nevertheless, in the following, the simple set-up process is demonstrated.
