@@ -44,8 +44,9 @@ the project via Maven, it is checked whether these dependencies are already in M
 repository. If this is the case, nothing has to be done and the project can be build.
 If this is not the case, the dependencies are downloaded automatically using the information
 specified in the <code>< dependency >...</ dependency ></code>-sections. If you are looking for a dependency for your project,
-you can have a look at the [**Maven Repository**](https://mvnrepository.com/). If you are, for instance, looking for
-the ASM framework, you can search for it 
+you can have a look at Maven repositories, e.g., [here](https://mvnrepository.com/) or [here](https://search.maven.org/). 
+**As you would do for any software you download, validate that the dependency you plan to use is safe.**
+If you are, for instance, looking for the ASM framework, you can search for it 
 
 ![Searching for asm in Maven](images/MavenInitial.png)
 
