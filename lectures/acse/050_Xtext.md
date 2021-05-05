@@ -9,7 +9,8 @@ This tutorial briefly explains the steps needed to create a new DSL project with
 
 You should be prompted with something similar to 
 ![](images/New%20Xtext%20Project.png)
-2.Choose project name, e.g., `de.wwu.pi.acse.customerDsl`.
+
+2. Choose project name, e.g., `de.wwu.pi.acse.customerDsl`.
 3. Choose name of language, e.g., `de.wwu.pi.acse.customerDsl.CustomerDsl`, and a file extension that model files in the language will use, e.g., `cdsl`.
 
 Starting with Xtext 2.23 and later, Java 11 must be used. As such, leave the setting of "Execution environment" set to
