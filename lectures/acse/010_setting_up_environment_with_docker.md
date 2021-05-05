@@ -8,7 +8,7 @@ title: Setting up the development environment
 1. [Installing Docker](#install)
 1. [Installing the latest Java 8 JDK](#jdk)
 1. [Installing Eclipse](#eclipse)
-1. [Extending Eclipse](#plugins)
+1. [Extending Eclipse with Xtext and Xtend](#plugins)
 
 ## <a id="git" name="git"></a>Installing Git
 Git can, for example, be downloaded [here](https://git-scm.com/downloads).
@@ -77,7 +77,7 @@ Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.do
 
 The Eclipse IDE comes with a Git integration tool, Java Development tools, and a Maven integration.
 
-## <a id="plugins" name="plugins"></a>Extending Eclipse
+## <a id="plugins" name="plugins"></a>Extending Eclipse with Xtext and Xtend
 1. Select **Help** > **Install new Software...**
 1. Specify Work with: Xtend - http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/. This can take some time.
 ![](images/XtendXtextInstallation.png)
@@ -92,6 +92,15 @@ The Eclipse IDE comes with a Git integration tool, Java Development tools, and a
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
 1. Click **Yes** when prompted to restart.
 
+## <a id="papyrus" name="papyrus"></a>Installing Papyrus
+1. Select **Help** > **Install new Software...**
+1. Specify Work with: https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-03/
+![](images/papyrus/WorkWithPapyrus.PNG)
+1. Select the version of Papyrus
+1. Click **Next**, read and accept the license aggreement and click **Finish**
+1. Click **Restart now** when prompted to restart
+1. After creating a Papyrus project, you now can model, e.g., class diagrams with the known UML elements.
+![](images/papyrus/Editor.PNG)
 ## <a id="envvar" name="envvar" />How To Set Environment Variables
 
 * **Windows 7 / 8 / 10**: Control Panel (*Systemsteuerung*) - System - choose Advanced System Settings (*Erweiterte Systemeinstellungen*) on the left - Advanced tab (*Erweitert*) - Environment Variables button (*Umgebungsvariablen*)
