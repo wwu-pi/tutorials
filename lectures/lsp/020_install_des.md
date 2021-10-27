@@ -5,7 +5,7 @@ title: Installing Datalog Educational System
 
 **Installation:**
 
-1. [Download](http://www.fdi.ucm.es/profesor/fernan/des/html/download.html) Datalog Educational System (DES).
+1. [Download](https://www.fdi.ucm.es/profesor/fernan/des/html/download.html) Datalog Educational System (DES).
 
    * We recommend using versions built with SWI-Prolog, e.g. [Windows](https://sourceforge.net/projects/des/files/des/des6.3/DES6.3ACIDE0.17Windows64SWI.zip/download) or [Unixes](https://sourceforge.net/projects/des/files/des/des6.3/DES6.3ACIDE0.17UnixesSWI.zip/download)
    
