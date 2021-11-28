@@ -16,6 +16,8 @@ title: Installing Drools
    * Select **Help** > **Eclipse Marketplace...**.
    
    * Install **JBoss Tools 4.21.0.Final**
+
+   * We will only need **JBoss Tools Java Standard Tools**. The other tools are optional.
    
 4. Install the Drools Eclipse Integration:
 
@@ -37,7 +39,7 @@ title: Installing Drools
 
 6. Create Test Project:
 
-   * In Eclipse switch to the **Drools perspective** (upper right corner).
+   * In Eclipse switch to the **Drools perspective** (**Window** > **Perspective** > **Open Perspective** > **Other** > **Drools**).
    
    * Choose **File** > **New** > **Drools Project**
 	
