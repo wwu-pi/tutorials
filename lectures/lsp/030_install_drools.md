@@ -9,7 +9,7 @@ title: Installing Drools
 
 2. [Download](https://download.jboss.org/drools/release/7.61.0.Final/droolsjbpm-integration-distribution-7.61.0.Final.zip) Drools 7.61.0 and extract the zip archive to any folder.
 
-3. Install JBoss Tools 4.21.0
+3. Install JBoss Tools 4.21.0:
 
    * Run Eclipse IDE.
 
@@ -17,7 +17,7 @@ title: Installing Drools
    
    * Install **JBoss Tools 4.21.0.Final**
    
-4. Install Drools:
+4. Install the Drools Eclipse Integration:
 
    * Select **Help** > **Install New Software...**.
    
@@ -35,7 +35,7 @@ title: Installing Drools
    
    * Click **OK** > **Apply and Close** 
 
-6. Create Test Project
+6. Create Test Project:
 
    * In Eclipse switch to the **Drools perspective** (upper right corner).
    
