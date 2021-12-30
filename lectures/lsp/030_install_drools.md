@@ -7,7 +7,7 @@ title: Installing Drools
 
 1. [Download](https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-java-developers) and install Eclipse IDE for Java Developers (2021-09). You might want to create a new workspace for your LSP projects.
 
-2. [Download](https://download.jboss.org/drools/release/7.61.0.Final/droolsjbpm-integration-distribution-7.61.0.Final.zip) Drools 7.61.0 and extract the zip archive to any folder.
+2. [Download](https://download.jboss.org/drools/release/7.63.0.Final/droolsjbpm-integration-distribution-7.63.0.Final.zip) Drools 7.63.0 and extract the zip archive to any folder.
 
 3. Install JBoss Tools 4.21.0:
 
