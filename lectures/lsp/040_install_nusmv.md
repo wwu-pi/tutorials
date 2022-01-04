@@ -22,3 +22,5 @@ title: Installing NuSMV
 4. If you want to have the `NuSMV` command generally available within the command line without the need of navigating
    to the program folder first, add the `bin` folder to the `PATH` environment variable. You can find resources online
    on how to do that for your respective operating system. For instance, consult [this GitHub Gist](https://gist.github.com/nex3/c395b2f8fd4b02068be37c961301caa7).
+
+5. Details on how to use NuSMV can be found in the [user manual](https://nusmv.fbk.eu/NuSMV/userman/index-v2.html).
