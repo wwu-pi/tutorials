@@ -12,10 +12,10 @@ title: Installing NuSMV
 2. Unzip the archive to a folder of your choice.
 
 3. You can run NuSMV in console mode using the respective binary in the `bin` folder (`NuSMV.exe` or `NuSMV`). Add the
-   `*.smv` file you want to load as an argument:
+   path to the `.smv` file you want to load as an argument:
 
 ```
-cd /path/to/nusmv
+cd /path/to/nusmv/bin
 ./NuSMV /path/to/file.smv
 ```
 
