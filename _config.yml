@@ -27,8 +27,8 @@ contacts:
     url: https://www.wi.uni-muenster.de/de/institut/pi/personen/matthias-neugebauer
     name: Matthias Neugebauer
   lsp:
-    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/hendrik-winkelmann-1
-    name: Hendrik Winkelmann
+    url: https://www.wi.uni-muenster.de/de/institut/pi/personen/jonathan-neugebauer-1
+    name: Jonathan Neugebauer
 
 # excluded from Jekyll conversion
 exclude:
