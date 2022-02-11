@@ -6,7 +6,7 @@ title: Setting up the development environment
 
 1. [Installing Git](#git)
 1. [Installing Docker](#install)
-1. [Installing the latest Java 8 JDK](#jdk)
+1. [Installing the latest Java 11 JDK](#jdk)
 1. [Installing Eclipse](#eclipse)
 1. [Extending Eclipse with Xtext and Xtend](#plugins)
 
@@ -60,33 +60,40 @@ Which tool to install depends on your operating system:
 [Docker Compose](https://docs.docker.com/compose/overview/) is an additional tool, which allows to manage multiple containers at once.
 Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.docker.com/compose/install/) separately; Docker Toolbox already bundles a version.
 
-## <a id="jdk" name="jdk"></a>Installing the latest Java 8 JDK
+## <a id="jdk" name="jdk"></a>Installing the latest Java 11 JDK
 
-1. Make sure that the latest version of the **Java 8 Development Kit** (JDK 8 Update 201 or later) is installed on your computer. If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
-<br><small>Java 9 has introduced a new module structure which leads to errors or additional adaptations in combination with other software used in the lecture. We therefore do not recommend using Java 9+ for the ACSE exercises.</small>
-1. Go to a provider of your liking, e.g., [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or [https://adoptopenjdk.net/](https://adoptopenjdk.net/) and follow the instructions to **download** the latest version of the **Java 8 Development Kit** (**Java SE 8 Update 201** or later) for the operating system of your computer. Downloading from [https://adoptopenjdk.net/](https://adoptopenjdk.net/) does not require you to set up an account.
-1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\jdk1.8.0_201`` on Windows.
-1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\jdk1.8.0_201``.
+1. Make sure that the latest version of the **Java 11 Development Kit** is installed on your computer. 
+If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
+1. Go to a provider of your liking, e.g., [https://adoptium.net/](https://adoptium.net/?variant=openjdk11&jvmVariant=hotspot) or [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions to **download** the latest version of the **Java 11 Development Kit** for the operating system of your computer.
+1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\<jdk>`` on Windows.
+1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\<jdk>``.
 1. You can check your installation by typing ``javac -version`` on your command line which should output the java version you just installed. If this is not the case you might also add the ``/bin`` directory of your Java installation to your ``PATH`` environment variable (keep in mind you have to open a new command line in order to see changes to the environment variables). For Linux and macOS, see the section at the bottom of this document.
 
 ## <a id="eclipse" name="eclipse"></a>Installing Eclipse
 
-1. **Download** the **Eclipse IDE for Java Developers** for your operating system from [https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers](https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers).
-1. **Extract** the downloaded **archive** to a directory on your computer, e.g. ``C:\ACSE``. This will create a sub directory, like ``C:\ACSE\eclipse``.
-1. **Start Eclipse**. The executable (``eclipse.exe`` or ``eclipse``) is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and **select a workspace directory**, for example ``C:\ACSE\projects``. This path must **not contain any spaces** either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. Click **"OK"** to close the dialog and get to the workbench window.
+1. **Download** the **Eclipse IDE for Java and DSL Developers** for your operating system from [https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/). Via the given page an installer will be downloaded.
+2. **Extract** the archive and **open** the installer.
+3. Be sure to **select** ``Eclipse IDE for Java and DSL Developers``. This package already includes Xtext and Xtend which otherwise have to be installed manually.
 
-The Eclipse IDE comes with a Git integration tool, Java Development tools, and a Maven integration.
+![](images/InstallEclipseXtextXtend.png)
+1. Set up the Java 11+ VM. For this, **select** the Java 11 JDK you installed in the previous step.
+![](images/SelectJDK.png)
+1. Start installing. The respective packages are downloaded. **This might take some time**.
+1. **Start Eclipse**. The executable (``eclipse.exe`` or ``eclipse``) is located in the installation directory. Wait for the "Workspace Launcher" window to pop up and **select a workspace directory**, for example ``C:\ACSE\projects``. This path must **not contain any spaces** either. The workspace directory is where all your projects will be stored. You may check the "Use this as the default and do not ask again" box to avoid this dialog from appearing on the next start. You might also want to create a different workspace for each project. Click **"OK"** to close the dialog and get to the workbench window.
+
+The Eclipse IDE comes with a Git integration tool, Java Development tools, Xtext and Xtend, and a Maven integration.
 
 ## <a id="plugins" name="plugins"></a>Extending Eclipse with Xtext and Xtend
+You can skip this step if you already installed the ``Eclipse IDE for Java and DSL Developers``.
 1. Select **Help** > **Install new Software...**
 1. Specify Work with: Xtend - http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/. This can take some time.
 ![](images/XtendXtextInstallation.png)
 1. Wait for the list of software to load (this can take some time) and select all of the following items:
     * _General Purpose Tools_
-      * **Xtext Complete SDK** (at least version 2.13!)
+      * **Xtext Complete SDK** (at least version 2.25!)
         _for domain-specific language development_
     * _Programming Languages_
-      * **Xtend IDE** (at least version 2.13!)
+      * **Xtend IDE** (at least version 2.25!)
         _for model-to-text transformations_
 
 1. Click **Next** two times, check **Accept**, click **Finish** and wait for the packages to be installed.
@@ -94,9 +101,9 @@ The Eclipse IDE comes with a Git integration tool, Java Development tools, and a
 
 ## <a id="papyrus" name="papyrus"></a>Installing Papyrus
 1. Select **Help** > **Install new Software...**
-1. Specify Work with: https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-03/
+1. Specify Work with: https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12/
 ![](images/papyrus/WorkWithPapyrus.PNG)
-1. Select the version of Papyrus
+1. Select the version of Papyrus, it should be 6.0.0.202112011019
 1. Click **Next**, read and accept the license aggreement and click **Finish**
 1. Click **Restart now** when prompted to restart
 1. After creating a Papyrus project, you now can model, e.g., class diagrams with the known UML elements.
@@ -107,4 +114,4 @@ The Eclipse IDE comes with a Git integration tool, Java Development tools, and a
 * **Linux / macOS**: Open you ~/.profile- and ~/.bashrc- or ~/.bash_profile-files.  Type `export JAVA_HOME=/usr/lib/jvm/<your version>` (using your installation path, of course). If Java is still not found you might need to add it to the path environment variable using `export PATH=$PATH:$JAVA_HOME/bin`. You need to log out and log back in again for the changes to be applied.
 
 
-Congratulations, you have successfully set-up your development environment!
+Congratulations, you have successfully set up your development environment!
