@@ -23,7 +23,7 @@ project. Nevertheless, in the following, the simple set-up process is demonstrat
 
 #### Creating a new skeleton
 In Spring Initializr we can create a skeleton which we can use to, e.g., build a new Web Application. 
-For ACSE, we will let Spring Initializr generate a Maven Project using the language 'Java' version 8.
+For ACSE, we will let Spring Initializr generate a Maven Project using the language 'Java' version 11.
 We will use the default Spring Boot version and choose 'Jar' for packaging.
 
 ![Spring Initializr with some dependencies](images/SpringInitializr.png)
