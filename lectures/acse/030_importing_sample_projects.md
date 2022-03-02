@@ -133,21 +133,23 @@ In the Eclipse IDE, right-click the imported project and click "Configure" > "Co
 
 
 ## <a id="sr" name="sr"></a>Spring SOAP/REST Adder Application
-The [SOAP and REST Adder Projects](https://github.com/wwu-pi/acse_2020_soap_rest_demo) are both located in the same repository, https://github.com/wwu-pi/acse_2020_soap_rest_demo.
+The [SOAP](https://github.com/wwu-pi/soap-application) and [REST](https://github.com/wwu-pi/rest-application) repositories each comprise two subprojects.
+The only difference is that in the first set of subprojects, SOAP is used while the latter uses and accepts REST requests. The REST application- and client-projects
+contain manually written DTOs. In the SOAP application- and client-projects the data objects are generated from an XSD file that can be found
+under `src/main/resources`.
+
 For cloning the application you can proceed analogous to [MVC Adder Application](#mvc). For importing the project into 
 Eclipse, some details differ. Note that if you immediately import the project into Eclipse, without starting the SOAP web service beforehand,
-the <code>soap_rest_client_example</code>-subproject
+the <code>soap-client</code>-subproject
 will indicate an error. This is ok. Refer to [Generating the SOAP Data Model](#soapgen) to resolve the error.
 
 For running the web application refer to [Run the Spring Boot Application](#run) using the 
-<code>@SpringBootApplication</code>-annotated class in the <code>soap_rest_example</code> subproject. 
+<code>@SpringBootApplication</code>-annotated class in the <code>soap</code> subproject. 
 
 <b>Note that this project offers only one method which presents a GUI to the user.</b>
 
-<b>Note that for the <code>soap_rest_client_example</code>-subproject certain best practices are violated to keep the size 
-of the client small.</b> The clients here solely consist of a one-time main-method. If you use a client in a web service, 
-you should make use of <code>@Autowired</code> for the <code>RestTemplate</code> and the <code>SOAPClient</code>. 
-Also refer to the "Best Practices" tutorial.
+In the `{soap, rest}-client` subprojects, the client classes, `AdderSoapClient` and `AdderRestClient` are manually instantiated in a one-time main-method. 
+If you use a client in an application, you should make use of <code>@Autowired</code> for the client classes. 
 
 #### Importing the project into Eclipse after cloning via the command line
 After cloning, again, open a new workspace. Click "Import project..." > "Maven" > "Existing Maven Projects". 
@@ -160,11 +162,12 @@ Again, choose "Import as general project" > "Next" > "Finish". Now, right-click 
 Two subprojects should be detected. Click "Finish".
 
 #### <a id="soapgen" name="soapgen"></a>Generating the SOAP Data Model
-The error in the <code>soap_rest_client_example</code>-subproject is the result of the plugin used in the pom.xml. The
+The error in the <code>soap-client</code>-subproject is the result of the plugin used in the pom.xml. The
 plugin tries to retrieve the WSDL-file from the server to generate the data model specified in XSD. However, since the local 
 server which provides the WSDL has not yet been started, the request cannot be fulfilled. 
-After starting the <code>soap_rest_example</code>-subproject (see [Run the Spring Boot Application](#run)) you can build and run 
-the <code>soap_rest_client_example</code>-subproject. During the maven lifecycle, the sources are generated.
+After starting the <code>soap</code>-subproject (see [Run the Spring Boot Application](#run)) you can build and run 
+the <code>soap-client</code>-subproject. During the maven lifecycle, the sources are generated.
+After starting the SOAP application, you can also right-click the `soap-client` project and select "Maven" > "Update Project" to get rid of this error.
 
 A particularity of the project is that no own data transfer objects are used for the REST-part of the application. 
 Instead, the SOAP-generated classes are reused. For your REST project you do not have to specify an XSD. Rather, you should
