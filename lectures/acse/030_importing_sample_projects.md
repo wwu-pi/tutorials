@@ -185,6 +185,7 @@ the client here is an own web application. It can be accessed under <code>localh
 The [Statistics Example with Kafka](https://github.com/wwu-pi/acse-statistics-with-kafka) demonstrates the use of Kafka in Spring. 
 The suggested way of running the application is via the console. For this, navigate to the root project folder where `docker-compose.yml` is located. 
 There, execute `docker-compose up -d`. This will start the Kafka broker and Zookeeper. 
+Afterwards, you can stop the started docker containers via `docker-compose down`.
 
 For the setup, proceed analogously to [SOAP and Rest Adder Projects](#sr). Different from [SOAP and Rest Adder Projects](#sr),
 the client here is an own web application. It can be accessed under <code>localhost:8080</code>.
