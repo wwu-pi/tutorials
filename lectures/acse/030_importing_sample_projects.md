@@ -60,8 +60,7 @@ For running the application in the command line, open a console window and navig
 the project is located. Projects created with Spring Intializr already contain the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/)
 so you can simply execute <code>./mvnw spring-boot:run</code>. If you are lacking permissions to execute the 
 application under Linux, you can try executing <code>chmod a+x <i>mvnw-file</i></code> and trying again thereafter.
-Executing <code>./mvnw spring-boot:run</code> will take care of the different maven lifecycle steps and deploying a 
-corresponding .jar.
+Executing <code>./mvnw spring-boot:run</code> will take care of the different maven lifecycle steps and start the application.
 
 ### Run and debug the application using Eclipse
 #### Run the application in Eclipses
@@ -178,6 +177,14 @@ The [Statistics Example with MoM](https://github.com/wwu-pi/acse-statistics-with
 middleware in Spring. The suggested way of running the application requires a docker container which runs the message broker.
 Run <code>docker run -p 61616:61616 -p 8161:8161 rmohr/activemq</code> in the console to pull and run the docker container prior to starting
 the application. 
+
+For the setup, proceed analogously to [SOAP and Rest Adder Projects](#sr). Different from [SOAP and Rest Adder Projects](#sr),
+the client here is an own web application. It can be accessed under <code>localhost:8080</code>.
+
+## <a id="kafka" name="kafka"></a>Spring Statistics Example with Kafka
+The [Statistics Example with Kafka](https://github.com/wwu-pi/acse-statistics-with-kafka) demonstrates the use of Kafka in Spring. 
+The suggested way of running the application is via the console. For this, navigate to the root project folder where `docker-compose.yml` is located. 
+There, execute `docker-compose up -d`. This will start the Kafka broker and Zookeeper. 
 
 For the setup, proceed analogously to [SOAP and Rest Adder Projects](#sr). Different from [SOAP and Rest Adder Projects](#sr),
 the client here is an own web application. It can be accessed under <code>localhost:8080</code>.
