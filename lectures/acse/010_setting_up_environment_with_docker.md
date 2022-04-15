@@ -101,9 +101,9 @@ You can skip this step if you already installed the ``Eclipse IDE for Java and D
 
 ## <a id="papyrus" name="papyrus"></a>Installing Papyrus
 1. Select **Help** > **Install new Software...**
-1. Specify Work with: https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2021-12/
+1. Specify Work with: https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2022-03/
 ![](images/papyrus/WorkWithPapyrus.PNG)
-1. Select the version of Papyrus, it should be 6.0.0.202112011019
+1. Select the version of Papyrus
 1. Click **Next**, read and accept the license aggreement and click **Finish**
 1. Click **Restart now** when prompted to restart
 1. After creating a Papyrus project, you now can model, e.g., class diagrams with the known UML elements.
