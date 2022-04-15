@@ -58,7 +58,7 @@ Which tool to install depends on your operating system:
 1. You can continue with the Docker tutorial starting from [Step 2](https://docs.docker.com/get-started/part2/) to get some insights in how to handle Docker and learn about containers, images, Docker Hub and so on. However, necessary commands will also be provided on the exercise sheets.
 
 [Docker Compose](https://docs.docker.com/compose/overview/) is an additional tool, which allows to manage multiple containers at once.
-Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.docker.com/compose/install/) separately; Docker Toolbox already bundles a version.
+Docker Desktop for Windows and Mac includes Compose. Linux users have to [install Docker Compose](https://docs.docker.com/compose/install/) separately; Docker Toolbox already bundles a version.
 
 ## <a id="jdk" name="jdk"></a>Installing the latest Java 11 JDK
 
@@ -66,7 +66,7 @@ Windows 10, Linux and Mac users have to [install Docker Compose](https://docs.do
 If the JDK is properly installed on your computer, you can jump to step 4 of this section, otherwise continue with the next step.
 1. Go to a provider of your liking, e.g., [https://adoptium.net/](https://adoptium.net/?variant=openjdk11&jvmVariant=hotspot) or [http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html) and follow the instructions to **download** the latest version of the **Java 11 Development Kit** for the operating system of your computer.
 1. **Install** the **JDK** to a directory on your computer, e.g. ``C:\Java\<jdk>`` on Windows.
-1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\<jdk>``.
+1. **Create** an **[environment variable](#envvar)** called **``JAVA_HOME``** that points to the JDK installation directory, for example ``C:\Java\<jdk>``. You could also be able to directly set this variable while installing the JDK.
 1. You can check your installation by typing ``javac -version`` on your command line which should output the java version you just installed. If this is not the case you might also add the ``/bin`` directory of your Java installation to your ``PATH`` environment variable (keep in mind you have to open a new command line in order to see changes to the environment variables). For Linux and macOS, see the section at the bottom of this document.
 
 ## <a id="eclipse" name="eclipse"></a>Installing Eclipse
