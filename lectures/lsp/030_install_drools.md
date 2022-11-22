@@ -5,17 +5,17 @@ title: Installing Drools
 
 **Windows, Mac and Linux (Ubuntu):**
 
-1. [Download](https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-java-developers) and install Eclipse IDE for Java Developers (2021-09). You might want to create a new workspace for your LSP projects.
+1. [Download](https://www.eclipse.org/downloads/packages/release/2022-09/r/eclipse-ide-java-developers) and install Eclipse IDE for Java Developers (2022-09). You might want to create a new workspace for your LSP projects.
 
-2. [Download](https://download.jboss.org/drools/release/7.63.0.Final/droolsjbpm-integration-distribution-7.63.0.Final.zip) Drools 7.63.0 and extract the zip archive to any folder.
+2. [Download](https://download.jboss.org/drools/release/7.73.0.Final/droolsjbpm-integration-distribution-7.73.0.Final.zip) Drools 7.73.0 and extract the zip archive to any folder.
 
-3. Install JBoss Tools 4.21.0:
+3. Install JBoss Tools 4.25.0:
 
    * Run Eclipse IDE.
 
    * Select **Help** > **Eclipse Marketplace...**.
    
-   * Install **JBoss Tools 4.21.0.Final**
+   * Install **JBoss Tools 4.25.0.Final**
 
    * We will only need **JBoss Tools Java Standard Tools**. The other tools are optional.
    
