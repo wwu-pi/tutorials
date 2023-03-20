@@ -37,7 +37,7 @@ contains metadata on the project, such as the current version, a description of 
 as a namespace (<code>< groupId >...</ groupId ></code>). Furthermore, we can
 specify key-value pairs in the <code>< properties >...</ properties ></code>-section. 
 In the given example, it is specified that Java version 11 should be used for the
-project. 
+project. (Now, you should use Java 17).
 
 The <code>< dependencies >...</ dependencies ></code>-section contains a set of dependencies. Upon executing
 the project via Maven, it is checked whether these dependencies are already in Maven's local

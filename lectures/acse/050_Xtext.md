@@ -15,13 +15,13 @@ You should be prompted with something similar to
 
 3. Choose name of language, e.g., `de.wwu.pi.acse.customerDsl.CustomerDsl`, and a file extension that model files in the language will use, e.g., `cdsl`.
 
-Starting with Xtext 2.23 and later, Java 11 must be used. As such, leave the setting of "Execution environment" set to
-JavaSE-11. A compatible Java version should have been automatically installed while you installed Eclipse. 
+Java 17 will be used. As such, leave the setting of "Execution environment" set to
+JavaSE-17. A compatible Java version should have been automatically installed while you installed Eclipse. 
 Make sure that if you click **Environments**...
 
 ![](images/Configuration%20of%20Java%2011.png)
 
-...and select JavaSE-11...
+...and select JavaSE-17 (in the example, Java 11 is selected)...
 
 ![](images/Select%20compatible%20JRE.png) 
 

@@ -14,6 +14,7 @@ ways you can proceed here.
 1. [MVC Adder Application](#mvc)
 1. [SOAP and Rest Adder Projects](#sr)
 1. [Statistics Example with MoM](#jms)
+1. [Statistics Example with Kafka](#kafka)
 
 ## <a id="init" name="init"></a>Spring Initializr
 [Spring Initializr](https://start.spring.io/) makes it easy to set up new Spring Boot projects. Spring applications using
@@ -23,7 +24,7 @@ project. Nevertheless, in the following, the simple set-up process is demonstrat
 
 #### Creating a new skeleton
 In Spring Initializr we can create a skeleton which we can use to, e.g., build a new Web Application. 
-For ACSE, we will let Spring Initializr generate a Maven Project using the language 'Java' version 11.
+For ACSE, we will let Spring Initializr generate a Maven Project using the language 'Java' version 17. However, this will be done for you and the project will be provided to you.
 We will use the default Spring Boot version and choose 'Jar' for packaging.
 
 ![Spring Initializr with some dependencies](images/SpringInitializr.png)
@@ -175,7 +176,7 @@ directly define your classes.
 ## <a id="jms" name="jms"></a>Spring Statistics Example with Message-Oriented Middleware
 The [Statistics Example with MoM](https://github.com/wwu-pi/acse-statistics-with-mom) demonstrates the use of message-oriented 
 middleware in Spring. The suggested way of running the application requires a docker container which runs the message broker.
-Run <code>docker run -p 61616:61616 -p 8161:8161 rmohr/activemq</code> in the console to pull and run the docker container prior to starting
+Run <code>docker run -e AMQ_USER=admin -e AMQ_PASSWORD=admin -e AMQ_SECURITY_ENABLED=false -p8161:8161 -p61616:61616 --name artemis quay.io/artemiscloud/activemq-artemis-broker</code> in the console to pull and run the docker container prior to starting
 the application. 
 
 For the setup, proceed analogously to [SOAP and Rest Adder Projects](#sr). Different from [SOAP and Rest Adder Projects](#sr),
