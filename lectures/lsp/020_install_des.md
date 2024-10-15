@@ -45,7 +45,7 @@ title: Installing Datalog Educational System
 **Build own executable with SWI-Prolog:**
 
 We recommend using the pre-built packages as described above. However, you can also build your own executable for DES
-with SWI-Prolog. This requires an installation of SWI-Prolog 7.x.
+with SWI-Prolog. This requires an installation of SWI-Prolog.
 
 1. [Download](https://sourceforge.net/projects/des/files/des/des6.3/DES6.3SWI.zip/download) the source code of Datalog Educational System (DES).
 

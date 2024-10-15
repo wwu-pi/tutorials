@@ -5,7 +5,7 @@ title: Installing NuSMV
 
 **Windows, Mac and Linux:**
 
-1. [Download](https://nusmv.fbk.eu/bin/bin_download2-v2.cgi) NuSMV.
+1. [Download](https://nusmv.fbk.eu/downloads.html) NuSMV.
 
    * We recommend downloading the 64-bit version.
 
@@ -23,5 +23,5 @@ title: Installing NuSMV
    to the program folder first, add the `bin` folder to the `PATH` environment variable. You can find resources online
    on how to do that for your respective operating system. For instance, consult [this GitHub Gist](https://gist.github.com/nex3/c395b2f8fd4b02068be37c961301caa7).
 
-5. An introduction to using NuSMV can be found in the [NuSMV tutorial](https://nusmv.fbk.eu/NuSMV/tutorial/index.html).
-   Further details can be found in the [user manual](https://nusmv.fbk.eu/NuSMV/userman/index-v2.html).
+5. An introduction to using NuSMV can be found in the [NuSMV tutorial](https://nusmv.fbk.eu/tutorials.html).
+   Further details can be found in the [user manual](https://nusmv.fbk.eu/user-manual.html).
