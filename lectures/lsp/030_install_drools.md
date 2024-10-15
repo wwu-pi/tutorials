@@ -4,7 +4,7 @@ title: Installing Drools
 ---
 
 <div class="tip" markdown="1">
-   <b>The Drools Eclipse Integration mentioned below is no longer maintained.</b> We recommend building your Drools project using [Maven](../acse/020_build_automation.html) instead. Use the sample project provided on the Learnweb course page as a starting point. You can use your favourite editor for development.
+   <b>The Drools Eclipse Integration mentioned below is no longer maintained.</b> We recommend building your Drools project using [Maven](../acse/020_build_automation.html) instead. Use the sample project provided on the Learnweb course page as a starting point. Consult the included README file for the Maven goals necessary for building and executing the sample project. You can use your favourite IDE for development.
 </div>
 
 **Windows, Mac and Linux (Ubuntu):**
