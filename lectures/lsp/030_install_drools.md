@@ -3,6 +3,10 @@ layout: recipe
 title: Installing Drools
 ---
 
+<div class="tip" markdown="1">
+   <b>The Drools Eclipse Integration mentioned below is no longer maintained.</b> We recommend building your Drools project using [Maven](../acse/020_build_automation.html) instead. Use the sample project provided on the Learnweb course page as a starting point. You can use your favourite editor for development.
+</div>
+
 **Windows, Mac and Linux (Ubuntu):**
 
 1. [Download](https://www.eclipse.org/downloads/packages/release/2023-09/r/eclipse-ide-java-developers) and install Eclipse IDE for Java Developers (2022-09). You might want to create a new workspace for your LSP projects.
